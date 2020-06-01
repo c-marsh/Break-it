@@ -1,7 +1,6 @@
 import Paddle from "./paddle.js";
 let canvas = document.getElementById('game');
 let context = canvas.getContext('2d');
-export default context;
 
 //Defining playing size
 const gameWidth = 800;

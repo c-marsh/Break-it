@@ -1,5 +1,5 @@
-import context from "./main.js";
 
+//Class to make paddle size
 export default class Paddle {
     constructor(gameWidth, gameHeight) {
         this.width = 150; //To Do: make responsive by making object
@@ -11,6 +11,7 @@ export default class Paddle {
 
 }
     draw(context) {
+        context.fillStyle = "red";
         context.fillRect(this.position.xAxis, this.position.yAxis, this.width, this.height);
 
     }
