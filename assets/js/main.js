@@ -10,5 +10,5 @@ const gameHeight = 600;
 context.clearRect(0, 0, gameWidth, gameHeight); //Clear screen on refresh
 
 let paddle = new Paddle(gameWidth, gameHeight);
-paddle.draw();
+paddle.draw(context);
 
