@@ -1,8 +1,9 @@
 import Paddle from "./paddle.js";
+import TopPaddle from "./top_paddle.js";
+//Identify canvas
 let canvas = document.getElementById('game');
-//Define context
 
-
+//Code for retina/HiDef canvas display from https://www.html5rocks.com/en/tutorials/canvas/hidpi/ 
 function setupCanvas(canvas) {
   // Get the device pixel ratio, falling back to 1.
   var dpr = window.devicePixelRatio || 1;
@@ -37,3 +38,5 @@ context.clearRect(0, 0, gameWidth, gameHeight); //Clear screen on refresh
 let paddle = new Paddle(gameWidth, gameHeight);
 paddle.draw(context);
 
+let topPaddle = new TopPaddle(gameWidth, gameHeight);
+topPaddle.draw(context);
