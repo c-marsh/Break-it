@@ -1,5 +1,6 @@
 import Paddle from "./paddle.js";
 import TopPaddle from "./top_paddle.js";
+import KeyBindings from "./input.js";
 //Identify canvas
 let canvas = document.getElementById("game");
 
@@ -28,6 +29,7 @@ context.beginPath();
 context.moveTo(100, 100);
 context.lineTo(200, 200);
 context.stroke();
+//End of imported code
 
 //Defining playing size
 const gameWidth = document.documentElement.clientWidth;
@@ -41,7 +43,7 @@ topPaddle.draw(context);
 
 //Build a frame refresh loop for the game
 let lastTime = 0;
-
+new KeyBindings();
 function gameLoop(timestamp) {
   //Define deltaTime as time elapsed since last frame
   let deltaTime = timestamp - lastTime;
