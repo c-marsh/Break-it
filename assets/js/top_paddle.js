@@ -15,5 +15,10 @@ export default class TopPaddle {
         context.fillRect(this.position.xAxis, this.position.yAxis, this.width, this.height);
 
     }
+    update(deltaTime) {
+    if (!deltaTime) return;
+
+    this.position.xAxis += 5 / deltaTime; //move 5 pixels per frame
+}
 
 }
