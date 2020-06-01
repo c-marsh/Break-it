@@ -2,11 +2,11 @@
 //Class to make paddle size
 export default class Paddle {
     constructor(gameWidth, gameHeight) {
-        this.width = gameWidth / 20; //To Do: make responsive by making object
-        this.height = gameHeight/200; //To Do: make responsive by making object
+        this.width = gameWidth/10; //To Do: make responsive by making object
+        this.height = gameHeight/50; //To Do: make responsive by making object
         this.position = {
-            xAxis : gameWidth / 6, //To Do: revisit - odd maths
-            yAxis : gameHeight/ 5 + this.height*5 //To Do: revisit - odd maths
+            xAxis : gameWidth/2-this.width/2, 
+            yAxis : gameHeight-this.height-10 
         }
 
 }
