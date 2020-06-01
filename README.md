@@ -1,2 +1,2 @@
 Code Sources:
-Code for retina/HiDef canvas display: https://stackoverflow.com/questions/35820750/understanding-html-retina-canvas-support
+Code for retina/HiDef canvas display: https://www.html5rocks.com/en/tutorials/canvas/hidpi/ 
