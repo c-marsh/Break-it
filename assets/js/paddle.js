@@ -5,8 +5,8 @@ export default class Paddle {
         this.width = 150; //To Do: make responsive by making object
         this.height = 30; //To Do: make responsive by making object
         this.position = {
-            xAxis : gameWidth / 2 - this.width / 2,
-            yAxis : gameHeight - this.height - 10
+            xAxis : 6,
+            yAxis : 6
         }
 
 }
