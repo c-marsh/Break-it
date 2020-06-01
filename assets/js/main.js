@@ -33,10 +33,27 @@ context.stroke();
 const gameWidth = document.documentElement.clientWidth;
 const gameHeight = 600;
 
-context.clearRect(0, 0, gameWidth, gameHeight); //Clear screen on refresh
-
 let paddle = new Paddle(gameWidth, gameHeight);
 paddle.draw(context);
 
 let topPaddle = new TopPaddle(gameWidth, gameHeight);
 topPaddle.draw(context);
+
+
+//Build a refresh loop
+let lastTime = 0;
+
+
+function gameLoop(timestamp) {
+    let deltaTime = timestamp - lastTime;
+    lastTime = timestamp;
+    context.clearRect(0, 0, gameWidth, gameHeight); //Clear screen on refresh
+    paddle.update(deltaTime);
+topPaddle.update(deltaTime);
+    paddle.draw(context);
+topPaddle.draw(context);
+
+    requestAnimationFrame(gameLoop);
+}
+
+gameLoop();
