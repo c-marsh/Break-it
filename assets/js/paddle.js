@@ -19,6 +19,9 @@ export default class Paddle {
     moveLeft() {
         this.speed = -this.maxSpeed;
     }
+    moveRight() {
+        this.speed = this.maxSpeed;
+    }
     draw(context) {
         //Paddle styling
         context.fillStyle = "red";

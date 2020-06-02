@@ -9,7 +9,7 @@ export default class KeyBindings {
                     break
                 
                 case 39:
-                    alert('move right')
+                    paddle.moveRight()
                     break
             }
 
