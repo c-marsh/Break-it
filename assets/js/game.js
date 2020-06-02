@@ -6,15 +6,13 @@ export default class Game {
   constructor(gameWidth, gameHeight) {
     this.gameWidth = gameWidth;
     this.gameHeight = gameHeight;
-    //Define and draw paddles
   }
+    
+  //Define and draw paddles
   start() {
     this.paddle = new Paddle(this);
-
     this.topPaddle = new TopPaddle(this);
-
     this.ball = new Ball(this);
-
     new KeyBindings(this.paddle, this.topPaddle);
   }
 
