@@ -1,7 +1,5 @@
-import Paddle from "./paddle.js";
-import TopPaddle from "./top_paddle.js";
-import Ball from "./ball.js";
-import KeyBindings from "./input.js";
+import Game from "./game.js";
+
 //Identify canvas
 let canvas = document.getElementById("game");
 
@@ -36,18 +34,13 @@ context.stroke();
 const gameWidth = document.documentElement.clientWidth;
 const gameHeight = 600;
 
-//Define and draw paddles
-let paddle = new Paddle(gameWidth, gameHeight);
-paddle.draw(context);
-let topPaddle = new TopPaddle(gameWidth, gameHeight);
-topPaddle.draw(context);
-let ball = new Ball(gameWidth, gameHeight);
-ball.draw(context);
-
+//instantiate game
+let game = new Game(gameWidth, gameHeight);
+game.start();
 
 //Build a frame refresh loop for the game
 let lastTime = 0;
-new KeyBindings(paddle, topPaddle);
+
 function gameLoop(timestamp) {
   //Define deltaTime as time elapsed since last frame
   let deltaTime = timestamp - lastTime;
@@ -55,15 +48,8 @@ function gameLoop(timestamp) {
   lastTime = timestamp;
   //Clear screen on refresh
   context.clearRect(0, 0, gameWidth, gameHeight);
-  //Pass time to paddles
-  paddle.update(deltaTime);
-    topPaddle.update(deltaTime);
-    ball.update(deltaTime);
-  //Redraw paddles
-  paddle.draw(context);
-    topPaddle.draw(context);
-    ball.draw(context);
-
+    game.update(deltaTime);
+    game.draw(context);
   requestAnimationFrame(gameLoop);
 }
 //Execute Game Loop
