@@ -43,7 +43,7 @@ topPaddle.draw(context);
 
 //Build a frame refresh loop for the game
 let lastTime = 0;
-new KeyBindings();
+new KeyBindings(paddle);
 function gameLoop(timestamp) {
   //Define deltaTime as time elapsed since last frame
   let deltaTime = timestamp - lastTime;
