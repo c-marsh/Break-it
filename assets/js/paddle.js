@@ -42,8 +42,8 @@ export default class Paddle {
 
         this.position.xAxis += this.speed; 
         //Stopping the paddle if it reaches canvas edge
-        if (this.position.xAxis < 0) this.speed = 0;
-        if (this.position.xAxis > this.gameWidth-this.width) this.speed = 0;
+        if (this.position.xAxis < 0) this.position.xAxis = 0;
+        if (this.position.xAxis > this.gameWidth-this.width) this.position.xAxis = this.gameWidth-this.width;
 }
 }
 
