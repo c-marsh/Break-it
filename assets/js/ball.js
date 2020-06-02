@@ -2,21 +2,21 @@ export default class Ball {
   constructor(game) {
     this.gameWidth = game.gameWidth;
     this.gameHeight = game.gameHeight;
-      this.game = game;
+    this.game = game;
     //Ball dimensions, relative to canvas size
     this.sizeR = this.gameWidth / 100;
 
     //Ball Start coordinates
-      this.position = {
-          x: 100,
-          y: 100
-      };
+    this.position = {
+      x: 100,
+      y: 100,
+    };
 
     //Ball Speed
-      this.speed = {
-          x: 2,
-          y: 2
-      };
+    this.speed = {
+      x: 2,
+      y: 2,
+    };
 
     //Ball extremes
 
@@ -39,22 +39,30 @@ export default class Ball {
     this.position.y += this.speed.y;
 
     //Bounce off L/R sides
-    if (this.position.x + this.sizeR > this.gameWidth || this.position.x  - this.sizeR < 0) {
+    if (
+      this.position.x + this.sizeR > this.gameWidth ||
+      this.position.x - this.sizeR < 0
+    ) {
       this.speed.x = -this.speed.x;
     }
-      
+
     //Bounce off bottom - for test purposes only
-    if (this.position.y > this.gameHeight || this.position.y < 0) {
-      this.speed.y = -this.speed.y;
-    }
-      
+    //if (this.position.y > this.gameHeight || this.position.y < 0) {
+      //this.speed.y = -this.speed.y;
+    //}
+
     //Bottom Paddle collision
-      let ballBottom = this.position.y + this.sizeR;
-      let BottomPaddleTop = this.game.paddle.position.yAxis;
-      
-      if (ballBottom >= BottomPaddleTop) {
-          this.speed.y = -this.speed.y;
-          
-      }
+    let ballBottom = this.position.y + this.sizeR;
+    let bottomPaddleTop = this.game.paddle.position.yAxis;
+    let leftSideOfPaddle = this.game.paddle.position.xAxis;
+      let rightSideOfPaddle = this.game.paddle.position.xAxis + this.game.paddle.width;
+
+      if (ballBottom >= bottomPaddleTop &&
+          this.position.x >= leftSideOfPaddle &&
+          this.position.x <= rightSideOfPaddle
+    ) {
+      this.speed.y = -this.speed.y;
+      //this.position.y = this.game.paddle.position.yAxis - this.sizeR;
+    }
   }
 }
