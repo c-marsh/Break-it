@@ -39,7 +39,7 @@ export default class Ball {
     this.position.y += this.speed.y;
 
     //Bounce off sides
-    if (this.position.x > this.gameWidth || this.position.x < 0) {
+    if (this.position.x + this.sizeR > this.gameWidth || this.position.x  - this.sizeR < 0) {
       this.speed.x = -this.speed.x;
     }
       
