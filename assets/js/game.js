@@ -7,25 +7,27 @@ export default class Game {
     this.gameWidth = gameWidth;
     this.gameHeight = gameHeight;
   }
-    
+
   //Define and draw paddles
   start() {
     this.paddle = new Paddle(this);
     this.topPaddle = new TopPaddle(this);
     this.ball = new Ball(this);
+    //create an array of features in the game
+    this.features = [this.ball, this.paddle, this.topPaddle];
     new KeyBindings(this.paddle, this.topPaddle);
   }
 
   update(deltaTime) {
-    //Pass time to paddles
-    this.paddle.update(deltaTime);
-    this.topPaddle.update(deltaTime);
-    this.ball.update(deltaTime);
+    //Pass time to array of feature
+    this.features.forEach((Object) => {
+      Object.update(deltaTime);
+    });
   }
   draw(context) {
     //Redraw paddles
-    this.paddle.draw(context);
-    this.topPaddle.draw(context);
-    this.ball.draw(context);
+    this.features.forEach((Object) => {
+      Object.draw(context);
+    });
   }
 }
