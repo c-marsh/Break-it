@@ -1,11 +1,11 @@
 
 //Class to make paddle size
 export default class Paddle {
-    constructor(gameWidth, gameHeight) {
-        this.gameWidth = gameWidth
+    constructor(game) {
+        this.gameWidth = game.gameWidth
         //Paddle dimensions, relative to canvas size
-        this.width = gameWidth / 10; 
-        this.height = gameHeight / 50;
+        this.width = game.gameWidth / 10; 
+        this.height = game.gameHeight / 50;
         
         //Paddle velocity
         this.maxSpeed = 8;
@@ -13,8 +13,8 @@ export default class Paddle {
         
         //Paddle position, relative to canvas size
         this.position = {
-            xAxis: gameWidth / 2 - this.width / 2,
-            yAxis: gameHeight - this.height - 10
+            xAxis: game.gameWidth / 2 - this.width / 2,
+            yAxis: game.gameHeight - this.height - 10
         };
     }
     //move left function

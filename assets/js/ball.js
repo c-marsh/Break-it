@@ -1,10 +1,10 @@
 export default class Ball {
-  constructor(gameWidth, gameHeight) {
-    this.gameWidth = gameWidth;
-    this.gameHeight = gameHeight;
+  constructor(game) {
+    this.gameWidth = game.gameWidth;
+    this.gameHeight = game.gameHeight;
 
     //Ball dimensions, relative to canvas size
-    this.sizeR = gameWidth / 100;
+    this.sizeR = this.gameWidth / 100;
 
     //Ball Start coordinates
       this.position = {
