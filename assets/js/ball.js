@@ -7,13 +7,18 @@ export default class Ball {
     this.sizeR = gameWidth / 100;
 
     //Ball Start coordinates
-    this.position = { x: 100, y: 100 };
+      this.position = {
+          x: 100,
+          y: 100
+      };
 
     //Ball Speed
-    this.speed = { x: 2, y: 2 };
+      this.speed = {
+          x: 2,
+          y: 2
+      };
 
     //Ball extremes
- 
 
     //Ball direction
     this.direction = this.xMove + this.yMove;
@@ -29,14 +34,17 @@ export default class Ball {
   }
 
   update(deltaTime) {
-    //Prevent division by 0 as a result of no first frame
+    //Move ball
     this.position.x += this.speed.x;
     this.position.y += this.speed.y;
 
-      if (this.position.x > this.gameWidth || this.position.x < 0) {
-          this.speed.x = -this.speed.x;
-      }
-         if (this.position.y > this.gameHeight || this.position.y < 0) {
+    //Bounce off sides
+    if (this.position.x > this.gameWidth || this.position.x < 0) {
+      this.speed.x = -this.speed.x;
+    }
+      
+    //Bounce off bottom - for test purposes only
+    if (this.position.y > this.gameHeight || this.position.y < 0) {
       this.speed.y = -this.speed.y;
     }
   }
