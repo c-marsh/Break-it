@@ -25,6 +25,10 @@ export default class Paddle {
     moveRight() {
         this.speed = this.maxSpeed;
     }
+    //Stop move function
+    moveStop() {
+        this.speed = 0;
+    }
     draw(context) {
         //Paddle styling
         context.fillStyle = "red";
@@ -37,7 +41,7 @@ export default class Paddle {
     if (!deltaTime) return;
 
         this.position.xAxis += this.speed; 
-        
+        //Stopping the paddle if it reaches canvas edge
         if (this.position.xAxis < 0) this.speed = 0;
         if (this.position.xAxis > this.gameWidth-this.width) this.speed = 0;
 }

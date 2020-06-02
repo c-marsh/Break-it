@@ -12,8 +12,20 @@ export default class KeyBindings {
                     paddle.moveRight()
                     break
             }
-
+            
         });
+        document.addEventListener('keyup', (event) => {
+            switch (event.keyCode) {
+                case 37:
+                    paddle.moveStop()
+                    break
+                
+                case 39:
+                    paddle.moveStop()
+                    break
+            }
+        });
+
 }
 
 
