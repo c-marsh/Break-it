@@ -2,7 +2,7 @@
 export default class TopPaddle {
   constructor(game) {
       this.gameWidth = game.gameWidth;
-      this.gameHeight = game.gameHight;
+      this.gameHeight = game.gameHeight;
     //Paddle dimensions, relative to canvas size
     this.width = this.gameWidth / 10;
     this.height = this.gameHeight / 50;
