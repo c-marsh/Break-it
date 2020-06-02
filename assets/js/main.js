@@ -67,4 +67,5 @@ function gameLoop(timestamp) {
   requestAnimationFrame(gameLoop);
 }
 //Execute Game Loop
-gameLoop();
+  requestAnimationFrame(gameLoop);
+
