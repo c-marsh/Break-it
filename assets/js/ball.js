@@ -2,7 +2,7 @@ export default class Ball {
   constructor(game) {
     this.gameWidth = game.gameWidth;
     this.gameHeight = game.gameHeight;
-
+      this.game = game;
     //Ball dimensions, relative to canvas size
     this.sizeR = this.gameWidth / 100;
 
@@ -38,7 +38,7 @@ export default class Ball {
     this.position.x += this.speed.x;
     this.position.y += this.speed.y;
 
-    //Bounce off sides
+    //Bounce off L/R sides
     if (this.position.x + this.sizeR > this.gameWidth || this.position.x  - this.sizeR < 0) {
       this.speed.x = -this.speed.x;
     }
@@ -47,5 +47,14 @@ export default class Ball {
     if (this.position.y > this.gameHeight || this.position.y < 0) {
       this.speed.y = -this.speed.y;
     }
+      
+    //Bottom Paddle collision
+      let ballBottom = this.position.y + this.sizeR;
+      let BottomPaddleTop = this.game.paddle.position.yAxis;
+      
+      if (ballBottom >= BottomPaddleTop) {
+          this.speed.y = -this.speed.y;
+          
+      }
   }
 }
