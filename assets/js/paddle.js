@@ -37,9 +37,6 @@ export default class Paddle {
 
     }
     update(deltaTime) {
-    //Prevent division by 0 as a result of no first frame
-    if (!deltaTime) return;
-
         this.position.xAxis += this.speed; 
         //Stopping the paddle if it reaches canvas edge
         if (this.position.xAxis < 0) this.position.xAxis = 0;
