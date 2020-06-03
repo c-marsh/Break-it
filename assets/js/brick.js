@@ -1,5 +1,5 @@
 export default class Brick {
-    constructor(game) {
+    constructor(game, position) {
         this.gameWidth = game.gameWidth
         this.gameHeight = game.gameHeight
         this.game = game;
@@ -7,10 +7,11 @@ export default class Brick {
         this.width = this.gameWidth / 10; 
         this.height = this.gameHeight / 50;
         //Position
-         this.position = {
-      xAxisBrick: this.gameWidth / 2 - this.width / 2,
-      yAxisBrick: this.height*25
-    };
+        this.position = position
+        //{
+    //   xAxisBrick: 87,//this.gameWidth / 2 - this.width / 2,
+    //   yAxisBrick: this.height*25
+    // };
     }  
     draw(context){
         //Brick styling
