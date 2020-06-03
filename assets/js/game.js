@@ -22,7 +22,7 @@ export default class Game {
     let bricks = [];
     //push 10 new bricks into array
     for(let i=0; i<10; i++){
-        bricks.push(new Brick(this, { xAxisBrick: i * 87, yAxisBrick: 30 }));
+        bricks.push(new Brick(this, { xAxisBrick: i * this.gameWidth / 12, yAxisBrick: this.gameHeight / 2}));
     }
     
     //create an array of features in the game
