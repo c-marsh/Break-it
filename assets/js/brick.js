@@ -9,7 +9,7 @@ export default class Brick {
         //Position
          this.position = {
       xAxisBrick: this.gameWidth / 2 - this.width / 2,
-      yAxisBrick: this.height
+      yAxisBrick: this.height*25
     };
     }  
     draw(context){
