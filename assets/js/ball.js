@@ -14,8 +14,8 @@ export default class Ball {
 
     //Ball Speed
     this.speed = {
-      x: 2,
-      y: 2,
+      x: 4,
+      y: 4,
     };
 
     //Ball extremes
@@ -48,17 +48,20 @@ export default class Ball {
 
     //Bounce off bottom - for test purposes only
     //if (this.position.y > this.gameHeight || this.position.y < 0) {
-      //this.speed.y = -this.speed.y;
+    //this.speed.y = -this.speed.y;
     //}
     //Top Paddle collision
     let ballTop = this.position.y - this.sizeR;
-    let topPaddleBottom = this.game.topPaddle.position.yAxisTop+ this.game.topPaddle.height;
+    let topPaddleBottom =
+      this.game.topPaddle.position.yAxisTop + this.game.topPaddle.height;
     let leftSideOfTopPaddle = this.game.topPaddle.position.xAxisTop;
-    let rightSideOfTopPaddle = this.game.topPaddle.position.xAxisTop + this.game.topPaddle.width;
+    let rightSideOfTopPaddle =
+      this.game.topPaddle.position.xAxisTop + this.game.topPaddle.width;
 
-      if (ballTop <= topPaddleBottom &&
-          this.position.x >= leftSideOfTopPaddle &&
-          this.position.x <= rightSideOfTopPaddle
+    if (
+      ballTop <= topPaddleBottom &&
+      this.position.x >= leftSideOfTopPaddle &&
+      this.position.x <= rightSideOfTopPaddle
     ) {
       this.speed.y = -this.speed.y;
       //this.position.y = this.game.paddle.position.yAxis - this.sizeR;
@@ -67,11 +70,13 @@ export default class Ball {
     let ballBottom = this.position.y + this.sizeR;
     let bottomPaddleTop = this.game.paddle.position.yAxis;
     let leftSideOfPaddle = this.game.paddle.position.xAxis;
-      let rightSideOfPaddle = this.game.paddle.position.xAxis + this.game.paddle.width;
+    let rightSideOfPaddle =
+      this.game.paddle.position.xAxis + this.game.paddle.width;
 
-      if (ballBottom >= bottomPaddleTop &&
-          this.position.x >= leftSideOfPaddle &&
-          this.position.x <= rightSideOfPaddle
+    if (
+      ballBottom >= bottomPaddleTop &&
+      this.position.x >= leftSideOfPaddle &&
+      this.position.x <= rightSideOfPaddle
     ) {
       this.speed.y = -this.speed.y;
       //this.position.y = this.game.paddle.position.yAxis - this.sizeR;
