@@ -3,7 +3,7 @@ export default class Brick {
         this.gameWidth = game.gameWidth
         this.gameHeight = game.gameHeight
         this.game = game;
-        //Paddle dimensions, relative to canvas size
+        //Brick dimensions, relative to canvas size
         this.width = this.gameWidth / 10; 
         this.height = this.gameHeight / 50;
         //Position
@@ -13,9 +13,9 @@ export default class Brick {
     };
     }  
     draw(context){
-        //Paddle styling
+        //Brick styling
         context.fillStyle = "blue";
-        //Paddle creation
+        //Brick creation
         context.fillRect(this.position.xAxisBrick, this.position.yAxisBrick, this.width, this.height);
 
     }
