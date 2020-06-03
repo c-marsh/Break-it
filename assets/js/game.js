@@ -10,14 +10,23 @@ export default class Game {
     this.gameHeight = gameHeight;
   }
 
-  //Define and draw paddles
-  start() {
+ 
+  start() { 
+    //Declare variables
     this.paddle = new Paddle(this);
     this.topPaddle = new TopPaddle(this);
-      this.ball = new Ball(this);
-      let brick = new Brick(this, { x: 40, y: 30 });
+    this.ball = new Ball(this);
+    
+
+    //create an empty array for bricks
+    let bricks = [];
+    //push 10 new bricks into array
+    for(let i=0; i<10; i++){
+        bricks.push(new Brick(this, { xAxisBrick: i * 87, yAxisBrick: 30 }));
+    }
+    
     //create an array of features in the game
-    this.features = [this.ball, this.paddle, this.topPaddle, brick];
+    this.features = [this.ball, this.paddle, this.topPaddle, ...bricks];
     new KeyBindings(this.paddle, this.topPaddle);
   }
 
