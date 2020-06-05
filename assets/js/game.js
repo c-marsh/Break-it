@@ -3,7 +3,7 @@ import TopPaddle from "./top_paddle.js";
 import Ball from "./ball.js";
 import KeyBindings from "./input.js";
 import Brick from "./brick.js";
-import {createLevel, level1} from "./levels.js";
+import { createLevel, level1 } from "./levels.js";
 
 export default class Game {
   constructor(gameWidth, gameHeight) {
@@ -11,23 +11,19 @@ export default class Game {
     this.gameHeight = gameHeight;
   }
 
- 
-  start() { 
+  start() {
     //Declare variables
     this.paddle = new Paddle(this);
     this.topPaddle = new TopPaddle(this);
     this.ball = new Ball(this);
-    
 
     //create an empty array for bricks
     let bricks = createLevel(this, level1);
-    //push 10 new bricks into array
-    // for(let i=0; i<10; i++){
-    //     bricks.push(new Brick(this, { xAxisBrick: i * this.gameWidth / 12, yAxisBrick: this.gameHeight / 2}));
-    // }
-    
+
     //create an array of features in the game
     this.features = [this.ball, this.paddle, this.topPaddle, ...bricks];
+
+    //Keymapping to paddles
     new KeyBindings(this.paddle, this.topPaddle);
   }
 
