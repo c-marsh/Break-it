@@ -52,21 +52,21 @@ export default class Ball {
     //this.speed.y = -this.speed.y;
     //}
     //Top Paddle collision
-    let ballTop = this.position.y - this.sizeR;
-    let topPaddleBottom =
-      this.game.topPaddle.position.yAxisTop + this.game.topPaddle.height;
-    let leftSideOfTopPaddle = this.game.topPaddle.position.xAxisTop;
-    let rightSideOfTopPaddle =
-      this.game.topPaddle.position.xAxisTop + this.game.topPaddle.width;
+    // let ballTop = this.position.y - this.sizeR;
+    // let topPaddleBottom =
+    //   this.game.topPaddle.position.yAxisTop + this.game.topPaddle.height;
+    // let leftSideOfTopPaddle = this.game.topPaddle.position.xAxisTop;
+    // let rightSideOfTopPaddle =
+    //   this.game.topPaddle.position.xAxisTop + this.game.topPaddle.width;
 
-    if (
-      ballTop <= topPaddleBottom &&
-      this.position.x >= leftSideOfTopPaddle &&
-      this.position.x <= rightSideOfTopPaddle
-    ) {
-      this.speed.y = -this.speed.y;
+    // // if (
+    //   ballTop <= topPaddleBottom &&
+    //   this.position.x >= leftSideOfTopPaddle &&
+    //   this.position.x <= rightSideOfTopPaddle
+    // ) {
+      //this.speed.y = -this.speed.y;
       //this.position.y = this.game.paddle.position.yAxis - this.sizeR;
-    }
+    //}
     // //Bottom Paddle collision
     // let ballBottom = this.position.y + this.sizeR;
     // let bottomPaddleTop = this.game.paddle.position.yAxis;

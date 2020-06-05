@@ -19,14 +19,14 @@ export function impact(ball,
   let paddleL = paddle.position.xAxis;
   let paddleR = paddle.position.xAxis + paddle.width;
 
-  let topPaddleT = topPaddle.position.yAxis;
-  let topPaddleB = topPaddle.position.yAxis + paddle.height;
-  let topPaddleL = topPaddle.position.xAxis;
-  let topPaddleR = topPaddle.position.xAxis + paddle.width;
+  let topPaddleT = topPaddle.position.yAxisTop;
+  let topPaddleB = topPaddle.position.yAxisTop + topPaddle.height;
+  let topPaddleL = topPaddle.position.xAxisTop;
+  let topPaddleR = topPaddle.position.xAxisTop + topPaddle.width;
 
     //returns true if ball has come into contact with a brick/paddle surface
-    if (ballB >= paddleT && ballR >= paddleL && ballL <= paddleR && ballT <= paddleB) return true 
-    else if (ballB >= topPaddleT && ballR >= topPaddleL && ballL <= topPaddleR && ballT <= topPaddleB) return true 
+    if (ballB >= paddleT && ballR >= paddleL && ballL <= paddleR && ballT <= paddleB) return true ;
+    else if (ballB >= topPaddleT && ballR >= topPaddleL && ballL <= topPaddleR && ballT <= topPaddleB) return true ;
     //    else if (ballB >= brickT && ballR >= brickL && BallL <= brickR && ballT <= brickB) return true;  
     else
     return false;
