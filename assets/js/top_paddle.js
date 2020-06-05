@@ -1,8 +1,8 @@
 //Class to make paddle size
 export default class TopPaddle {
   constructor(game) {
-      this.gameWidth = game.gameWidth;
-      this.gameHeight = game.gameHeight;
+    this.gameWidth = game.gameWidth;
+    this.gameHeight = game.gameHeight;
     //Paddle dimensions, relative to canvas size
     this.width = this.gameWidth / 10;
     this.height = this.gameHeight / 50;
@@ -12,7 +12,7 @@ export default class TopPaddle {
     //Paddle position, relative to canvas size
     this.position = {
       xAxisTop: this.gameWidth / 2 - this.width / 2,
-      yAxisTop: this.height
+      yAxisTop: this.height,
     };
   } //move left function
   moveLeft() {
@@ -38,8 +38,6 @@ export default class TopPaddle {
     );
   }
   update(deltaTime) {
- 
-
     this.position.xAxisTop += this.speed;
     //Stopping the paddle if it reaches canvas edge
     if (this.position.xAxisTop < 0) this.position.xAxisTop = 0;
