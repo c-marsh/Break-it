@@ -1,4 +1,4 @@
-export function impact() {
+export function impact(ball, paddle, topPaddle, brick) {
   //ball measured from centre of ball
   let ballT = ball.position.y - ball.sizeR;
   let ballB = ball.position.y + ball.sizeR;
