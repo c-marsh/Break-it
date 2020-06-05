@@ -1,3 +1,4 @@
+import {impact} from "./impact.js";
 export default class Ball {
   constructor(game) {
     this.gameWidth = game.gameWidth;
@@ -66,17 +67,14 @@ export default class Ball {
       this.speed.y = -this.speed.y;
       //this.position.y = this.game.paddle.position.yAxis - this.sizeR;
     }
-    //Bottom Paddle collision
-    let ballBottom = this.position.y + this.sizeR;
-    let bottomPaddleTop = this.game.paddle.position.yAxis;
-    let leftSideOfPaddle = this.game.paddle.position.xAxis;
-    let rightSideOfPaddle =
-      this.game.paddle.position.xAxis + this.game.paddle.width;
+    // //Bottom Paddle collision
+    // let ballBottom = this.position.y + this.sizeR;
+    // let bottomPaddleTop = this.game.paddle.position.yAxis;
+    // let leftSideOfPaddle = this.game.paddle.position.xAxis;
+    // let rightSideOfPaddle =
+    //   this.game.paddle.position.xAxis + this.game.paddle.width;
 
-    if (
-      ballBottom >= bottomPaddleTop &&
-      this.position.x >= leftSideOfPaddle &&
-      this.position.x <= rightSideOfPaddle
+    if (impact (this, this.game.paddle, this.game.topPaddle)
     ) {
       this.speed.y = -this.speed.y;
       //this.position.y = this.game.paddle.position.yAxis - this.sizeR;
