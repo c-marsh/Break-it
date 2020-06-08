@@ -48,10 +48,9 @@ function gameLoop(timestamp) {
   lastTime = timestamp;
   //Clear screen on refresh
   context.clearRect(0, 0, gameWidth, gameHeight);
-    game.update(deltaTime);
-    game.draw(context);
+  game.update(deltaTime);
+  game.draw(context);
   requestAnimationFrame(gameLoop);
 }
 //Execute Game Loop
-  requestAnimationFrame(gameLoop);
-
+requestAnimationFrame(gameLoop);
