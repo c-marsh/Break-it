@@ -41,14 +41,14 @@ export default class Ball {
 
     //Bounce off L/R sides
     if (
-      this.position.x + this.sizeR > this.gameWidth ||
-      this.position.x - this.sizeR < 0
+      this.position.x + this.sizeR >= this.gameWidth ||
+      this.position.x - this.sizeR <= 0
     ) {
       this.speed.x = -this.speed.x;
     }
 
     //Bounce off bottom - for test purposes only
-    if (this.position.y > this.gameHeight || this.position.y < 0) {
+    if (this.position.y >= this.gameHeight || this.position.y <= 0) {
       this.speed.y = -this.speed.y;
     }
     //Top Paddle collision
