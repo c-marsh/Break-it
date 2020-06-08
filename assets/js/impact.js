@@ -16,10 +16,13 @@ export function impact(ball, paddle, topPaddle, features) {
   let topPaddleL = topPaddle.position.xAxisTop;
   let topPaddleR = topPaddle.position.xAxisTop + topPaddle.width;
 
-  let brickB = ball.game.features[3].position.yAxisBrick + ball.game.features[3].height;
+  //bricks - currently only referencing 4th brick in array
+  let brickB =
+    ball.game.features[3].position.yAxisBrick + ball.game.features[3].height;
   let brickT = ball.game.features[3].position.yAxisBrick;
   let brickL = ball.game.features[3].position.xAxisBrick;
-  let brickR = ball.game.features[3].position.xAxisBrick + ball.game.features[3].width;
+  let brickR =
+    ball.game.features[3].position.xAxisBrick + ball.game.features[3].width;
 
   //returns true if ball has come into contact with a brick/paddle surface
   if (
