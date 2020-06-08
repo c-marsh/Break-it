@@ -1,7 +1,4 @@
-export function impact(ball,
-    paddle,
-    topPaddle,
-    brick) {
+export function impact(ball, paddle, topPaddle, features) {
   //ball measured from centre of ball
   let ballT = ball.position.y - ball.sizeR;
   let ballB = ball.position.y + ball.sizeR;
@@ -9,11 +6,6 @@ export function impact(ball,
   let ballR = ball.position.x + ball.sizeR;
 
   //rectangles measured from top left
-//   let brickB = brick.position.yAxisBrick + brick.height;
-//   let brickT = brick.position.yAxisBrick;
-//   let brickL = brick.position.xAxisBrick;
-//   let brickR = brick.position.xAxisBrick + brick.width;
-
   let paddleT = paddle.position.yAxis;
   let paddleB = paddle.position.yAxis + paddle.height;
   let paddleL = paddle.position.xAxis;
@@ -24,13 +16,34 @@ export function impact(ball,
   let topPaddleL = topPaddle.position.xAxisTop;
   let topPaddleR = topPaddle.position.xAxisTop + topPaddle.width;
 
-    //returns true if ball has come into contact with a brick/paddle surface
-    if (ballB >= paddleT && ballR >= paddleL && ballL <= paddleR && ballT <= paddleB) return true ;
-    else if (ballB >= topPaddleT && ballR >= topPaddleL && ballL <= topPaddleR && ballT <= topPaddleB) return true ;
-    //    else if (ballB >= brickT && ballR >= brickL && BallL <= brickR && ballT <= brickB) return true;  
-    else
-    return false;
-  
+  let brickB = ball.game.features[3].position.yAxisBrick + ball.game.features[3].height;
+  let brickT = ball.game.features[3].position.yAxisBrick;
+  let brickL = ball.game.features[3].position.xAxisBrick;
+  let brickR = ball.game.features[3].position.xAxisBrick + ball.game.features[3].width;
+
+  //returns true if ball has come into contact with a brick/paddle surface
+  if (
+    ballB >= paddleT &&
+    ballR >= paddleL &&
+    ballL <= paddleR &&
+    ballT <= paddleB
+  )
+    return true;
+  else if (
+    ballB >= topPaddleT &&
+    ballR >= topPaddleL &&
+    ballL <= topPaddleR &&
+    ballT <= topPaddleB
+  )
+    return true;
+  else if (
+    ballB >= brickT &&
+    ballR >= brickL &&
+    ballL <= brickR &&
+    ballT <= brickB
+  )
+    return true;
+  else return false;
 }
 
 // if (
