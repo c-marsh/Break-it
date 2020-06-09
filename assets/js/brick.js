@@ -9,11 +9,11 @@ export default class Brick {
     this.height = this.gameHeight / 50;
     //Position
     this.position = position;
-    //{
-    //   xAxisBrick: 87,//this.gameWidth / 2 - this.width / 2,
-    //   yAxisBrick: this.height*25
-    // };
-  }
+
+  }  
+
+  update(deltaTime) {}
+  
   draw(context) {
     //Brick styling
     context.fillStyle = "blue";
@@ -25,5 +25,5 @@ export default class Brick {
       this.height
     );
   }
-  update(deltaTime) {}
+
 }
