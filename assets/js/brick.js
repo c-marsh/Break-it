@@ -9,10 +9,8 @@ export default class Brick {
     this.height = this.gameHeight / 50;
     //Position
     this.position = position;
-
-  }  
-
-  
+    this.flaggedToRemove = false;
+  }
 
   draw(context) {
     //Brick styling
@@ -26,8 +24,9 @@ export default class Brick {
     );
   }
   update(deltaTime) {
-        if (impact(this.game.ball, this)) {
-            this.game.ball.speed.y = -this.game.ball.speed.y;
-      }
+    if (impact(this.game.ball, this)) {
+      this.game.ball.speed.y = -this.game.ball.speed.y;
+      this.flaggedToRemove = true;
+    }
   }
 }

@@ -17,7 +17,7 @@ export default class Game {
     this.topPaddle = new TopPaddle(this);
     this.ball = new Ball(this);
 
-    //runs createLevel function from level.js to create the level 
+    //runs createLevel function from level.js to create the level
     let bricks = createLevel(this, level1);
 
     //create an array of features in the game
@@ -30,8 +30,9 @@ export default class Game {
   update(deltaTime) {
     //Pass time to array of feature
     this.features.forEach((Object) => {
-      Object.update(deltaTime);
+      Object.update(deltaTime); this.features = this.features.filter(Object => !Object.flaggedToRemove);
     });
+   
   }
   draw(context) {
     //Redraw paddles
