@@ -14,9 +14,12 @@ export default class KeyBindings {
           paddle.moveRight();
           topPaddle.moveRight();
           break;
-
-          //esc/space bar for pause
-        case (27, 32):
+        //esc/space bar for pause
+        case 32:
+          game.start();
+          break;
+        //esc/space bar for pause
+        case 27:
           game.pause();
           break;
       }

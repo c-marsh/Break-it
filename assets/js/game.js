@@ -16,29 +16,28 @@ export default class Game {
   constructor(gameWidth, gameHeight) {
     this.gameWidth = gameWidth;
     this.gameHeight = gameHeight;
-  }
-    
-
-  //start the game function
-  start() {
-    this.screen = screen.running;
+    this.screen = screen.menu;
     //Declare variables
     this.paddle = new Paddle(this);
     this.topPaddle = new TopPaddle(this);
-    this.ball = new Ball(this);
-
+      this.ball = new Ball(this);
+      this.features = [];
+    //Keymapping to paddles
+    new KeyBindings(this.paddle, this.topPaddle, this);
+  }
+  //start the game function
+  start() {
     //runs createLevel function from level.js to create the level
     let bricks = createLevel(this, level1);
 
     //create an array of features in the game
     this.features = [this.ball, this.paddle, this.topPaddle, ...bricks];
-
-    //Keymapping to paddles
-    new KeyBindings(this.paddle, this.topPaddle, this);
+    this.screen = screen.running;
   }
 
   update(deltaTime) {
-    if (this.screen == screen.paused) return;
+    //Stop animation cycle if screen is paused/menu
+    if (this.screen === screen.paused || this.screen === screen.menu) return;
     //Pass time to array of feature
     this.features.forEach((Object) => {
       Object.update(deltaTime);
@@ -50,18 +49,27 @@ export default class Game {
     this.features.forEach((Object) => {
       Object.draw(context);
     });
-      
+
     //pause screen styling
-      if (this.screen == screen.paused) {
-  //test pause screen from https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Applying_styles_and_colors
-  for (var i = 0; i < this.gameWidth; i++) {
-    for (var j = 0; j < this.gameHeight; j++) {
-      context.fillStyle = 'rgb(' + Math.floor(255 - 20 * i) + ', ' +
-                       Math.floor(255 - 20 * j) + ', 0)';
-      context.fillRect(j * 100, i * 100, 100, 100);
+    if (this.screen === screen.paused) {
+      //test pause screen from https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Applying_styles_and_colors
+      for (var i = 0; i < this.gameWidth; i++) {
+        for (var j = 0; j < this.gameHeight; j++) {
+          context.fillStyle =
+            "rgb(" +
+            Math.floor(255 - 20 * i) +
+            ", " +
+            Math.floor(255 - 20 * j) +
+            ", 0)";
+          context.fillRect(j * 100, i * 100, this.gameWidth, this.gameHeight);
+        }
+      }
     }
-  }
-}
+    //menu screen
+    if (this.screen === screen.menu) {
+      context.fillRect(0, 0, this.gameWidth, this.gameHeight);
+      context.fillStyle = "rgba(0,0,0,0.5)";
+    }
   }
   pause() {
     if (this.screen == screen.paused) {

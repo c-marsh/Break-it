@@ -36,7 +36,7 @@ const gameHeight = 600;
 
 //instantiate game
 let game = new Game(gameWidth, gameHeight);
-game.start();
+
 
 //Build a frame refresh loop for the game
 let lastTime = 0;
