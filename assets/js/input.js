@@ -1,7 +1,7 @@
 //Export Keybindings
 export default class KeyBindings {
   //game keybindings: 37=left, 39=right
-  constructor(paddle, topPaddle) {
+  constructor(paddle, topPaddle, game) {
     //Key Depress actions
     document.addEventListener("keydown", (event) => {
       switch (event.keyCode) {
@@ -13,6 +13,11 @@ export default class KeyBindings {
         case 39:
           paddle.moveRight();
           topPaddle.moveRight();
+          break;
+
+          //esc/space bar for pause
+        case (27, 32):
+          game.pause();
           break;
       }
     });
