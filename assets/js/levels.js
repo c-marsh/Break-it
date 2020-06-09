@@ -12,8 +12,8 @@ export function createLevel(game, level) {
     row.forEach((brick, brickIndex) => {
       if (brick === 1) {
         let position = {
-          xAxisBrick: (gameWidth / 11) * brickIndex,
-          yAxisBrick: gameHeight / 2 - 20 * rowIndex,
+          xAxis: (gameWidth / 11) * brickIndex,
+          yAxis: gameHeight / 2 - 20 * rowIndex,
         };
         bricks.push(new Brick(game, position));
       }
