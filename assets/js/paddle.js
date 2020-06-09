@@ -1,3 +1,4 @@
+import { impact } from "./impact.js";
 //Class to make paddle size
 export default class Paddle {
   constructor(game) {
@@ -5,7 +6,7 @@ export default class Paddle {
     //Paddle dimensions, relative to canvas size
     this.width = game.gameWidth / 10;
     this.height = game.gameHeight / 50;
-
+      this.game = game;
     //Paddle velocity
     this.maxSpeed = 8;
     this.speed = 0;
@@ -44,6 +45,9 @@ export default class Paddle {
     //Stopping the paddle if it reaches canvas edge
     if (this.position.xAxis < 0) this.position.xAxis = 0;
     if (this.position.xAxis > this.gameWidth - this.width)
-      this.position.xAxis = this.gameWidth - this.width;
+        this.position.xAxis = this.gameWidth - this.width;
+      if (impact(this.game.ball, this)) {
+            this.game.ball.speed.y = -this.game.ball.speed.y;
+      }
   }
 }

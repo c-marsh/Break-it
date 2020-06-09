@@ -74,9 +74,9 @@ export default class Ball {
     // let rightSideOfPaddle =
     //   this.game.paddle.position.xAxis + this.game.paddle.width;
 
-    if (impact(this, this.game.paddle, this.game.topPaddle)) {
-      this.speed.y = -this.speed.y;
+    // if (impact(this, this.game.paddle, this.game.topPaddle)) {
+    //   this.speed.y = -this.speed.y;
       //this.position.y = this.game.paddle.position.yAxis - this.sizeR;
-    }
+    
   }
 }
