@@ -21,8 +21,8 @@ export default class Game {
     this.paddle = new Paddle(this);
     this.topPaddle = new TopPaddle(this);
     this.ball = new Ball(this);
-      this.features = [];
-      this.ballsRemaining = 1;
+    this.features = [];
+    this.ballsRemaining = 3;
     //Keymapping to paddles
     new KeyBindings(this.paddle, this.topPaddle, this);
   }
@@ -30,7 +30,7 @@ export default class Game {
   start() {
     //runs createLevel function from level.js to create the level
     let bricks = createLevel(this, level1);
-
+    this.ball.newBall();
     //disable reinitiating level once it has started
     if (this.screen !== screen.menu) return;
     //create an array of features in the game
@@ -39,11 +39,15 @@ export default class Game {
   }
 
   update(deltaTime) {
-      if (this.ballsRemaining === 0)
-          this.screen = screen.gameOver;
-    
+    if (this.ballsRemaining === 0) this.screen = screen.gameOver;
+
     //Stop animation cycle if screen is paused/menu
-    if (this.screen === screen.paused || this.screen === screen.menu || this.screen === screen.gameOver) return;
+    if (
+      this.screen === screen.paused ||
+      this.screen === screen.menu ||
+      this.screen === screen.gameOver
+    )
+      return;
     //Pass time to array of feature
     this.features.forEach((Object) => {
       Object.update(deltaTime);
@@ -76,7 +80,7 @@ export default class Game {
       context.fillRect(0, 0, this.gameWidth, this.gameHeight);
       context.fillStyle = "rgba(0,0,0,0.5)";
     }
-      //menu screen
+    //menu screen
     if (this.screen === screen.gameOver) {
       context.fillRect(0, 0, this.gameWidth, this.gameHeight);
       context.fillStyle = "rgba(0,0,0,1)";

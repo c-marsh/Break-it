@@ -6,8 +6,10 @@ export default class Ball {
     this.game = game;
     //Ball dimensions, relative to canvas size
     this.sizeR = this.gameWidth / 100;
-
+    this.newBall();
     //Ball Start coordinates
+  }
+  newBall() {
     this.position = {
       x: 100,
       y: 100,
@@ -18,11 +20,6 @@ export default class Ball {
       x: 4,
       y: 4,
     };
-
-    //Ball extremes
-
-    //Ball direction
-    this.direction = this.xMove + this.yMove;
   }
 
   //ball
@@ -49,7 +46,8 @@ export default class Ball {
 
     //Bounce off bottom - for test purposes only
     if (this.position.y >= this.gameHeight || this.position.y <= 0) {
-        this.game.ballsRemaining--;
+      this.game.ballsRemaining--;
+      this.newBall();
     }
     //Top Paddle collision
     // let ballTop = this.position.y - this.sizeR;
@@ -76,7 +74,6 @@ export default class Ball {
 
     // if (impact(this, this.game.paddle, this.game.topPaddle)) {
     //   this.speed.y = -this.speed.y;
-      //this.position.y = this.game.paddle.position.yAxis - this.sizeR;
-    
+    //this.position.y = this.game.paddle.position.yAxis - this.sizeR;
   }
 }
