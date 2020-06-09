@@ -14,7 +14,7 @@ export default class Brick {
 
   draw(context) {
     //Brick styling
-    context.fillStyle = "blue";
+    context.fillStyle = "#F4A261";
     //Brick creation
     context.fillRect(
       this.position.xAxis,
