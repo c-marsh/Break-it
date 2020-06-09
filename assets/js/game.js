@@ -13,15 +13,16 @@ const screen = {
 };
 
 export default class Game {
-  constructor(gameWidth, gameHeight) {
+  constructor(gameWidth, gameHeight, popSound) {
     this.gameWidth = gameWidth;
     this.gameHeight = gameHeight;
     this.screen = screen.menu;
     //Declare variables
     this.paddle = new Paddle(this);
     this.topPaddle = new TopPaddle(this);
-      this.ball = new Ball(this);
+    this.ball = new Ball(this);
       this.features = [];
+      this.ballsRemaining = 1;
     //Keymapping to paddles
     new KeyBindings(this.paddle, this.topPaddle, this);
   }
@@ -30,14 +31,19 @@ export default class Game {
     //runs createLevel function from level.js to create the level
     let bricks = createLevel(this, level1);
 
+    //disable reinitiating level once it has started
+    if (this.screen !== screen.menu) return;
     //create an array of features in the game
     this.features = [this.ball, this.paddle, this.topPaddle, ...bricks];
     this.screen = screen.running;
   }
 
   update(deltaTime) {
+      if (this.ballsRemaining === 0)
+          this.screen = screen.gameOver;
+    
     //Stop animation cycle if screen is paused/menu
-    if (this.screen === screen.paused || this.screen === screen.menu) return;
+    if (this.screen === screen.paused || this.screen === screen.menu || this.screen === screen.gameOver) return;
     //Pass time to array of feature
     this.features.forEach((Object) => {
       Object.update(deltaTime);
@@ -69,6 +75,11 @@ export default class Game {
     if (this.screen === screen.menu) {
       context.fillRect(0, 0, this.gameWidth, this.gameHeight);
       context.fillStyle = "rgba(0,0,0,0.5)";
+    }
+      //menu screen
+    if (this.screen === screen.gameOver) {
+      context.fillRect(0, 0, this.gameWidth, this.gameHeight);
+      context.fillStyle = "rgba(0,0,0,1)";
     }
   }
   pause() {

@@ -49,7 +49,7 @@ export default class Ball {
 
     //Bounce off bottom - for test purposes only
     if (this.position.y >= this.gameHeight || this.position.y <= 0) {
-      this.speed.y = -this.speed.y;
+        this.game.ballsRemaining--;
     }
     //Top Paddle collision
     // let ballTop = this.position.y - this.sizeR;
