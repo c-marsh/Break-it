@@ -19,8 +19,8 @@ export default class Brick {
     context.fillStyle = "blue";
     //Brick creation
     context.fillRect(
-      this.position.xAxisBrick,
-      this.position.yAxisBrick,
+      this.position.xAxis,
+      this.position.yAxis,
       this.width,
       this.height
     );
