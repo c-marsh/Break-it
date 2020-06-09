@@ -12,8 +12,8 @@ export default class Brick {
 
   }  
 
-  update(deltaTime) {}
   
+
   draw(context) {
     //Brick styling
     context.fillStyle = "blue";
@@ -25,5 +25,9 @@ export default class Brick {
       this.height
     );
   }
-
+  update(deltaTime) {
+        if (impact(this.game.ball, this)) {
+            this.game.ball.speed.y = -this.game.ball.speed.y;
+      }
+  }
 }
