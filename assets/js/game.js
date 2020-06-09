@@ -17,7 +17,7 @@ export default class Game {
     this.topPaddle = new TopPaddle(this);
     this.ball = new Ball(this);
 
-    //create an empty array for bricks
+    //runs createLevel function from level.js to create the level 
     let bricks = createLevel(this, level1);
 
     //create an array of features in the game
