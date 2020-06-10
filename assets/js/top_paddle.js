@@ -46,7 +46,8 @@ export default class TopPaddle {
     if (this.position.xAxis > this.gameWidth - this.width)
       this.position.xAxis = this.gameWidth - this.width;
     if (impact(this.game.ball, this)) {
-      this.game.ball.speed.y = -this.game.ball.speed.y;
+        this.game.ball.speed.y = -this.game.ball.speed.y;
+        document.getElementById("paddleSFX").play();
     }
   }
 }
