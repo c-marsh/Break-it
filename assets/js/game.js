@@ -10,7 +10,7 @@ import {
   level3,
   level4,
   level5,
-  level6
+  level6,
 } from "./levels.js";
 
 const screen = {
@@ -64,8 +64,8 @@ export default class Game {
       return;
     if (this.bricks.length === 0) {
       this.playLevel++;
-        this.screen = screen.levelUp;
-        document.getElementById("levelUpSFX").play();
+      this.screen = screen.levelUp;
+      document.getElementById("levelUpSFX").play();
       this.start();
     }
 
@@ -101,8 +101,8 @@ export default class Game {
       context.fillStyle = "rgba(0,0,0,0.5)";
     }
     //menu screen
-      if (this.screen === screen.gameOver) {
-        document.getElementById("gameOverSFX").play();
+    if (this.screen === screen.gameOver) {
+      document.getElementById("gameOverSFX").play();
       context.fillRect(0, 0, this.gameWidth, this.gameHeight);
       context.fillStyle = "rgba(0,0,0,1)";
     }
