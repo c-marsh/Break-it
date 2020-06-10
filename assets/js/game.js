@@ -13,7 +13,7 @@ const screen = {
 };
 
 export default class Game {
-  constructor(gameWidth, gameHeight, popSound) {
+  constructor(gameWidth, gameHeight) {
     this.gameWidth = gameWidth;
     this.gameHeight = gameHeight;
     this.screen = screen.menu;
@@ -22,19 +22,21 @@ export default class Game {
     this.topPaddle = new TopPaddle(this);
     this.ball = new Ball(this);
     this.features = [];
+    this.bricks = [];
     this.ballsRemaining = 3;
+
     //Keymapping to paddles
     new KeyBindings(this.paddle, this.topPaddle, this);
   }
   //start the game function
   start() {
     //runs createLevel function from level.js to create the level
-    let bricks = createLevel(this, level1);
+    this.bricks = createLevel(this, level1);
     this.ball.newBall();
     //disable reinitiating level once it has started
     if (this.screen !== screen.menu) return;
     //create an array of features in the game
-    this.features = [this.ball, this.paddle, this.topPaddle, ...bricks];
+    this.features = [this.ball, this.paddle, this.topPaddle];
     this.screen = screen.running;
   }
 
@@ -47,16 +49,18 @@ export default class Game {
       this.screen === screen.menu ||
       this.screen === screen.gameOver
     )
-      return;
-    //Pass time to array of feature
-    this.features.forEach((Object) => {
+        return;
+      if (this.bricks.length === 0)
+          console.log('new level');
+              
+      [...this.features, ...this.bricks].forEach((Object) => {
       Object.update(deltaTime);
-      this.features = this.features.filter((Object) => !Object.flaggedToRemove);
+      this.bricks = this.bricks.filter((Object) => !Object.flaggedToRemove);
     });
   }
   draw(context) {
     //Redraw paddles
-    this.features.forEach((Object) => {
+    [...this.features, ...this.bricks].forEach((Object) => {
       Object.draw(context);
     });
 
