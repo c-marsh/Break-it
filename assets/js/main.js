@@ -32,7 +32,7 @@ context.stroke();
 
 //Defining playing size
 const gameWidth = document.documentElement.clientWidth;
-const gameHeight = 600;
+const gameHeight = 700;
 
 //instantiate game
 let game = new Game(gameWidth, gameHeight);
