@@ -3,13 +3,22 @@ import TopPaddle from "./top_paddle.js";
 import Ball from "./ball.js";
 import KeyBindings from "./input.js";
 import Brick from "./brick.js";
-import { createLevel, level1 } from "./levels.js";
+import {
+  createLevel,
+  level1,
+  level2,
+  level3,
+  level4,
+  level5,
+  level6
+} from "./levels.js";
 
 const screen = {
   menu: 0,
   running: 1,
   paused: 2,
   gameOver: 3,
+  levelUp: 4,
 };
 
 export default class Game {
@@ -24,14 +33,17 @@ export default class Game {
     this.features = [];
     this.bricks = [];
     this.ballsRemaining = 3;
+    this.levels = [level1, level2, level3, level4, level5, level6];
+    this.playLevel = 0;
 
     //Keymapping to paddles
     new KeyBindings(this.paddle, this.topPaddle, this);
   }
   //start the game function
   start() {
+    if (this.screen !== screen.menu && this.screen !== screen.levelUp) return;
     //runs createLevel function from level.js to create the level
-    this.bricks = createLevel(this, level1);
+    this.bricks = createLevel(this, this.levels[this.playLevel]);
     this.ball.newBall();
     //disable reinitiating level once it has started
     if (this.screen !== screen.menu) return;
@@ -49,11 +61,14 @@ export default class Game {
       this.screen === screen.menu ||
       this.screen === screen.gameOver
     )
-        return;
-      if (this.bricks.length === 0)
-          console.log('new level');
-              
-      [...this.features, ...this.bricks].forEach((Object) => {
+      return;
+    if (this.bricks.length === 0) {
+      this.playLevel++;
+      this.screen = screen.levelUp;
+      this.start();
+    }
+
+    [...this.features, ...this.bricks].forEach((Object) => {
       Object.update(deltaTime);
       this.bricks = this.bricks.filter((Object) => !Object.flaggedToRemove);
     });
