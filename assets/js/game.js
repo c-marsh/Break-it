@@ -35,6 +35,9 @@ export default class Game {
     this.ballsRemaining = 3;
     this.levels = [level1, level2, level3, level4, level5, level6];
     this.playLevel = 0;
+
+    //Score
+    this.score = 0;
     //SFX
     this.brickSFX = document.getElementById("brickSFX");
     this.paddleSFX = document.getElementById("paddleSFX");
@@ -105,11 +108,20 @@ export default class Game {
       context.fillRect(0, 0, this.gameWidth, this.gameHeight);
       context.fillStyle = "rgba(0,0,0,0.5)";
     }
-    //menu screen
+    //game over screen
     if (this.screen === screen.gameOver) {
       document.getElementById("GameOverSFX");
       context.fillRect(0, 0, this.gameWidth, this.gameHeight);
-      context.fillStyle = "rgba(0,0,0,1)";
+        context.fillStyle = "rgba(0,0,0,1)";
+        context.fill();
+
+      context.font = "45px Arial";
+      context.fillStyle = "#0095DD";
+      context.fillText(
+        "Score: " + this.score,
+        this.gameWidth / 2,
+        this.gameHeight / 2
+      );
     }
   }
   pause() {
