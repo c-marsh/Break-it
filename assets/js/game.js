@@ -39,6 +39,9 @@ export default class Game {
     //Score
     this.score = 0;
     //SFX
+    this.mute = document.getElementsByTagName("audio");
+
+
     this.brickSFX = document.getElementById("brickSFX");
     this.paddleSFX = document.getElementById("paddleSFX");
     this.GameOverSFX = document.getElementById("GameOverSFX");
@@ -100,25 +103,50 @@ export default class Game {
             Math.floor(255 - 20 * j) +
             ", 0)";
           context.fillRect(j * 100, i * 100, this.gameWidth, this.gameHeight);
+          
         }
-      }
+      } context.font = "30px Major Mono Display";
+          context.fillStyle = "#0095DD";
+          context.fillText(
+            "Press ESC to Pause | Press M to Mute",
+            this.gameWidth / 20,
+            this.gameHeight / 20
+          );
     }
     //menu screen
     if (this.screen === screen.menu) {
-      context.fillRect(0, 0, this.gameWidth, this.gameHeight);
-      context.fillStyle = "rgba(0,0,0,0.5)";
+        context.fillStyle = "rgba(0,0,0,0.5)";
+        context.fillRect(0, 0, this.gameWidth, this.gameHeight);
+
+
+        
+      context.font = "45px Major Mono Display";
+      context.fillStyle = "#0095DD";
+      context.fillText(
+        "Press Space to start",
+        this.gameWidth / 2,
+        this.gameHeight / 2
+      );
+        
+      context.font = "30px Major Mono Display";
+      context.fillStyle = "#0095DD";
+      context.fillText(
+        "PRESS ESC TO PAUSE | PRESS M MUTE",
+        this.gameWidth / 20,
+        this.gameHeight / 20
+      );
     }
     //game over screen
     if (this.screen === screen.gameOver) {
-      document.getElementById("GameOverSFX");
+      document.getElementById("GameOverSFX").play();
       context.fillRect(0, 0, this.gameWidth, this.gameHeight);
-        context.fillStyle = "rgba(0,0,0,1)";
-        context.fill();
+      context.fillStyle = "rgba(0,0,0,1)";
+      context.fill();
 
-      context.font = "45px Arial";
+      context.font = "45px Major Mono Display";
       context.fillStyle = "#0095DD";
       context.fillText(
-        "Score: " + this.score,
+        "score: " + this.score,
         this.gameWidth / 2,
         this.gameHeight / 2
       );
@@ -130,5 +158,8 @@ export default class Game {
     } else {
       this.screen = screen.paused;
     }
-  }
+    }
+  mutePage() {
+    document.querySelectorAll("video, audio").forEach( elem => muteMe(elem) );
+}
 }
