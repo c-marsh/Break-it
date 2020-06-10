@@ -238,12 +238,11 @@ One issue was found on the site, but on further eximanation, it references a hid
 - [ ] Gameover sound loops
 - [ ] Gameover black circle
 - [ ] you restart levels with space bar on level 2+
-- [ ] Mute toggle not working
 - [ ] On resize of screen mid play, ball becomes oval, unless refreshed
 
 ### Squashed Bugs
 - ~~[ ] Ball return to screen after leaving~~ No longer relevent as this a new game screen starts
-
+- [x] Mute toggle not working
 # 5. Deployment
 
 Repo URL: https://github.com/c-marsh/Pong-Breaker.
