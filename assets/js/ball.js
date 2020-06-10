@@ -49,31 +49,6 @@ export default class Ball {
       this.game.ballsRemaining--;
       this.newBall();
     }
-    //Top Paddle collision
-    // let ballTop = this.position.y - this.sizeR;
-    // let topPaddleBottom =
-    //   this.game.topPaddle.position.yAxisTop + this.game.topPaddle.height;
-    // let leftSideOfTopPaddle = this.game.topPaddle.position.xAxisTop;
-    // let rightSideOfTopPaddle =
-    //   this.game.topPaddle.position.xAxisTop + this.game.topPaddle.width;
-
-    // // if (
-    //   ballTop <= topPaddleBottom &&
-    //   this.position.x >= leftSideOfTopPaddle &&
-    //   this.position.x <= rightSideOfTopPaddle
-    // ) {
-    //this.speed.y = -this.speed.y;
-    //this.position.y = this.game.paddle.position.yAxis - this.sizeR;
-    //}
-    // //Bottom Paddle collision
-    // let ballBottom = this.position.y + this.sizeR;
-    // let bottomPaddleTop = this.game.paddle.position.yAxis;
-    // let leftSideOfPaddle = this.game.paddle.position.xAxis;
-    // let rightSideOfPaddle =
-    //   this.game.paddle.position.xAxis + this.game.paddle.width;
-
-    // if (impact(this, this.game.paddle, this.game.topPaddle)) {
-    //   this.speed.y = -this.speed.y;
-    //this.position.y = this.game.paddle.position.yAxis - this.sizeR;
+  
   }
 }
