@@ -23,8 +23,11 @@ export default class KeyBindings {
           game.pause();
           break;
         //M to mute
-          case 77:
-              document.getElementById('brickSFX').muted = !document.getElementById('brickSFX').muted;
+        case 77:
+              game.brickMuteSFX ();
+              game.paddleMuteSFX ();
+              game.gameMuteOverSFX ();
+              game.leveMutelUpSFX();
           break;
       }
     });
