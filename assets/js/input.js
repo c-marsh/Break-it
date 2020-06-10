@@ -22,6 +22,10 @@ export default class KeyBindings {
         case 27:
           game.pause();
           break;
+        //M to mute
+        case 77:
+          game.mutePage();
+          break;
       }
     });
     //Key Release actions
