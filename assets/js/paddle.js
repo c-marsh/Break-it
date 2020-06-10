@@ -2,7 +2,8 @@ import { impact } from "./impact.js";
 //Class to make paddle size
 export default class Paddle {
   constructor(game) {
-    this.gameWidth = game.gameWidth;
+      this.gameWidth = game.gameWidth;
+      this.gameHeight = game.gameHeight;
     //Paddle dimensions, relative to canvas size
     this.width = game.gameWidth / 10;
     this.height = game.gameHeight / 50;
@@ -47,7 +48,8 @@ export default class Paddle {
     if (this.position.xAxis > this.gameWidth - this.width)
         this.position.xAxis = this.gameWidth - this.width;
       if (impact(this.game.ball, this)) {
-            this.game.ball.speed.y = -this.game.ball.speed.y;
+          this.game.ball.speed.y = -this.game.ball.speed.y;
+          document.getElementById("paddleSFX").play();
       }
   }
 }

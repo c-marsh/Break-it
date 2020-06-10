@@ -25,7 +25,8 @@ export default class Brick {
   }
   update(deltaTime) {
     if (impact(this.game.ball, this)) {
-      this.game.ball.speed.y = -this.game.ball.speed.y;
+        this.game.ball.speed.y = -this.game.ball.speed.y;
+        document.getElementById("brickSFX").play();
       this.flaggedToRemove = true;
     }
   }
