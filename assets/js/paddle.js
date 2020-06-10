@@ -49,7 +49,8 @@ export default class Paddle {
         this.position.xAxis = this.gameWidth - this.width;
       if (impact(this.game.ball, this)) {
           this.game.ball.speed.y = -this.game.ball.speed.y;
-          document.getElementById("paddleSFX").play();
+          this.game.paddleSFX.play();
+          
       }
   }
 }

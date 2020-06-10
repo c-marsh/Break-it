@@ -35,7 +35,12 @@ export default class Game {
     this.ballsRemaining = 3;
     this.levels = [level1, level2, level3, level4, level5, level6];
     this.playLevel = 0;
-
+    //SFX
+    this.brickSFX = document.getElementById("brickSFX");
+    this.paddleSFX = document.getElementById("paddleSFX");
+    this.GameOverSFX = document.getElementById("GameOverSFX");
+    this.LevelUpSFX = document.getElementById("LevelUpSFX");
+    //    this.PauseSFX = document.getElementById("paddleSFX");
     //Keymapping to paddles
     new KeyBindings(this.paddle, this.topPaddle, this);
   }
@@ -102,7 +107,7 @@ export default class Game {
     }
     //menu screen
     if (this.screen === screen.gameOver) {
-      document.getElementById("gameOverSFX").play();
+      document.getElementById("GameOverSFX");
       context.fillRect(0, 0, this.gameWidth, this.gameHeight);
       context.fillStyle = "rgba(0,0,0,1)";
     }
