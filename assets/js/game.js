@@ -1,3 +1,4 @@
+//Import class and functions
 import Paddle from "./paddle.js";
 import TopPaddle from "./top_paddle.js";
 import Ball from "./ball.js";
@@ -13,6 +14,7 @@ import {
   level6,
 } from "./levels.js";
 
+// Screens/Play States created as an object
 const screen = {
   menu: 0,
   running: 1,
@@ -21,12 +23,13 @@ const screen = {
   levelUp: 4,
 };
 
+//Create the Game Class
 export default class Game {
   constructor(gameWidth, gameHeight) {
+    //Game Attributes
     this.gameWidth = gameWidth;
     this.gameHeight = gameHeight;
     this.screen = screen.menu;
-    //Declare variables
     this.paddle = new Paddle(this);
     this.topPaddle = new TopPaddle(this);
     this.ball = new Ball(this);
@@ -39,13 +42,11 @@ export default class Game {
     //Score
     this.score = 0;
     //SFX
-    this.mute = document.getElementsByTagName("audio");
-
 
     this.brickSFX = document.getElementById("brickSFX");
     this.paddleSFX = document.getElementById("paddleSFX");
-    this.GameOverSFX = document.getElementById("GameOverSFX");
-    this.LevelUpSFX = document.getElementById("LevelUpSFX");
+    this.gameOverSFX = document.getElementById("gameOverSFX");
+    this.levelUpSFX = document.getElementById("levelUpSFX");
     //    this.PauseSFX = document.getElementById("paddleSFX");
     //Keymapping to paddles
     new KeyBindings(this.paddle, this.topPaddle, this);
@@ -73,25 +74,31 @@ export default class Game {
       this.screen === screen.gameOver
     )
       return;
+
+    //if all bricks are cleared...
     if (this.bricks.length === 0) {
+      //...Level up
       this.playLevel++;
       this.screen = screen.levelUp;
+      //...level up SFX
       document.getElementById("levelUpSFX").play();
       this.start();
     }
 
+    //Update all objects
     [...this.features, ...this.bricks].forEach((Object) => {
       Object.update(deltaTime);
+      //Update Bricks if not flagged for removal
       this.bricks = this.bricks.filter((Object) => !Object.flaggedToRemove);
     });
   }
   draw(context) {
-    //Redraw paddles
+    //Redraw everything
     [...this.features, ...this.bricks].forEach((Object) => {
       Object.draw(context);
     });
 
-    //pause screen styling
+    //pause screen
     if (this.screen === screen.paused) {
       //test pause screen from https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Applying_styles_and_colors
       for (var i = 0; i < this.gameWidth; i++) {
@@ -103,23 +110,23 @@ export default class Game {
             Math.floor(255 - 20 * j) +
             ", 0)";
           context.fillRect(j * 100, i * 100, this.gameWidth, this.gameHeight);
-          
         }
-      } context.font = "30px Major Mono Display";
-          context.fillStyle = "#0095DD";
-          context.fillText(
-            "Press ESC to Pause | Press M to Mute",
-            this.gameWidth / 20,
-            this.gameHeight / 20
-          );
+      }
+      context.font = "30px Major Mono Display";
+      context.fillStyle = "#0095DD";
+      context.fillText(
+        "Press ESC to Pause | Press M to Mute",
+        this.gameWidth / 20,
+        this.gameHeight / 20
+      );
     }
     //menu screen
     if (this.screen === screen.menu) {
-        context.fillStyle = "rgba(0,0,0,0.5)";
-        context.fillRect(0, 0, this.gameWidth, this.gameHeight);
+      //styling
+      context.fillStyle = "rgba(0,0,0,0.5)";
+      context.fillRect(0, 0, this.gameWidth, this.gameHeight);
 
-
-        
+      //text
       context.font = "45px Major Mono Display";
       context.fillStyle = "#0095DD";
       context.fillText(
@@ -127,7 +134,7 @@ export default class Game {
         this.gameWidth / 2,
         this.gameHeight / 2
       );
-        
+
       context.font = "30px Major Mono Display";
       context.fillStyle = "#0095DD";
       context.fillText(
@@ -138,11 +145,12 @@ export default class Game {
     }
     //game over screen
     if (this.screen === screen.gameOver) {
-      document.getElementById("GameOverSFX").play();
+      //styling
+      document.getElementById("gameOverSFX").play();
       context.fillRect(0, 0, this.gameWidth, this.gameHeight);
       context.fillStyle = "rgba(0,0,0,1)";
       context.fill();
-
+      //content
       context.font = "45px Major Mono Display";
       context.fillStyle = "#0095DD";
       context.fillText(
@@ -152,14 +160,34 @@ export default class Game {
       );
     }
   }
+  //pause function called when ESC is pressed
   pause() {
     if (this.screen == screen.paused) {
       this.screen = screen.running;
     } else {
       this.screen = screen.paused;
     }
-    }
-  mutePage() {
-    document.querySelectorAll("video, audio").forEach( elem => muteMe(elem) );
-}
+  }
+  //mute functions called when M is pressed
+  brickMuteSFX() {
+    document.getElementById("brickSFX").muted = !document.getElementById(
+      "brickSFX"
+    ).muted;
+  }
+  paddleMuteSFX() {
+    document.getElementById("paddleSFX").muted = !document.getElementById(
+      "paddleSFX"
+    ).muted;
+  }
+  gameMuteOverSFX() {
+    document.getElementById("gameOverSFX").muted = !document.getElementById(
+      "gameOverSFX"
+    ).muted;
+  }
+
+  leveMutelUpSFX() {
+    document.getElementById("levelUpSFX").muted = !document.getElementById(
+      "levelUpSFX"
+    ).muted;
+  }
 }
