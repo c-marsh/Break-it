@@ -1,5 +1,6 @@
 #game {
     border: 5px solid #E76F51;
+    font-family: 'Major Mono Display', monospace;
     width: 100vw;
     height: 600px;
     margin: auto;
