@@ -47,10 +47,11 @@ export default class Game {
     this.paddleSFX = document.getElementById("paddleSFX");
     this.gameOverSFX = document.getElementById("gameOverSFX");
     this.levelUpSFX = document.getElementById("levelUpSFX");
-    //    this.PauseSFX = document.getElementById("paddleSFX");
+
     //Keymapping to paddles
     new KeyBindings(this.paddle, this.topPaddle, this);
   }
+
   //start the game function
   start() {
     if (this.screen !== screen.menu && this.screen !== screen.levelUp) return;
@@ -115,7 +116,7 @@ export default class Game {
       context.font = "30px Major Mono Display";
       context.fillStyle = "#0095DD";
       context.fillText(
-        "Press ESC to Pause | Press M to Mute",
+        "press ESC to PAUSE \n\n Press m to Mute",
         this.gameWidth / 20,
         this.gameHeight / 20
       );
@@ -123,7 +124,7 @@ export default class Game {
     //menu screen
     if (this.screen === screen.menu) {
       //styling
-      context.fillStyle = "rgba(0,0,0,0.5)";
+      context.fillStyle = "#3B8EA5";
       context.fillRect(0, 0, this.gameWidth, this.gameHeight);
 
       //text

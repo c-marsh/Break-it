@@ -32,7 +32,7 @@ export default class Paddle {
   }
   draw(context) {
     //Paddle styling
-    context.fillStyle = "sandy";
+    context.fillStyle = "#F49E4C";
     //Paddle creation
     context.fillRect(
       this.position.xAxis,

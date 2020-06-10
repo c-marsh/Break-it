@@ -1,6 +1,6 @@
 /*colourscheme*/
 :root {
-    --charcoal: #183E4E;
+    --coal: #183E4E;
     --munsell: #3B8EA5;
     --crayola: #F5EE9E;
     --sandy: #F49E4C;
@@ -14,6 +14,6 @@
     width: 100vw;
     height: 600px;
     margin: auto;
-    background-color: charcoal;
+    background-color: var(--coal);
 }
 
