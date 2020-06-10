@@ -234,10 +234,12 @@ One issue was found on the site, but on further eximanation, it references a hid
 
 ### Active Bugs
 - [ ] Ball bounce under paddle
-- [ ] Ball return to screen after leaving
-- [ ] On resize, ball becomes oval, unless refreshed
+- [ ] Ball bounces through paddle
+- [ ] Gameover sound loops
+- [ ] On resize of screen mid play, ball becomes oval, unless refreshed
 
 ### Squashed Bugs
+- ~~[ ] Ball return to screen after leaving~~ No longer relevent as this a new game screen starts
 
 # 5. Deployment
 
