@@ -236,6 +236,9 @@ One issue was found on the site, but on further eximanation, it references a hid
 - [ ] Ball bounce under paddle
 - [ ] Ball bounces through paddle
 - [ ] Gameover sound loops
+- [ ] Gameover black circle
+- [ ] you restart levels with space bar on level 2+
+- [ ] Mute toggle not working
 - [ ] On resize of screen mid play, ball becomes oval, unless refreshed
 
 ### Squashed Bugs
@@ -261,8 +264,9 @@ Code for retina/HiDef canvas display: https://www.html5rocks.com/en/tutorials/ca
 
 
 ## 6.3 Media
+Fonts from Google Fonts
 
-
+Sounds from https://freesound.org/
 ## 6.4 Acknowledgements
 
 
