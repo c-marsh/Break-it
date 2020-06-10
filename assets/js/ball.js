@@ -27,7 +27,7 @@ export default class Ball {
     context.beginPath();
     //context.arc(x,y,r,sAngle,eAngle,counterclockwise);
     context.arc(this.position.x, this.position.y, this.sizeR, 0, 2 * Math.PI);
-    context.fillStyle = "#E9C46A";
+    context.fillStyle = "crayola";
     context.fill();
   }
 

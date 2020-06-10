@@ -14,7 +14,7 @@ export default class Brick {
 
   draw(context) {
     //Brick styling
-    context.fillStyle = "#F4A261";
+    context.fillStyle = "munsell";
     //Brick creation
     context.fillRect(
       this.position.xAxis,
