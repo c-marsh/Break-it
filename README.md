@@ -233,7 +233,7 @@ One issue was found on the site, but on further eximanation, it references a hid
 ## 4.5 Bugs
 
 ### Active Bugs
-- [ ] Ball bounce under paddle
+- [x] Ball bounce under paddle
 - [ ] Ball bounces through paddle
 - [ ] Gameover sound loops
 - [ ] Gameover black circle
