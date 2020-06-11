@@ -21,6 +21,7 @@ const screen = {
   paused: 2,
   gameOver: 3,
   levelUp: 4,
+  cheat: 5,
 };
 
 //Create the Game Class
@@ -49,6 +50,7 @@ export default class Game {
     this.paddleSFX = document.getElementById("paddleSFX");
     this.gameOverSFX = document.getElementById("gameOverSFX");
     this.levelUpSFX = document.getElementById("levelUpSFX");
+    this.cheatSFX = document.getElementById("cheatSFX");
 
     //Keymapping to paddles
     new KeyBindings(this.paddle, this.topPaddle, this);
@@ -78,12 +80,19 @@ export default class Game {
         localStorage.setItem("highscore", this.score);
       }
     }
+    window.addEventListener("resize", cheat());
+function cheat() {
+  this.screen = screen.cheat;
+  localStorage.setItem("highscore", null);
+}
+    
 
     //Stop animation cycle if screen is paused/menu
     if (
       this.screen === screen.paused ||
       this.screen === screen.menu ||
-      this.screen === screen.gameOver
+      this.screen === screen.gameOver ||
+      this.screen === screen.cheat
     )
       return;
 
@@ -110,6 +119,44 @@ export default class Game {
       Object.draw(context);
     });
 
+    //cheat screen
+    if (this.screen === screen.cheat) {
+      document.getElementById("cheatSFX").play();
+      //styling
+      context.fillStyle = "#AB3428";
+      context.fillRect(0, 0, this.gameWidth, this.gameHeight);
+      //content
+      context.font = "16px Major Mono Display";
+      context.fillStyle = "#F5EE9E";
+      context.textAlign = "left";
+      context.fillText(
+        "press SPACE to restart",
+        this.gameWidth / 20,
+        this.gameHeight / 20
+      );
+      context.font = "30px Major Mono Display";
+      context.fillStyle = "#F5EE9E";
+      context.textAlign = "center";
+      context.fillText("Cheat!", this.gameWidth / 2, this.gameHeight / 3);
+
+      context.font = "30px Major Mono Display";
+      context.fillStyle = "#F5EE9E";
+      context.textAlign = "center";
+      context.fillText(
+        "You've been caught cheating'",
+        this.gameWidth / 2,
+        this.gameHeight / 2
+      );
+
+      context.font = "30px Major Mono Display";
+      context.fillStyle = "#F5EE9E";
+      context.textAlign = "center";
+      context.fillText(
+        "Your highscore has been reset as punishment",
+        this.gameWidth / 2,
+        (this.gameHeight / 3) * 2
+      );
+    }
     //pause screen
     if (this.screen === screen.paused) {
       context.fillStyle = "#183E4E";
@@ -151,7 +198,7 @@ export default class Game {
       //styling
       context.fillStyle = "#3B8EA5";
       context.fillRect(0, 0, this.gameWidth, this.gameHeight);
-//text
+      //text
       context.font = "18px Major Mono Display";
       context.fillStyle = "#F5EE9E";
       context.textAlign = "center";
@@ -256,6 +303,11 @@ export default class Game {
   leveMutelUpSFX() {
     document.getElementById("levelUpSFX").muted = !document.getElementById(
       "levelUpSFX"
+    ).muted;
+  }
+  cheatSFX() {
+    document.getElementById("cheatSFX").muted = !document.getElementById(
+      "cheatSFX"
     ).muted;
   }
 
