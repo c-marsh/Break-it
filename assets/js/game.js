@@ -126,8 +126,8 @@ export default class Game {
       context.font = "30px Major Mono Display";
       context.fillStyle = "F5EE9E";
       context.textAlign = "center";
-        context.fillText("Paused", this.gameWidth / 2, this.gameHeight / 3);
-        
+      context.fillText("Paused", this.gameWidth / 2, this.gameHeight / 3);
+
       context.font = "20px Major Mono Display";
       context.fillStyle = "F5EE9E";
       context.textAlign = "center";
@@ -178,6 +178,14 @@ export default class Game {
       context.fillStyle = "#AB3428";
       context.fillRect(0, 0, this.gameWidth, this.gameHeight);
       //content
+      context.font = "16px Major Mono Display";
+      context.fillStyle = "#F5EE9E";
+      context.textAlign = "left";
+      context.fillText(
+        "press SPACE to restart",
+        this.gameWidth / 20,
+        this.gameHeight / 20
+      );
       context.font = "30px Major Mono Display";
       context.fillStyle = "#F5EE9E";
       context.textAlign = "center";
@@ -242,12 +250,12 @@ export default class Game {
       "levelUpSFX"
     ).muted;
   }
-    
-    spaceBar() {
-        if (this.screen === screen.menu) {
-            this.start();
-        } else if (this.screen === screen.gameOver) {
-            window.location.reload(false); 
-      }
+
+  spaceBar() {
+    if (this.screen === screen.menu) {
+      this.start();
+    } else if (this.screen === screen.gameOver) {
+      window.location.reload(false);
+    }
   }
 }
