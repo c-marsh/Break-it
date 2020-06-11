@@ -22,7 +22,7 @@ export default class Ball {
 
     //Ball Speed
     this.speed = {
-      x: 4,
+      x: 3,
       y: 4,
     };
   }
