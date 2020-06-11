@@ -41,6 +41,7 @@ export default class Game {
 
     //Score
     this.score = 0;
+
     //SFX
 
     this.brickSFX = document.getElementById("brickSFX");
@@ -58,14 +59,14 @@ export default class Game {
     //runs createLevel function from level.js to create the level
     this.bricks = createLevel(this, this.levels[this.playLevel]);
     this.ball.newBall();
-    //disable reinitiating level once it has started
-    if (this.screen !== screen.menu) return;
+
     //create an array of features in the game
     this.features = [this.ball, this.paddle, this.topPaddle];
     this.screen = screen.running;
   }
 
   update(deltaTime) {
+    //display GameOver screen if no balls left
     if (this.ballsRemaining === 0) this.screen = screen.gameOver;
 
     //Stop animation cycle if screen is paused/menu
@@ -101,8 +102,6 @@ export default class Game {
 
     //pause screen
     if (this.screen === screen.paused) {
-      //test pause screen from https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Applying_styles_and_colors
-
       context.fillStyle = "rgba 0,0,0,0.5";
       context.fillRect(0, 0, this.gameWidth, this.gameHeight);
 
@@ -132,7 +131,7 @@ export default class Game {
       context.fillText(
         this.ballsRemaining + " balls remaining",
         this.gameWidth / 2,
-        (this.gameHeight / 4)*3
+        (this.gameHeight / 4) * 3
       );
     }
     //menu screen
@@ -164,12 +163,11 @@ export default class Game {
     if (this.screen === screen.gameOver) {
       //styling
       document.getElementById("gameOverSFX").play();
-      context.fillRect(0, 0, this.gameWidth, this.gameHeight);
       context.fillStyle = "#AB3428";
-      context.fill();
+      context.fillRect(0, 0, this.gameWidth, this.gameHeight);
       //content
       context.font = "30px Major Mono Display";
-      context.fillStyle = "F5EE9E";
+      context.fillStyle = "#F5EE9E";
       context.textAlign = "center";
       context.fillText(
         "Your score: " + this.score,
@@ -177,7 +175,7 @@ export default class Game {
         this.gameHeight / 2
       );
       context.font = "30px Major Mono Display";
-      context.fillStyle = "F5EE9E";
+      context.fillStyle = "#F5EE9E";
       context.textAlign = "center";
       context.fillText("game over", this.gameWidth / 2, this.gameHeight / 3);
     }
