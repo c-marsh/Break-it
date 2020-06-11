@@ -16,7 +16,7 @@ export default class KeyBindings {
           break;
         //esc/space bar for pause
         case 32:
-          game.start();
+          game.spaceBar();
           break;
         //esc/space bar for pause
         case 27:

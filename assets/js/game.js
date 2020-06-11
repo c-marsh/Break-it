@@ -242,4 +242,12 @@ export default class Game {
       "levelUpSFX"
     ).muted;
   }
+    
+    spaceBar() {
+        if (this.screen === screen.menu) {
+            this.start();
+        } else if (this.screen === screen.gameOver) {
+            window.location.reload(false); 
+      }
+  }
 }
