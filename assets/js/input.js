@@ -28,6 +28,7 @@ export default class KeyBindings {
               game.paddleMuteSFX ();
               game.gameMuteOverSFX ();
               game.leveMutelUpSFX();
+              game.cheatSFX();
           break;
       }
     });
