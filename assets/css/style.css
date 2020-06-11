@@ -15,5 +15,6 @@
     height: 600px;
     margin: auto;
     background-color: var(--coal);
+    vertical-align: center;
 }
 
