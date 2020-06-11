@@ -179,24 +179,35 @@ export default class Game {
       context.font = "30px Major Mono Display";
       context.fillStyle = "#F5EE9E";
       context.textAlign = "center";
-        context.fillText("game over", this.gameWidth / 2, this.gameHeight / 3);
-        
+      context.fillText("game over", this.gameWidth / 2, this.gameHeight / 3);
+
       context.font = "30px Major Mono Display";
       context.fillStyle = "#F5EE9E";
       context.textAlign = "center";
       context.fillText(
-        "Your score of " + this.score,
+        "Your score: " + this.score,
         this.gameWidth / 2,
         this.gameHeight / 2
       );
+      if (this.score > this.highscore) {
         context.font = "30px Major Mono Display";
-      context.fillStyle = "#F5EE9E";
-      context.textAlign = "center";
-      context.fillText(
-        "Your highscore " + this.highscore,
-        this.gameWidth / 2,
-        (this.gameHeight / 3)*2
-      );
+        context.fillStyle = "#F5EE9E";
+        context.textAlign = "center";
+        context.fillText(
+          "Congratulations, new highscore: " + this.highscore,
+          this.gameWidth / 2,
+          (this.gameHeight / 3) * 2
+        );
+      } else {
+        context.font = "30px Major Mono Display";
+        context.fillStyle = "#F5EE9E";
+        context.textAlign = "center";
+        context.fillText(
+          "Previous highscore: " + this.highscore,
+          this.gameWidth / 2,
+          (this.gameHeight / 3) * 2
+        );
+      }
     }
   }
   //pause function called when ESC is pressed
