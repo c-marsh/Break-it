@@ -112,7 +112,7 @@ export default class Game {
 
     //pause screen
     if (this.screen === screen.paused) {
-      context.fillStyle = "rgba 0,0,0,0.5";
+      context.fillStyle = "#183E4E";
       context.fillRect(0, 0, this.gameWidth, this.gameHeight);
 
       context.font = "16px Major Mono Display";
@@ -123,6 +123,11 @@ export default class Game {
         this.gameWidth / 20,
         this.gameHeight / 20
       );
+      context.font = "30px Major Mono Display";
+      context.fillStyle = "F5EE9E";
+      context.textAlign = "center";
+        context.fillText("Paused", this.gameWidth / 2, this.gameHeight / 3);
+        
       context.font = "20px Major Mono Display";
       context.fillStyle = "F5EE9E";
       context.textAlign = "center";
@@ -131,17 +136,14 @@ export default class Game {
         this.gameWidth / 2,
         this.gameHeight / 2
       );
-      context.font = "30px Major Mono Display";
-      context.fillStyle = "F5EE9E";
-      context.textAlign = "center";
-      context.fillText("Paused", this.gameWidth / 2, this.gameHeight / 4);
+
       context.font = "20px Major Mono Display";
       context.fillStyle = "F5EE9E";
       context.textAlign = "center";
       context.fillText(
         this.ballsRemaining + " balls remaining",
         this.gameWidth / 2,
-        (this.gameHeight / 4) * 3
+        (this.gameHeight / 3) * 2
       );
     }
     //menu screen
