@@ -7,12 +7,17 @@ export default class Ball {
     //Ball dimensions, relative to canvas size
     this.sizeR = this.gameWidth / 100;
     this.newBall();
-    //Ball Start coordinates
   }
+  //Ball Start coordinates
   newBall() {
     this.position = {
-      x: 1+this.sizeR,
-      y: 1+this.sizeR,
+      x: 1 + this.sizeR,
+      //Starts just below top paddle to prevent collison on generating ball
+      y:
+        this.game.topPaddle.position.yAxis +
+        this.game.topPaddle.height +
+        this.sizeR +
+        1,
     };
 
     //Ball Speed
@@ -49,6 +54,5 @@ export default class Ball {
       this.game.ballsRemaining--;
       this.newBall();
     }
-  
   }
 }
