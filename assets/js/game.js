@@ -151,7 +151,15 @@ export default class Game {
       //styling
       context.fillStyle = "#3B8EA5";
       context.fillRect(0, 0, this.gameWidth, this.gameHeight);
-
+//text
+      context.font = "18px Major Mono Display";
+      context.fillStyle = "#F5EE9E";
+      context.textAlign = "center";
+      context.fillText(
+        "use LEFT and RIGHT to move paddle",
+        this.gameWidth / 2,
+        this.gameHeight / 2 - 60
+      );
       //text
       context.font = "30px Major Mono Display";
       context.fillStyle = "#F5EE9E";
