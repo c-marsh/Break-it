@@ -5,14 +5,21 @@ export default class KeyBindings {
     //Key Depress actions
     document.addEventListener("keydown", (event) => {
       switch (event.keyCode) {
-        case 37, 65:
+        case 37:
           paddle.moveLeft();
           topPaddle.moveLeft();
           break;
-
-        case 39, 86:
+        case 65:
+          paddle.moveLeftA();
+          topPaddle.moveLeftA();
+          break;
+        case 39:
           paddle.moveRight();
           topPaddle.moveRight();
+          break;
+        case 68:
+          paddle.moveRightD();
+          topPaddle.moveRightD();
           break;
         //esc/space bar for pause
         case 32:
@@ -24,25 +31,35 @@ export default class KeyBindings {
           break;
         //M to mute
         case 77:
-              game.brickMuteSFX ();
-              game.paddleMuteSFX ();
-              game.gameMuteOverSFX ();
-              game.leveMutelUpSFX();
-              game.cheatSFX();
+          game.brickMuteSFX();
+          game.paddleMuteSFX();
+          game.gameMuteOverSFX();
+          game.leveMutelUpSFX();
+          game.cheatSFX();
           break;
       }
     });
     //Key Release actions
     document.addEventListener("keyup", (event) => {
       switch (event.keyCode) {
-        case 37, 65:
+        case 37:
           paddle.moveStop();
           topPaddle.moveStop();
           break;
 
-        case 39, 68:
+        case 65:
+          paddle.moveStopA();
+          topPaddle.moveStopA();
+          break;
+
+        case 39:
           paddle.moveStop();
           topPaddle.moveStop();
+          break;
+
+        case 68:
+          paddle.moveStopD();
+          topPaddle.moveStopD();
           break;
       }
     });

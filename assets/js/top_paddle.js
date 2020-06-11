@@ -16,16 +16,29 @@ export default class TopPaddle {
       xAxis: this.gameWidth / 2 - this.width / 2,
       yAxis: this.height,
     };
-  } //move left function
+  }
+  //move left function
   moveLeft() {
+    this.speed = -this.maxSpeed;
+  }
+  moveLeftA() {
     this.speed = -this.maxSpeed;
   }
   //move Right function
   moveRight() {
     this.speed = this.maxSpeed;
   }
+  moveRightD() {
+    this.speed = this.maxSpeed;
+  }
   //Stop move function
   moveStop() {
+    this.speed = 0;
+  }
+  moveStopA() {
+    this.speed = 0;
+  }
+  moveStopD() {
     this.speed = 0;
   }
   draw(context) {
@@ -46,8 +59,8 @@ export default class TopPaddle {
     if (this.position.xAxis > this.gameWidth - this.width)
       this.position.xAxis = this.gameWidth - this.width;
     if (impact(this.game.ball, this)) {
-        this.game.ball.speed.y = -this.game.ball.speed.y;
-        document.getElementById("paddleSFX").play();
+      this.game.ball.speed.y = -this.game.ball.speed.y;
+      document.getElementById("paddleSFX").play();
     }
   }
 }

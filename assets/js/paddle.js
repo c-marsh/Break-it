@@ -2,12 +2,12 @@ import { impact } from "./impact.js";
 //Class to make paddle size
 export default class Paddle {
   constructor(game) {
-      this.gameWidth = game.gameWidth;
-      this.gameHeight = game.gameHeight;
+    this.gameWidth = game.gameWidth;
+    this.gameHeight = game.gameHeight;
     //Paddle dimensions, relative to canvas size
     this.width = game.gameWidth / 10;
     this.height = game.gameHeight / 50;
-      this.game = game;
+    this.game = game;
     //Paddle velocity
     this.maxSpeed = 8;
     this.speed = 0;
@@ -22,14 +22,27 @@ export default class Paddle {
   moveLeft() {
     this.speed = -this.maxSpeed;
   }
+  moveLeftA() {
+    this.speed = -this.maxSpeed;
+  }
   //move Right function
   moveRight() {
+    this.speed = this.maxSpeed;
+  }
+  moveRightD() {
     this.speed = this.maxSpeed;
   }
   //Stop move function
   moveStop() {
     this.speed = 0;
   }
+  moveStopA() {
+    this.speed = 0;
+  }
+  moveStopD() {
+    this.speed = 0;
+  }
+
   draw(context) {
     //Paddle styling
     context.fillStyle = "#F49E4C";
@@ -45,12 +58,13 @@ export default class Paddle {
     this.position.xAxis += this.speed;
     //Stopping the paddle if it reaches canvas edge
     if (this.position.xAxis < 0) this.position.xAxis = 0;
+
     if (this.position.xAxis > this.gameWidth - this.width)
-        this.position.xAxis = this.gameWidth - this.width;
-      if (impact(this.game.ball, this)) {
-          this.game.ball.speed.y = -this.game.ball.speed.y;
-          this.game.paddleSFX.play();
-          
-      }
+      this.position.xAxis = this.gameWidth - this.width;
+
+    if (impact(this.game.ball, this)) {
+      this.game.ball.speed.y = -this.game.ball.speed.y;
+      this.game.paddleSFX.play();
+    }
   }
 }
