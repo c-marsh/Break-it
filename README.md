@@ -95,41 +95,37 @@ A functioning game that can be played, and hopefully be enjoyable to play.
 
 This Website features:
 
-## 2.1 Top Section
+## 2.1 Screens
+- welcome screen with instructions to start the game, and details on how to pause or mute the game.
+- Pause screen when game is paused shows the details on how to pause or mute the game, along with current score and balls remaining
+- Gameover screen features final score and previous highscore. If this game provided the highscore the text is changed to reflect that you've beaten your previous best.
+
+
+## 2.2 Levels
 
 
 
-## 2.2 Nav Bar
+## 2.3 Lives
 
 
 
-## 2.3 Donate Alert
+## 2.4 Score
 
 
 
-## 2.4 Welcome section
+## 2.5 Sounds
 
 
-
-## 2.5 Shows section
-
-
-## 2.6 Stories section
+## 2.6 Responsiveness
 
 
-## 2.7 Projects section
+## 2.7 Other Features
 
 
-## 2.8 Makes section
+## 2.8 Footer
 
 
-## 2.9 Footer
-
-
-## 2.10 General features
-
-
-### 2.11 Future improvements
+## 2.9 Potential Future Features
 
 
 # 3. Technologies Used
@@ -236,8 +232,8 @@ One issue was found on the site, but on further eximanation, it references a hid
 - [x] Ball bounce under paddle
 - [ ] Ball bounces through paddle
 - [ ] Gameover sound loops
-- [ ] Gameover black circle
-- [ ] you restart levels with space bar on level 2+
+- [x] Gameover black circle
+- [x] you restart levels with space bar on level 2+
 - [ ] On resize of screen mid play, ball becomes oval, unless refreshed
 
 ### Squashed Bugs
