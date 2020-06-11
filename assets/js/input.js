@@ -5,12 +5,12 @@ export default class KeyBindings {
     //Key Depress actions
     document.addEventListener("keydown", (event) => {
       switch (event.keyCode) {
-        case 37:
+        case 37, 65:
           paddle.moveLeft();
           topPaddle.moveLeft();
           break;
 
-        case 39:
+        case 39, 86:
           paddle.moveRight();
           topPaddle.moveRight();
           break;
@@ -34,12 +34,12 @@ export default class KeyBindings {
     //Key Release actions
     document.addEventListener("keyup", (event) => {
       switch (event.keyCode) {
-        case 37:
+        case 37, 65:
           paddle.moveStop();
           topPaddle.moveStop();
           break;
 
-        case 39:
+        case 39, 68:
           paddle.moveStop();
           topPaddle.moveStop();
           break;
