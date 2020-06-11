@@ -80,12 +80,11 @@ export default class Game {
         localStorage.setItem("highscore", this.score);
       }
     }
-    window.addEventListener("resize", cheat());
-function cheat() {
-  this.screen = screen.cheat;
-  localStorage.setItem("highscore", null);
-}
-    
+
+    if (document.documentElement.clientWidth != this.gameWidth) {
+      this.screen = screen.cheat;
+      localStorage.setItem("highscore", null);
+    };
 
     //Stop animation cycle if screen is paused/menu
     if (
