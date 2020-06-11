@@ -102,23 +102,37 @@ export default class Game {
     //pause screen
     if (this.screen === screen.paused) {
       //test pause screen from https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Applying_styles_and_colors
-      for (var i = 0; i < this.gameWidth; i++) {
-        for (var j = 0; j < this.gameHeight; j++) {
-          context.fillStyle =
-            "rgb(" +
-            Math.floor(255 - 20 * i) +
-            ", " +
-            Math.floor(255 - 20 * j) +
-            ", 0)";
-          context.fillRect(j * 100, i * 100, this.gameWidth, this.gameHeight);
-        }
-      }
-      context.font = "30px Major Mono Display";
+
+      context.fillStyle = "rgba 0,0,0,0.5";
+      context.fillRect(0, 0, this.gameWidth, this.gameHeight);
+
+      context.font = "16px Major Mono Display";
       context.fillStyle = "#0095DD";
+      context.textAlign = "left";
       context.fillText(
-        "press ESC to PAUSE \n\n Press m to Mute",
+        "press ESC to PAUSE | Press m to Mute",
         this.gameWidth / 20,
         this.gameHeight / 20
+      );
+      context.font = "20px Major Mono Display";
+      context.fillStyle = "F5EE9E";
+      context.textAlign = "center";
+      context.fillText(
+        "Your current score: " + this.score,
+        this.gameWidth / 2,
+        this.gameHeight / 2
+      );
+      context.font = "30px Major Mono Display";
+      context.fillStyle = "F5EE9E";
+      context.textAlign = "center";
+      context.fillText("Paused", this.gameWidth / 2, this.gameHeight / 4);
+      context.font = "20px Major Mono Display";
+      context.fillStyle = "F5EE9E";
+      context.textAlign = "center";
+      context.fillText(
+        this.ballsRemaining + " balls remaining",
+        this.gameWidth / 2,
+        (this.gameHeight / 4)*3
       );
     }
     //menu screen
@@ -128,16 +142,18 @@ export default class Game {
       context.fillRect(0, 0, this.gameWidth, this.gameHeight);
 
       //text
-      context.font = "45px Major Mono Display";
-      context.fillStyle = "#0095DD";
+      context.font = "30px Major Mono Display";
+      context.fillStyle = "#F5EE9E";
+      context.textAlign = "center";
       context.fillText(
         "Press Space to start",
         this.gameWidth / 2,
         this.gameHeight / 2
       );
 
-      context.font = "30px Major Mono Display";
-      context.fillStyle = "#0095DD";
+      context.font = "16px Major Mono Display";
+      context.fillStyle = "#F5EE9E";
+      context.textAlign = "left";
       context.fillText(
         "PRESS ESC TO PAUSE | PRESS M MUTE",
         this.gameWidth / 20,
@@ -149,16 +165,21 @@ export default class Game {
       //styling
       document.getElementById("gameOverSFX").play();
       context.fillRect(0, 0, this.gameWidth, this.gameHeight);
-      context.fillStyle = "rgba(0,0,0,1)";
+      context.fillStyle = "#AB3428";
       context.fill();
       //content
-      context.font = "45px Major Mono Display";
-      context.fillStyle = "#0095DD";
+      context.font = "30px Major Mono Display";
+      context.fillStyle = "F5EE9E";
+      context.textAlign = "center";
       context.fillText(
-        "score: " + this.score,
+        "Your score: " + this.score,
         this.gameWidth / 2,
         this.gameHeight / 2
       );
+      context.font = "30px Major Mono Display";
+      context.fillStyle = "F5EE9E";
+      context.textAlign = "center";
+      context.fillText("game over", this.gameWidth / 2, this.gameHeight / 3);
     }
   }
   //pause function called when ESC is pressed
