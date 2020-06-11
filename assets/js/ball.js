@@ -11,8 +11,8 @@ export default class Ball {
   }
   newBall() {
     this.position = {
-      x: 100,
-      y: 100,
+      x: 1+this.sizeR,
+      y: 1+this.sizeR,
     };
 
     //Ball Speed
