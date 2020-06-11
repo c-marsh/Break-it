@@ -298,7 +298,6 @@ export default class Game {
       "gameOverSFX"
     ).muted;
   }
-
   leveMutelUpSFX() {
     document.getElementById("levelUpSFX").muted = !document.getElementById(
       "levelUpSFX"
@@ -310,10 +309,11 @@ export default class Game {
     ).muted;
   }
 
+    // This allows Space abr to be used for different functions depending on which screen is displayed
   spaceBar() {
     if (this.screen === screen.menu) {
       this.start();
-    } else if (this.screen === screen.gameOver) {
+    } else if (this.screen === screen.gameOver || this.screen === screen.cheat ) {
       window.location.reload(false);
     }
   }
