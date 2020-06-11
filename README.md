@@ -122,6 +122,14 @@ The score is calculated as each brick demolished. It is reported on game over an
 It can be viewed during play from the pause screen.
 
 ## 2.5 Sounds
+The game features the following SFX:
+- A sound for impact between paddle and ball
+- A sound for impact between brick and ball
+- A sound for starting a new level
+- A sound for Game Over
+- A sound for cheating
+
+All sounds can be muted and unmuted. By dafault they are on, but don't play until gameplay is initiated.
 
 ## 2.6 Responsiveness
 
@@ -131,7 +139,6 @@ It can be viewed during play from the pause screen.
 ## 2.7 Other Features
 
 - While LEFT and RIGHT are advertised as control keys, a and d also work in case of playing with a keyboard with no arrows.
-
 
 ## 2.8 Footer
 
@@ -221,6 +228,10 @@ The contrast validator checks contrast between text and background to ensure it'
 One issue was found on the site, but on further eximanation, it references a hidden form, and as such is not visible to any user.
 
 ## 4.2 UX Stories
+Wants to play a game
+Wants to pause game
+Wants to mute/unmute sound in game
+Wants to play again/better score
 
 ### A Parent wants to homeschool and is looking for an educational project
 
