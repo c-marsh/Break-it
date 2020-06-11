@@ -41,6 +41,7 @@ export default class Game {
 
     //Score
     this.score = 0;
+    this.highscore = localStorage.getItem("highscore");
 
     //SFX
 
@@ -67,7 +68,16 @@ export default class Game {
 
   update(deltaTime) {
     //display GameOver screen if no balls left
-    if (this.ballsRemaining === 0) this.screen = screen.gameOver;
+    if (this.ballsRemaining === 0) {
+      this.screen = screen.gameOver;
+      if (this.highscore !== null) {
+        if (this.score > this.highscore) {
+          localStorage.setItem("highscore", this.score);
+        }
+      } else {
+        localStorage.setItem("highscore", this.score);
+      }
+    }
 
     //Stop animation cycle if screen is paused/menu
     if (
@@ -145,7 +155,7 @@ export default class Game {
       context.fillStyle = "#F5EE9E";
       context.textAlign = "center";
       context.fillText(
-        "Press Space to start",
+        "Press SPACE to start",
         this.gameWidth / 2,
         this.gameHeight / 2
       );
@@ -154,7 +164,7 @@ export default class Game {
       context.fillStyle = "#F5EE9E";
       context.textAlign = "left";
       context.fillText(
-        "PRESS ESC TO PAUSE | PRESS M MUTE",
+        "press ESC to PAUSE | Press m to Mute",
         this.gameWidth / 20,
         this.gameHeight / 20
       );
@@ -169,15 +179,24 @@ export default class Game {
       context.font = "30px Major Mono Display";
       context.fillStyle = "#F5EE9E";
       context.textAlign = "center";
-      context.fillText(
-        "Your score: " + this.score,
-        this.gameWidth / 2,
-        this.gameHeight / 2
-      );
+        context.fillText("game over", this.gameWidth / 2, this.gameHeight / 3);
+        
       context.font = "30px Major Mono Display";
       context.fillStyle = "#F5EE9E";
       context.textAlign = "center";
-      context.fillText("game over", this.gameWidth / 2, this.gameHeight / 3);
+      context.fillText(
+        "Your score of " + this.score,
+        this.gameWidth / 2,
+        this.gameHeight / 2
+      );
+        context.font = "30px Major Mono Display";
+      context.fillStyle = "#F5EE9E";
+      context.textAlign = "center";
+      context.fillText(
+        "Your highscore " + this.highscore,
+        this.gameWidth / 2,
+        (this.gameHeight / 3)*2
+      );
     }
   }
   //pause function called when ESC is pressed
