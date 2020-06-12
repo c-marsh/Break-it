@@ -201,6 +201,8 @@ Giphy makes and hosts giphs for the ReadME.
 # 4. Testing
 
 ## 4.1 Validation
+### JavaScript Validation
+The code has passed ES6 Syntax Check using https://www.piliapp.com/syntax-check/es6/, however while JSLint doesn't list any errors, it provides an extensive warning list. This is primarily due to import/export files resulting in undeclared values due to checking one page at a time. A comprehensive list of all errors can be found [here](docs/jslint-errors.md)
 
 ### [HTML5 validator](https://validator.w3.org/)
 
