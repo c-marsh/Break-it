@@ -108,9 +108,6 @@ This Website features:
 ## 2.2 Play Screen
 This features a ball, 2 paddles and bricks. The corners contain information about the level, score, and how many lives left.
 
-
-
-
 ## 2.3 Lives
 
 The game starts with 3 lives. This could be easily modified to adjust difficulty.
@@ -252,9 +249,81 @@ Wants to play again/better score
 - [] Website loads as expected
 - [] If screen is less than 600 px tall an error message is displayed
 - [] If screen is less than 680 px tall the footer is hidden
+- [] If screen is less than 420 px wide an error message is displayed
+
+Screens
+- []Large Menu screen
+- []Small Menu screen
+- []Large Cheat screen
+- []Small Cheat screen
+- []Large Pause screen
+- []Small Pause screen
+- []Large Game Over screen
+- []Small Game Over screen
+
+Gameplay
+Ball
+- [] bounces off sides
+- [] bounces off paddles
+- [] bounces off bricks
+- [] vanishes past paddles into top/bottom screen
+- [] decreases life on hitting top/bottom screen
+- [] restarts on hitting top/bottom screen
+- [] triggers game over on hitting top/bottom screen if no lives left
+- [] doesn't generate in contact with another object
+
+Bricks
+- [x] Appear where expected
+- [x] Delete on contact
+- [] trigger sound on contact with ball
+
+paddles
+- [x] Appear where expected
+- [x] move left with left
+- [x] move left with A
+- [x] move right with right
+- [x] move right with D
+- [x] trigger sound on contact with ball
+
+keybindings
+- [] M mutes and unmutes sound while running
+- [] M mutes and unmutes sound while in Menu
+- [] M mutes and unmutes sound while paused
+- [] M mutes and unmutes sound while Gameover
+- [] M mutes and unmutes sound while in cheat screen
+- [] ESC pauses/unpauses
+- [] ESC disabled on Menu screen
+- [x] Space triggers game from menu screen
+- [x] Space reloads game on Gameover screen
+- [x] Space reloads game on Cheat screen
+- [x] Space does not restart level in running screen
+
+Levels
+- [] Generate as expected
+- [] Generates a new level when all bricks cleared
+- [] Correct level no. is displayed on game screen
+
+Lives
+- [] Start with expected number
+- [] Display correct number on pause screen
+- [] Display correct number on play screen
+- [] Decrease by 1 for balls lost off Table
+- [] Increase by 1 on level completion
+
+Score
+- [] is correctly counted
+- [] is correctly displayed on play screen
+- [] is correctly displayed on pause screen
+- [] is correctly displayed on gmae over screen
+- [] is saved to memory
+- [] highscore is recalled from memory
+- [] deals with null/NaN
+
+Responsive
 - [] If screen is resized cheat screen is displayed
 - [] Cheat screen sound can be muted
 - [] Cheat screen sound can be unmuted
+
 
 
 ### Testing Responsive Features: Mobile version (iphone 8)
