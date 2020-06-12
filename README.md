@@ -135,14 +135,17 @@ All sounds can be muted and unmuted. By dafault they are on, but don't play unti
 
 - The page is responsive and displays as such, however a keyboard is required to innitiate the game, and play it.
 - The canvas has a fixed 600px height. If the view window doesn't currently support this a pop up asks the user to rotate the device to vertical orientation or that the game is not compatible with the screen size.
+- if the screen is less than 685px tall, the footer is hidden.
 
 ## 2.7 Other Features
 
 - While LEFT and RIGHT are advertised as control keys, a and d also work in case of playing with a keyboard with no arrows.
 
 ## 2.8 Footer
+- a Footer is included with a link to the developers github. The icon throbs on hover.
 
 ## 2.9 Potential Future Features
+In no praticular order, here are some additional features that could be implemented:
 
 - Difficulty modes could be easily introduced by changing start the ball speed and/or paddle move speed
 - Dark/light mode
@@ -203,29 +206,30 @@ Giphy makes and hosts giphs for the ReadME.
 
 Validates the code aheres to HTML standards
 
-The HTML validator throws up a warning about a double hyphen in a comment, however as this is part of URL to copied code, I have left it in place.
+The HTML validator throws up a warning not having section headings, however this is an active choice to try and keep the game as contained as possible.
 
-//Screenshot of HTML warning
+[Imgur](https://i.imgur.com/BvDXt6I.png)
 
-### [Image validation](https://validator.w3.org/)
-
-Additional validation from confirms all images have "alt" caption.
 
 ### CSS validator
 
 Validates the code aheres to CSS standards.
 
-The code has been run through the W3 CSS validator.
+The code has been run through the W3 CSS validator, results can be viewed [here](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fc-marsh.github.io%2FBreak-it%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
 
-It has thrown up some issues with the use of variables, however further research implies this is a feature not supported by the validator: https://github.com/w3c/css-validator/issues/111
+It has thrown up some issues with the use of variables and vendor extension, however further research implies this is a feature not supported by the validator: https://github.com/w3c/css-validator/issues/111
 
 Manual testing shows the code responding on the webpage as anticipated:
+
+![Chrome test](https://i.imgur.com/k0EbJ8t.gifv)
+![Firefox test](https://i.imgur.com/WPkLgZA.gifv)
+![Safari test](https://i.imgur.com/h4w8fP0.gifv)
 
 ### [Contrast validator](https://color.a11y.com/Contrast/)
 
 The contrast validator checks contrast between text and background to ensure it's visible to people with vision impairments.
 
-One issue was found on the site, but on further eximanation, it references a hidden form, and as such is not visible to any user.
+I suspect a limitation may be that is cannot check contrast in the html canvas.
 
 ## 4.2 UX Stories
 Wants to play a game
@@ -233,11 +237,15 @@ Wants to pause game
 Wants to mute/unmute sound in game
 Wants to play again/better score
 
-### A Parent wants to homeschool and is looking for an educational project
 
 ## 4.3 Manual Testing
+- [] Website loads as expected
+- [] If screen is less than 600 px tall an error message is displayed
+- [] If screen is less than 680 px tall the footer is hidden
+- [] If screen is resized cheat screen is displayed
+- [] Cheat screen sound can be muted
+- [] Cheat screen sound can be unmuted
 
-### Links - External
 
 ### Testing Responsive Features: Mobile version (iphone 8)
 
@@ -257,12 +265,12 @@ Wants to play again/better score
 
 # 5. Deployment
 
-Repo URL: https://github.com/c-marsh/Pong-Breaker.
+Repo URL: https://github.com/c-marsh/Break-it.
 
 1. Using Gitpod's Chrome extension, the project was launched from within the repository, based on [CodeInstitutes template](https://github.com/Code-Institute-Org/gitpod-full-template).
 1. Code was developed through Gitpod’s IDE, and develpoments regularly commited and pushed to the Github repository.
 
-The project be viewed by following this URL: https://c-marsh.github.io/Pong-Breaker/, or run locally by following [these instructions](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository).
+The project be viewed by following this URL: https://c-marsh.github.io/Break-it/, or run locally by following [these instructions](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository).
 
 # 6. Credits
 
