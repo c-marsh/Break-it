@@ -11,7 +11,7 @@ import {
   level3,
   level4,
   level5,
-  level6,
+  level6
 } from "./levels.js";
 
 // Screens/Play States created as an object
@@ -21,7 +21,7 @@ const screen = {
   paused: 2,
   gameOver: 3,
   levelUp: 4,
-  cheat: 5,
+  cheat: 5
 };
 
 //Create the Game Class
@@ -58,7 +58,7 @@ export default class Game {
 
   //start the game function
   start() {
-    if (this.screen !== screen.menu && this.screen !== screen.levelUp) return;
+      if (this.screen !== screen.menu && this.screen !== screen.levelUp) { return };
     //runs createLevel function from level.js to create the level
     this.bricks = createLevel(this, this.levels[this.playLevel]);
     this.ball.newBall();
@@ -98,12 +98,12 @@ export default class Game {
       this.screen === screen.gameOver ||
       this.screen === screen.cheat
     )
-      return;
+      { return };
 
     //if all bricks are cleared...
     if (this.bricks.length === 0) {
       //...Level up
-      this.playLevel++;
+      this.playLevel+=1;
       this.screen = screen.levelUp;
       //...level up SFX
       document.getElementById("levelUpSFX").play();
@@ -371,9 +371,9 @@ export default class Game {
           context.font = "12px Major Mono Display";
           context.fillStyle = "#F5EE9E";
           context.textAlign = "center";
-          "Congratulations, new highscore",
-            this.gameWidth / 2,
-            (this.gameHeight / 3) * 2;
+            "Congratulations, new highscore",
+                this.gameWidth / 2,
+                (this.gameHeight / 3) * 2;
         } else {
           context.font = "12px Major Mono Display";
           context.fillStyle = "#F5EE9E";
