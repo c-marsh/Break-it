@@ -105,21 +105,22 @@ This Website features:
 - Pause screen when game is paused shows the details on how to pause or mute the game, along with current score and balls remaining
 - Gameover screen features final score and previous highscore. If this game provided the highscore the text is changed to reflect that you've beaten your previous best. Instructions provided to restart game.
 
-## 2.2 Levels
+## 2.2 Play Screen
+This features a ball, 2 paddles and bricks. The corners contain information about the level, score, and how many lives left.
 
-Levels are comprised of a grid of up to 11 bricks wide and 5 rows high.
 
-6 unique levels are currently implemented in the game, however a feature is that as a result of their construction as an array, it is simple and quick to add more.
+
 
 ## 2.3 Lives
 
 The game starts with 3 lives. This could be easily modified to adjust difficulty.
-Remaining lives can be checked from the pause screen.
+Remaining lives can be checked from the pause screen or in the corner of the screen.
+
+A new life is added for each completed level.
 
 ## 2.4 Score
-
 The score is calculated as each brick demolished. It is reported on game over and saved to the browser memory as a highscore to beat for future play.
-It can be viewed during play from the pause screen.
+It can be viewed during play from the pause screen, or in the corner of the screen.
 
 ## 2.5 Sounds
 The game features the following SFX:
@@ -132,19 +133,25 @@ The game features the following SFX:
 All sounds can be muted and unmuted. By dafault they are on, but don't play until gameplay is initiated.
 
 ## 2.6 Responsiveness
-
 - The page is responsive and displays as such, however a keyboard is required to innitiate the game, and play it.
 - The canvas has a fixed 600px height. If the view window doesn't currently support this a pop up asks the user to rotate the device to vertical orientation or that the game is not compatible with the screen size.
 - if the screen is less than 685px tall, the footer is hidden.
+- Ball, paddles, and bricks are calculated proportionally to the screen width, resulting in a different play experience on different sized screens.
 
 ## 2.7 Other Features
+- On page load the game screen bounces into place
+- While LEFT and RIGHT are advertised as control keys, A and D also work in case of playing with a keyboard with no arrows.
+- cheating feature: if the viewport is resized, the game is topped, a warning screen is shown and 1 point is deducted from the saved highscore as a penalty for cheating.
 
-- While LEFT and RIGHT are advertised as control keys, a and d also work in case of playing with a keyboard with no arrows.
+## 2.8 Levels
+Levels are comprised of a grid of up to 11 bricks wide and 5 rows high.
 
-## 2.8 Footer
+6 unique levels are currently implemented in the game, however a feature is that as a result of their construction as an array, it is simple and quick to add more.
+
+## 2.9 Footer
 - a Footer is included with a link to the developers github. The icon throbs on hover.
 
-## 2.9 Potential Future Features
+## 2.10 Potential Future Features
 In no praticular order, here are some additional features that could be implemented:
 
 - Difficulty modes could be easily introduced by changing start the ball speed and/or paddle move speed
