@@ -1,8 +1,8 @@
 //Import class and functions
 import Paddle from "./paddle.js";
-import TopPaddle from "./top_paddle.js";
+import TopPaddle from "./topPaddle.js";
 import Ball from "./ball.js";
-import KeyBindings from "./input.js";
+import KeyBindings from "./keyBindings.js";
 import Brick from "./brick.js";
 import {
   createLevel,
