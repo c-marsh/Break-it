@@ -208,7 +208,7 @@ export default class Game {
         context.fillRect(0, 0, this.gameWidth, this.gameHeight);
 
         context.font = "16px Major Mono Display";
-        context.fillStyle = "#3B8EA5";
+        context.fillStyle = "#F5EEA3";
         context.textAlign = "center";
         context.fillText(
           "ESC to PAUSE | m to Mute",
@@ -217,12 +217,12 @@ export default class Game {
         );
 
         context.font = "30px Major Mono Display";
-        context.fillStyle = "3B8EA5";
+        context.fillStyle = "#F5EEA3";
         context.textAlign = "center";
         context.fillText("Paused", this.gameWidth / 2, this.gameHeight / 3);
 
         context.font = "20px Major Mono Display";
-        context.fillStyle = "3B8EA5";
+        context.fillStyle = "#F5EEA3";
         context.textAlign = "center";
         context.fillText(
           "Your current score: " + this.score,
@@ -231,7 +231,7 @@ export default class Game {
         );
 
         context.font = "20px Major Mono Display";
-        context.fillStyle = "3B8EA5";
+        context.fillStyle = "#F5EEA3";
         context.textAlign = "center";
         context.fillText(
           this.ballsRemaining + " balls remaining",
@@ -243,7 +243,7 @@ export default class Game {
         context.fillRect(0, 0, this.gameWidth, this.gameHeight);
 
         context.font = "16px Major Mono Display";
-        context.fillStyle = "#3B8EA5";
+        context.fillStyle = "#F5EEA3";
         context.textAlign = "left";
         context.fillText(
           "press ESC to PAUSE | Press m to Mute",
@@ -252,12 +252,12 @@ export default class Game {
         );
 
         context.font = "30px Major Mono Display";
-        context.fillStyle = "3B8EA5";
+        context.fillStyle = "#F5EEA3";
         context.textAlign = "center";
         context.fillText("Paused", this.gameWidth / 2, this.gameHeight / 3);
 
         context.font = "20px Major Mono Display";
-        context.fillStyle = "3B8EA5";
+        context.fillStyle = "#F5EEA3";
         context.textAlign = "center";
         context.fillText(
           "Your current score: " + this.score,
@@ -266,7 +266,7 @@ export default class Game {
         );
 
         context.font = "20px Major Mono Display";
-        context.fillStyle = "3B8EA5";
+        context.fillStyle = "#F5EEA3";
         context.textAlign = "center";
         context.fillText(
           this.ballsRemaining + " balls remaining",
