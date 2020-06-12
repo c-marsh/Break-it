@@ -11,7 +11,7 @@ import {
   level3,
   level4,
   level5,
-  level6
+  level6,
 } from "./levels.js";
 
 // Screens/Play States created as an object
@@ -21,7 +21,7 @@ const screen = {
   paused: 2,
   gameOver: 3,
   levelUp: 4,
-  cheat: 5
+  cheat: 5,
 };
 
 //Create the Game Class
@@ -58,7 +58,9 @@ export default class Game {
 
   //start the game function
   start() {
-      if (this.screen !== screen.menu && this.screen !== screen.levelUp) { return };
+    if (this.screen !== screen.menu && this.screen !== screen.levelUp) {
+      return;
+    }
     //runs createLevel function from level.js to create the level
     this.bricks = createLevel(this, this.levels[this.playLevel]);
     this.ball.newBall();
@@ -78,6 +80,9 @@ export default class Game {
         if (this.score > this.highscore) {
           localStorage.setItem("highscore", this.score);
         }
+        //if NaN has been recorded
+      } else if (this.highscore == NaN) {
+        localStorage.setItem("highscore", this.score);
       } else {
         //if no previous score record this score
         localStorage.setItem("highscore", this.score);
@@ -87,7 +92,7 @@ export default class Game {
     if (document.documentElement.clientWidth != this.gameWidth) {
       this.screen = screen.cheat;
       if (this.highscore !== null) {
-        localStorage.setItem("highscore", this.highscore--);
+        localStorage.setItem("highscore", (this.highscore = -1));
       }
     }
 
@@ -97,13 +102,14 @@ export default class Game {
       this.screen === screen.menu ||
       this.screen === screen.gameOver ||
       this.screen === screen.cheat
-    )
-      { return };
+    ) {
+      return;
+    }
 
     //if all bricks are cleared...
     if (this.bricks.length === 0) {
       //...Level up
-      this.playLevel+=1;
+      this.playLevel += 1;
       this.screen = screen.levelUp;
       //...level up SFX
       document.getElementById("levelUpSFX").play();
@@ -118,7 +124,22 @@ export default class Game {
     });
   }
   draw(context) {
-    //Redraw everything
+    //draw game field text
+    context.font = "12px Major Mono Display";
+    context.fillStyle = "#3b8ea5";
+    context.textAlign = "left";
+    context.fillText(
+      "Score: " + this.score + " | " + this.ballsRemaining + " balls left",
+      10,
+      15
+    );
+
+    context.font = "12px Major Mono Display";
+    context.fillStyle = "#3b8ea5";
+    context.textAlign = "right";
+    context.fillText("level " + (this.playLevel + 1), this.gameWidth - 10, 15);
+
+    //Redraw game features
     [...this.features, ...this.bricks].forEach((Object) => {
       Object.draw(context);
     });
@@ -333,6 +354,16 @@ export default class Game {
           this.gameWidth / 2,
           this.gameHeight / 20
         );
+
+        context.font = "12px Major Mono Display";
+        context.fillStyle = "#F5EE9E";
+        context.textAlign = "left";
+        context.textAlign = "center";
+        context.fillText(
+          this.ballsRemaining + " balls left",
+          this.gameWidth / 2,
+          this.gameHeight / 20 + 18 * (this.gameHeight / 20)
+        );
       }
     }
 
@@ -371,9 +402,9 @@ export default class Game {
           context.font = "12px Major Mono Display";
           context.fillStyle = "#F5EE9E";
           context.textAlign = "center";
-            "Congratulations, new highscore",
-                this.gameWidth / 2,
-                (this.gameHeight / 3) * 2;
+          "Congratulations, new highscore",
+            this.gameWidth / 2,
+            (this.gameHeight / 3) * 2;
         } else {
           context.font = "12px Major Mono Display";
           context.fillStyle = "#F5EE9E";
@@ -438,9 +469,11 @@ export default class Game {
 
   //pause function called when ESC is pressed
   pause() {
-    if (this.screen == screen.paused) {
+    if (this.screen == screen.menu) {
+      return;
+    } else if (this.screen == screen.paused) {
       this.screen = screen.running;
-    } else {
+    } else if ((this.screen = screen.running)) {
       this.screen = screen.paused;
     }
   }
