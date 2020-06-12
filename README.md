@@ -202,6 +202,7 @@ Giphy makes and hosts giphs for the ReadME.
 
 ## 4.1 Validation
 ### JavaScript Validation
+![JSValidation](https://i.imgur.com/m2AwAzG.png)
 The code has passed ES6 Syntax Check using https://www.piliapp.com/syntax-check/es6/, however while JSLint doesn't list any errors, it provides an extensive warning list. This is primarily due to import/export files resulting in undeclared values due to checking one page at a time. A comprehensive list of all errors can be found [here](docs/jslint-errors.md)
 
 ### [HTML5 validator](https://validator.w3.org/)
@@ -210,7 +211,7 @@ Validates the code aheres to HTML standards
 
 The HTML validator throws up a warning not having section headings, however this is an active choice to try and keep the game as contained as possible.
 
-[Imgur](https://i.imgur.com/BvDXt6I.png)
+![Imgur](https://i.imgur.com/BvDXt6I.png)
 
 
 ### CSS validator
@@ -256,11 +257,14 @@ Wants to play again/better score
 ### Active Bugs
 
 - [x] Ball bounce under paddle
+- [x] When pausing from start screen, and then unpausing, the game starts. 
+    -   fixed by disabling pause from strat screen
 - [ ] Ball bounces through paddle
 - [ ] Gameover sound loops
 - [x] Gameover black circle
 - [x] you restart levels with space bar on level 2+
-- [ ] On resize of screen mid play, ball becomes oval, unless refreshed
+- [x] On resize of screen mid play, ball becomes oval, unless refreshed
+    -   prevented by implementing cheat screen
 - [x] ~~Ball return to screen after leaving~~ No longer relevent as this a new game screen starts
 - [x] Mute toggle not working
 - [ ] When resizing before playing the game, an error is logged through Chrome as a result of audio being played before input on the page - https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Best_practices#Autoplay_policy
