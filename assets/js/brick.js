@@ -29,7 +29,7 @@ export default class Brick {
       this.game.ball.speed.y = -this.game.ball.speed.y;
       this.game.brickSFX.play();
       this.flaggedToRemove = true;
-      this.game.score++;
+      this.game.score+=1;
     }
   }
 }

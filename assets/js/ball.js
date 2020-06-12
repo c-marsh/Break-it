@@ -1,5 +1,5 @@
 import { impact } from "./impact.js";
-export default class Ball {
+export default class Ball{
   constructor(game) {
     this.gameWidth = game.gameWidth;
     this.gameHeight = game.gameHeight;
@@ -9,7 +9,7 @@ export default class Ball {
     this.newBall();
   }
   //Ball Start coordinates
-  newBall() {
+  newBall(){
     this.position = {
       x: 1 + this.sizeR,
       //Starts just below top paddle to prevent collison on generating ball
@@ -17,13 +17,13 @@ export default class Ball {
         this.game.topPaddle.position.yAxis +
         this.game.topPaddle.height +
         this.sizeR +
-        1,
+        1
     };
 
     //Ball Speed
     this.speed = {
       x: 3,
-      y: 4,
+      y: 4
     };
   }
 
@@ -51,7 +51,7 @@ export default class Ball {
 
     //If hits bottom/top, remove 1 life and reset ball
     if (this.position.y >= this.gameHeight || this.position.y <= 0) {
-      this.game.ballsRemaining--;
+      this.game.ballsRemaining-=1;
       this.newBall();
     }
   }
