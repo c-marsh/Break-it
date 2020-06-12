@@ -68,6 +68,9 @@ export default class Game {
     //create an array of features in the game
     this.features = [this.ball, this.paddle, this.topPaddle];
     this.screen = screen.running;
+
+    //play start levevel SFX
+    document.getElementById("levelUpSFX").play();
   }
 
   update(deltaTime) {
@@ -110,6 +113,8 @@ export default class Game {
     if (this.bricks.length === 0) {
       //...Level up
       this.playLevel += 1;
+      //... add a ball
+      this.ballsRemaining += 1;
       this.screen = screen.levelUp;
       //...level up SFX
       document.getElementById("levelUpSFX").play();
