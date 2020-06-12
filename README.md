@@ -251,11 +251,9 @@ Wants to play again/better score
 - [x] Gameover black circle
 - [x] you restart levels with space bar on level 2+
 - [ ] On resize of screen mid play, ball becomes oval, unless refreshed
-
-### Squashed Bugs
-
-- ~~[ ] Ball return to screen after leaving~~ No longer relevent as this a new game screen starts
+- [x] ~~Ball return to screen after leaving~~ No longer relevent as this a new game screen starts
 - [x] Mute toggle not working
+- [ ] When resizing before playing the game, an error is logged through Chrome as a result of audio being played before input on the page - https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Best_practices#Autoplay_policy
 
 # 5. Deployment
 
@@ -269,18 +267,23 @@ The project be viewed by following this URL: https://c-marsh.github.io/Pong-Brea
 # 6. Credits
 
 ## 6.1 Code snippets
+The game was developed based on youtbue tutorials from Chris Perko https://www.youtube.com/channel/UCraxnACLukXNgBnCq1zQnNg and MDN Web Docs https://developer.mozilla.org/en-US/docs/Games/Tutorials
 
+Hover effect from https://animista.net/
 
-
+https://stackoverflow.com/ and https://www.w3schools.com/ have been used to reference code.
 
 Code for retina/HiDef canvas display: https://www.html5rocks.com/en/tutorials/canvas/hidpi/
 
 ## 6.2 Content
+All textual content is orginal.
 
 ## 6.3 Media
 Favicon generated with https://realfavicongenerator.net/
 
-Fonts from Google Fonts
+Fonts from https://fonts.google.com/
+
+Icons from https://fontawesome.com/
 
 Sounds from https://freesound.org/
 
