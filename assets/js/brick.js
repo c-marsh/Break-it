@@ -24,11 +24,12 @@ export default class Brick {
     );
   }
   update(deltaTime) {
+    //on inpact, change ball direction, play SFX, flag brick for deletion and play SFX
     if (impact(this.game.ball, this)) {
       this.game.ball.speed.y = -this.game.ball.speed.y;
       this.game.brickSFX.play();
       this.flaggedToRemove = true;
-      this.game.score++
+      this.game.score++;
     }
   }
 }

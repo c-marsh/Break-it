@@ -57,10 +57,12 @@ export default class TopPaddle {
     //Stopping the paddle if it reaches canvas edge
     if (this.position.xAxis < 0) this.position.xAxis = 0;
     if (this.position.xAxis > this.gameWidth - this.width)
-      this.position.xAxis = this.gameWidth - this.width;
+        this.position.xAxis = this.gameWidth - this.width;
+    //change direction on impact
     if (impact(this.game.ball, this)) {
-      this.game.ball.speed.y = -this.game.ball.speed.y;
-      document.getElementById("paddleSFX").play();
+        this.game.ball.speed.y = -this.game.ball.speed.y;
+        //play SFX
+      this.game.paddleSFX.play();
     }
   }
 }

@@ -1,6 +1,6 @@
 //Export Keybindings
 export default class KeyBindings {
-  //game keybindings: 37=left, 39=right
+  //game keybindings: 37=left, 39=right, 65=A, 68=D
   constructor(paddle, topPaddle, game) {
     //Key Depress actions
     document.addEventListener("keydown", (event) => {
@@ -39,6 +39,7 @@ export default class KeyBindings {
           break;
       }
     });
+
     //Key Release actions
     document.addEventListener("keyup", (event) => {
       switch (event.keyCode) {

@@ -61,9 +61,10 @@ export default class Paddle {
 
     if (this.position.xAxis > this.gameWidth - this.width)
       this.position.xAxis = this.gameWidth - this.width;
-
+    //On impact change ball direction
     if (impact(this.game.ball, this)) {
       this.game.ball.speed.y = -this.game.ball.speed.y;
+      //play SFX
       this.game.paddleSFX.play();
     }
   }

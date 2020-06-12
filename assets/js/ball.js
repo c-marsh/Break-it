@@ -49,7 +49,7 @@ export default class Ball {
       this.speed.x = -this.speed.x;
     }
 
-    //Bounce off bottom - for test purposes only
+    //If hits bottom/top, remove 1 life and reset ball
     if (this.position.y >= this.gameHeight || this.position.y <= 0) {
       this.game.ballsRemaining--;
       this.newBall();

@@ -22,7 +22,7 @@ export function createLevel(game, level) {
   return bricks;
 }
 
-//build level maps
+//build level maps: 1=brick, 0=no brick
 export const level1 = [
   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],

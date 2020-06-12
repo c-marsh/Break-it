@@ -72,20 +72,26 @@ export default class Game {
     //display GameOver screen if no balls left
     if (this.ballsRemaining === 0) {
       this.screen = screen.gameOver;
+      //if previous highscore found...
       if (this.highscore !== null) {
+        //...and if this is greater than previous highscore, overwrite it.
         if (this.score > this.highscore) {
           localStorage.setItem("highscore", this.score);
         }
       } else {
+        //if no previous score record this score
         localStorage.setItem("highscore", this.score);
       }
     }
-
+    //If screen width is not the same as screen when game loaded, remove 1 from highscore, unless no highscore detected
     if (document.documentElement.clientWidth != this.gameWidth) {
       this.screen = screen.cheat;
+      if (this.highscore !== null) {
+        localStorage.setItem("highscore", this.highscore--);
+      }
     }
 
-    //Stop animation cycle if screen is paused/menu
+    //Stop animation cycle if screen is paused/menu/game over/cheat
     if (
       this.screen === screen.paused ||
       this.screen === screen.menu ||
@@ -121,7 +127,7 @@ export default class Game {
     if (this.screen === screen.cheat) {
       document.getElementById("cheatSFX").play();
       if (this.gameWidth < 600) {
-        //styling small
+        //styling small screens
         context.fillStyle = "#AB3428";
         context.fillRect(0, 0, this.gameWidth, this.gameHeight);
         //content
@@ -133,6 +139,7 @@ export default class Game {
           this.gameWidth / 2,
           this.gameHeight / 20
         );
+
         context.font = "30px Major Mono Display";
         context.fillStyle = "#F5EE9E";
         context.textAlign = "center";
@@ -168,6 +175,7 @@ export default class Game {
           this.gameWidth / 20,
           this.gameHeight / 20
         );
+
         context.font = "30px Major Mono Display";
         context.fillStyle = "#F5EE9E";
         context.textAlign = "center";
@@ -207,6 +215,7 @@ export default class Game {
           this.gameWidth / 2,
           this.gameHeight / 20
         );
+
         context.font = "30px Major Mono Display";
         context.fillStyle = "3B8EA5";
         context.textAlign = "center";
@@ -241,6 +250,7 @@ export default class Game {
           this.gameWidth / 20,
           this.gameHeight / 20
         );
+
         context.font = "30px Major Mono Display";
         context.fillStyle = "3B8EA5";
         context.textAlign = "center";
@@ -280,6 +290,7 @@ export default class Game {
           this.gameWidth / 2,
           this.gameHeight / 2 - 50
         );
+
         //text
         context.font = "12px Major Mono Display";
         context.fillStyle = "#F5EE9E";
@@ -302,6 +313,7 @@ export default class Game {
           this.gameWidth / 2,
           this.gameHeight / 2 - 50
         );
+
         //text
         context.font = "28px Major Mono Display";
         context.fillStyle = "#F5EE9E";
@@ -323,6 +335,7 @@ export default class Game {
         );
       }
     }
+
     //game over screen
     if (this.screen === screen.gameOver) {
       if (this.gameWidth < 600) {
@@ -339,6 +352,7 @@ export default class Game {
           this.gameWidth / 2,
           this.gameHeight / 20
         );
+
         context.font = "30px Major Mono Display";
         context.fillStyle = "#F5EE9E";
         context.textAlign = "center";
@@ -352,14 +366,14 @@ export default class Game {
           this.gameWidth / 2,
           this.gameHeight / 2
         );
+
         if (this.score > this.highscore || this.highscore == null) {
           context.font = "12px Major Mono Display";
           context.fillStyle = "#F5EE9E";
           context.textAlign = "center";
-            "Congratulations, new highscore",
+          "Congratulations, new highscore",
             this.gameWidth / 2,
-            (this.gameHeight / 3) * 2
-          ;
+            (this.gameHeight / 3) * 2;
         } else {
           context.font = "12px Major Mono Display";
           context.fillStyle = "#F5EE9E";
@@ -384,6 +398,7 @@ export default class Game {
           this.gameWidth / 20,
           this.gameHeight / 20
         );
+
         context.font = "30px Major Mono Display";
         context.fillStyle = "#F5EE9E";
         context.textAlign = "center";
@@ -397,6 +412,7 @@ export default class Game {
           this.gameWidth / 2,
           this.gameHeight / 2
         );
+
         if (this.score > this.highscore) {
           context.font = "30px Major Mono Display";
           context.fillStyle = "#F5EE9E";
@@ -419,6 +435,7 @@ export default class Game {
       }
     }
   }
+
   //pause function called when ESC is pressed
   pause() {
     if (this.screen == screen.paused) {
@@ -454,7 +471,7 @@ export default class Game {
     ).muted;
   }
 
-  // This allows Space bar to be used for different functions depending on which screen is displayed
+  // This allows Space bar to be used for innitiating the game in the menu screen, or refreshing the page in the gameover/cheat screen
   spaceBar() {
     if (this.screen === screen.menu) {
       this.start();
