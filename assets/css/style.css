@@ -1,20 +1,31 @@
 /*colourscheme*/
 :root {
-    --coal: #1D4A5D;
-    --munsell: #3B8EA5;
-    --crayola: #F5EE9E;
-    --sandy: #F49E4C;
-    --firebrick: #AB3428;
+  --coal: #1d4a5d;
+  --munsell: #3b8ea5;
+  --crayola: #f5ee9e;
+  --sandy: #f49e4c;
+  --firebrick: #ab3428;
+  --persianplum: #6B2A24;
 }
 
+.game-content {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background-color: var(--persianplum);
+}
 
 #game {
-    border: 5px solid firebrick;
-    font-family: 'Major Mono Display', monospace;
-    width: 100vw;
-    height: 600px;
-    margin: auto;
-    background-color: var(--coal);
-    vertical-align: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  border: 5px solid var(--firebrick);
+  font-family: "Major Mono Display", monospace;
+  width: 100vw;
+  height: 600px;
+  margin: auto;
+  background-color: var(--coal);
+  vertical-align: center;
 }
-

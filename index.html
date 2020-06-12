@@ -1,27 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
-<link rel="stylesheet" href="assets/css/style.css">
-<title>Title</title>
-</head>
-<body>
-<audio id="paddleSFX" class="audio" src="assets/sfx/pop.mp3"></audio>
-<audio id="brickSFX" class="audio" src="assets/sfx/brick.wav"></audio>
-<audio id="gameOverSFX" class="audio" src="assets/sfx/game_over.wav"></audio>
-<audio id="levelUpSFX" class="audio" src="assets/sfx/level_up.mp3"></audio>
-<audio id="cheatSFX" class="audio" src="assets/sfx/cheat.mp3"></audio>
-<canvas id="game" class=""></canvas>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png" />
+    <link rel="manifest" href="assets/favicon/site.webmanifest" />
+    <link rel="mask-icon" href="assets/favicon/safari-pinned-tab.svg" color="#1d4a5d" />
+    <meta name="msapplication-TileColor" content="#b91d47" />
+    <meta name="theme-color" content="#ffffff" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <title>Title</title>
+  </head>
+  <body>
+    <audio id="paddleSFX" class="audio" src="assets/sfx/pop.mp3"></audio>
+    <audio id="brickSFX" class="audio" src="assets/sfx/brick.wav"></audio>
+    <audio
+      id="gameOverSFX"
+      class="audio"
+      src="assets/sfx/game_over.wav"
+    ></audio>
+    <audio id="levelUpSFX" class="audio" src="assets/sfx/level_up.mp3"></audio>
+    <audio id="cheatSFX" class="audio" src="assets/sfx/cheat.mp3"></audio>
 
-
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script type="module" src="assets/js/main.js"></script>   
-</body>
+    <div class="game-content">
+      <div class="d-flex">
+        <canvas id="game" class="align-self-center"></canvas>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="module" src="assets/js/main.js"></script>
+  </body>
 </html>

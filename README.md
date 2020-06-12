@@ -278,6 +278,7 @@ Code for retina/HiDef canvas display: https://www.html5rocks.com/en/tutorials/ca
 ## 6.2 Content
 
 ## 6.3 Media
+Favicon generated with https://realfavicongenerator.net/
 
 Fonts from Google Fonts
 
