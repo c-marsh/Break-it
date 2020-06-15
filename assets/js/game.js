@@ -130,7 +130,7 @@ export default class Game {
   }
   draw(context) {
     //draw game field text
-      this.textStyling(context, "12px Major Mono Display", "#3b8ea5", "left");
+    this.textStyling(context, "12px Major Mono Display", "#3b8ea5", "left");
     context.fillText(
       "Score: " + this.score + " | " + this.ballsRemaining + " balls left",
       10,
@@ -152,32 +152,44 @@ export default class Game {
         context.fillStyle = "#AB3428";
         context.fillRect(0, 0, this.gameWidth, this.gameHeight);
         //content
-        context.font = "12px Major Mono Display";
-        context.fillStyle = "#F5EE9E";
-        context.textAlign = "center";
+        this.textStyling(
+          context,
+          "12px Major Mono Display",
+          "#F5EE9E",
+          "center"
+        );
         context.fillText(
           "press SPACE to restart",
           this.gameWidth / 2,
           this.gameHeight / 20
         );
 
-        context.font = "30px Major Mono Display";
-        context.fillStyle = "#F5EE9E";
-        context.textAlign = "center";
+        this.textStyling(
+          context,
+          "30px Major Mono Display",
+          "#F5EE9E",
+          "center"
+        );
         context.fillText("Cheat!", this.gameWidth / 2, this.gameHeight / 3);
 
-        context.font = "20px Major Mono Display";
-        context.fillStyle = "#F5EE9E";
-        context.textAlign = "center";
+        this.textStyling(
+          context,
+          "20px Major Mono Display",
+          "#F5EE9E",
+          "center"
+        );
         context.fillText(
           "You've been caught cheating",
           this.gameWidth / 2,
           this.gameHeight / 2
         );
 
-        context.font = "12px Major Mono Display";
-        context.fillStyle = "#F5EE9E";
-        context.textAlign = "center";
+        this.textStyling(
+          context,
+          "12px Major Mono Display",
+          "#F5EE9E",
+          "center"
+        );
         context.fillText(
           "Your highscore may be reduced as punishment",
           this.gameWidth / 2,
@@ -188,32 +200,39 @@ export default class Game {
         context.fillStyle = "#AB3428";
         context.fillRect(0, 0, this.gameWidth, this.gameHeight);
         //content
-        context.font = "16px Major Mono Display";
-        context.fillStyle = "#F5EE9E";
-        context.textAlign = "left";
+        this.textStyling(context, "16px Major Mono Display", "#F5EE9E", "left");
         context.fillText(
           "press SPACE to restart",
           this.gameWidth / 20,
           this.gameHeight / 20
         );
 
-        context.font = "30px Major Mono Display";
-        context.fillStyle = "#F5EE9E";
-        context.textAlign = "center";
+        this.textStyling(
+          context,
+          "30px Major Mono Display",
+          "#F5EE9E",
+          "center"
+        );
         context.fillText("Cheat!", this.gameWidth / 2, this.gameHeight / 3);
 
-        context.font = "30px Major Mono Display";
-        context.fillStyle = "#F5EE9E";
-        context.textAlign = "center";
+        this.textStyling(
+          context,
+          "30px Major Mono Display",
+          "#F5EE9E",
+          "center"
+        );
         context.fillText(
           "You've been caught cheating'",
           this.gameWidth / 2,
           this.gameHeight / 2
         );
 
-        context.font = "30px Major Mono Display";
-        context.fillStyle = "#F5EE9E";
-        context.textAlign = "center";
+        this.textStyling(
+          context,
+          "30px Major Mono Display",
+          "#F5EE9E",
+          "center"
+        );
         context.fillText(
           "Your highscore may be reduced as punishment",
           this.gameWidth / 2,
@@ -467,11 +486,11 @@ export default class Game {
     }
   }
 
-    textStyling(context, font, style, align) {
-        context.font = font;
-        context.fillStyle = style;
-        context.textAlign = align;
-    }
+  textStyling(context, font, style, align) {
+    context.font = font;
+    context.fillStyle = style;
+    context.textAlign = align;
+  }
 
   //pause function called when ESC is pressed
   pause() {
