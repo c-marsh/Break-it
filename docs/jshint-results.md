@@ -24,7 +24,6 @@ The most complex function has a cyclomatic complexity value of 5 while the media
 ![Imgur](https://i.imgur.com/vLJrm6w.png)
 
 ## game.js
-Metrics
 There are 15 functions in this file.
 
 Function with the largest signature take 7 arguments, while the median is 0.
@@ -34,7 +33,8 @@ Largest function has 64 statements in it, while the median is 2.
 The most complex function has a cyclomatic complexity value of 14 while the median is 1.
 
 One warning
-17	Redefinition of 'screen'.
+26	Redefinition of 'screen'.
+
 
 ![Imgur](https://i.imgur.com/q8GLQq2.png)
 
