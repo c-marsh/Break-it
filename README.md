@@ -1,8 +1,9 @@
 ![Imgur](https://i.imgur.com/7hAi8zD.png?1)
 
-# Table of Contents
-
-## [1. UX](https://github.com/c-marsh/Break-it#1-ux-1)
+# Break-it! (https://c-marsh.github.io/Break-it/)
+***
+## Table of Contents
+### [1. UX](https://github.com/c-marsh/Break-it#1-ux-1)
 
 [1.1 Who is this website for?](https://github.com/c-marsh/Break-it#11-who-is-this-website-for)
 
@@ -10,7 +11,7 @@
 
 [1.3 Website Planning and Wireframes](https://github.com/c-marsh/Break-it#13-website-planning-and-wireframes)
 
-## [2. Features](https://github.com/c-marsh/Break-it#2-features-1)
+### [2. Features](https://github.com/c-marsh/Break-it#2-features-1)
 
 [2.1 Screens](https://github.com/c-marsh/Break-it#21-screens)
 
@@ -32,7 +33,7 @@
 
 [2.11 Future improvements](https://github.com/c-marsh/Break-it#210-potential-future-features)
 
-## [3. Technologies Used](https://github.com/c-marsh/Break-it#3-technologies-used-1)
+### [3. Technologies Used](https://github.com/c-marsh/Break-it#3-technologies-used-1)
 
 [3.1 Languages](https://github.com/c-marsh/Break-it#31-languages)
 
@@ -43,7 +44,7 @@
 [3.4 External Hostings](https://github.com/c-marsh/Break-it#34-external-hostings)
 
 
-## [4. Testing](https://github.com/c-marsh/Break-it#4-testing-1)
+### [4. Testing](https://github.com/c-marsh/Break-it#4-testing-1)
 
 [4.1 Validation](https://github.com/c-marsh/Break-it#41-validation)
 
@@ -53,9 +54,9 @@
 
 [4.4 Bugs](https://github.com/c-marsh/Break-it#45-bugs)
 
-## [5. Deployment](https://github.com/c-marsh/Break-it#5-deployment-1)
+### [5. Deployment](https://github.com/c-marsh/Break-it#5-deployment-1)
 
-## [6. Credits](https://github.com/c-marsh/Break-it#6-credits-1)
+### [6. Credits](https://github.com/c-marsh/Break-it#6-credits-1)
 
 [6.1 Code-snippets](https://github.com/c-marsh/Break-it#61-code-snippets)
 
@@ -65,7 +66,7 @@
 
 [6.4 Acknowledgements](https://github.com/c-marsh/Break-it#64-acknowledgements)
 
-# 1. UX
+## 1. UX
 
 ## 1.1 Who is this website for?
 
