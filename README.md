@@ -48,7 +48,7 @@
 
 [4.1 Validation](##-4.1-Validation)
 
-[4.2 UX Stories](##-4.2-UX-Stories)
+[4.2 UX Stories](#42-ux-stories)
 
 [4.3 Manual Testing](##-4.3-Manual-Testing)
 
