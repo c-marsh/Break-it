@@ -67,7 +67,7 @@ export default class Game {
     //Score
     this.score = 0;
     this.penalty = localStorage.getItem("penalty");
-    this.highscore = localStorage.getItem("highscore")-this.penalty;
+    this.highscore = localStorage.getItem("highscore") - this.penalty;
 
     //SFX
 
@@ -127,10 +127,10 @@ export default class Game {
         //...and if this is greater than previous highscore, overwrite it.
         if (this.score > this.highscore) {
           localStorage.setItem("highscore", this.score);
+        } else if (this.highscore.isNaN()) {
+          //if NaN has been recorded
+          localStorage.setItem("highscore", this.score);
         }
-        //if NaN has been recorded
-      } else if (this.highscore.isNaN()) {
-        localStorage.setItem("highscore", this.score);
       } else {
         //if no previous score record this score
         localStorage.setItem("highscore", this.highscore);
