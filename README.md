@@ -10,7 +10,7 @@
 
 ## [2. Features](https://github.com/c-marsh/Break-it#2-features-1)
 
-[2.1 Screens(https://github.com/c-marsh/Break-it#21-screens)
+[2.1 Screens](https://github.com/c-marsh/Break-it#21-screens)
 
 [2.2 Play Screen](https://github.com/c-marsh/Break-it#22-play-screen)
 
