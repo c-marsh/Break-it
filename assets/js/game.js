@@ -410,7 +410,7 @@ export default class Game {
           this.gameWidth / 2,
           this.gameHeight / 2
         );
-      } else if (421 < this.gameWidth < 700) {
+      } else if (421 < this.gameWidth) {
         //styling tablet size+
         context.fillStyle = "#3B8EA5";
         context.fillRect(0, 0, this.gameWidth, this.gameHeight);
@@ -440,7 +440,6 @@ export default class Game {
           context,
           "12px Major Mono Display",
           "#F5EE9E",
-          "left",
           "center",
           "press ESC to PAUSE | Press m to Mute",
           this.gameWidth / 2,
@@ -451,7 +450,6 @@ export default class Game {
           context,
           "12px Major Mono Display",
           "#F5EE9E",
-          "left",
           "center",
           this.ballsRemaining + " balls left",
           this.gameWidth / 2,
