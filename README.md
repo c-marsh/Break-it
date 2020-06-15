@@ -82,18 +82,19 @@ A functioning game that can be played, and hopefully be enjoyable to play.
 
 ## 1.4 Website Planning and Wireframes
 
-//user stories
+### User Stories
 Wants to play a game
 Wants to pause game
 Wants to mute/unmute sound in game
 Wants to play again/better score
 
-//Data Architecture
+### Data Architecture
+Here is an visual depiction the process of the application.
+![Imgur](https://i.imgur.com/hiZ4b4z.png)
 
-//Wireframe
-
-//Design elements
-![docs/colourscheme.png](docs/colourscheme.png)
+### Design elements
+![Imgur](https://i.imgur.com/saBz7cX.png)
+Font: Major Mono Display
 
 # 2. Features
 
@@ -134,6 +135,8 @@ All sounds can be muted and unmuted. By dafault they are on, but don't play unti
 - The canvas has a fixed 600px height. If the view window doesn't currently support this a pop up asks the user to rotate the device to vertical orientation or that the game is not compatible with the screen size.
 - if the screen is less than 685px tall, the footer is hidden.
 - Ball, paddles, and bricks are calculated proportionally to the screen width, resulting in a different play experience on different sized screens.
+- The canvas is designed to render both on HiDef and non hiDef screens
+- Custom Favicons have been created to be compatible with different browsers/Operating systems
 
 ## 2.7 Other Features
 - On page load the game screen bounces into place
@@ -144,6 +147,8 @@ All sounds can be muted and unmuted. By dafault they are on, but don't play unti
 Levels are comprised of a grid of up to 11 bricks wide and 5 rows high.
 
 6 unique levels are currently implemented in the game, however a feature is that as a result of their construction as an array, it is simple and quick to add more.
+
+The current level is displayed on the screen in play.
 
 ## 2.9 Footer
 - a Footer is included with a link to the developers github. The icon throbs on hover.
@@ -196,18 +201,13 @@ The project used the GitHub hosting service to save the project in a repository.
 
 Imgur service to hosts images and screen shots for the ReadME.
 
-### giphy
-
-Giphy makes and hosts giphs for the ReadME.
-
-## 3.5 Other Tools
 
 # 4. Testing
 
 ## 4.1 Validation
 ### JavaScript Validation
 ![JSValidation](https://i.imgur.com/m2AwAzG.png)
-The code has passed ES6 Syntax Check using https://www.piliapp.com/syntax-check/es6/, however while JSLint doesn't list any errors, it provides an extensive warning list. This is primarily due to import/export files resulting in undeclared values due to checking one page at a time. A comprehensive list of all errors can be found [here](docs/jslint-errors.md)
+The code has passed ES6 Syntax Check using https://www.piliapp.com/syntax-check/es6/. Comprehensive results from JSHint validation can be found [here](docs/jshint-results.md)
 
 ### [HTML5 validator](https://validator.w3.org/)
 
@@ -236,46 +236,65 @@ Manual testing shows the code responding on the webpage as anticipated:
 
 The contrast validator checks contrast between text and background to ensure it's visible to people with vision impairments.
 
-I suspect a limitation may be that is cannot check contrast in the html canvas.
+I suspect a limitation may be that it cannot check contrast in the html canvas.
 
 ## 4.2 UX Stories
 Wants to play a game
+ - Head to page 
+ - Read instructions 
+ - press Spacebar, and play
+ ![Imgur](https://i.imgur.com/0Rpd9qS.gifv)
 Wants to pause game
+- As above, press ESC while playing
+![Imgur](https://i.imgur.com/4mqKwGb.gifv)
 Wants to mute/unmute sound in game
+- As above, press M while playing
 Wants to play again/better score
-
+- As above, when game is complete, follow instructions to press space bar to reload page.
+![Imgur](https://i.imgur.com/T0w5kqK.gifv)
 
 ## 4.3 Manual Testing
-- [] Website loads as expected
-- [] If screen is less than 600 px tall an error message is displayed
-- [] If screen is less than 680 px tall the footer is hidden
-- [] If screen is less than 420 px wide an error message is displayed
+- [x] Website loads as expected
+![Imgur](https://i.imgur.com/0Rpd9qS.gifv)
+- [x] If screen is less than 600 px tall an error message is displayed
+- [x] If screen is less than 680 px tall the footer is hidden
+![Imgur](https://i.imgur.com/5YrJ0KD.png)
+- [x] If screen is less than 420 px wide an error message is displayed
+![Imgur](https://i.imgur.com/4mRjBqC.png?1)
 
 Screens
-- []Large Menu screen
-- []Small Menu screen
-- []Large Cheat screen
-- []Small Cheat screen
-- []Large Pause screen
-- []Small Pause screen
-- []Large Game Over screen
-- []Small Game Over screen
+- [x]Large Menu screen
+![Imgur](https://i.imgur.com/EH2LI4k.png?1)
+- [x]Small Menu screen
+![Imgur](https://i.imgur.com/5YrJ0KD.png)
+- [x]Large Cheat screen
+- [x]Small Cheat screen
+![Imgur](https://i.imgur.com/lmYqhmY.png)
+- [x]Large Pause screen
+![Imgur](https://i.imgur.com/y0Zsvjv.png)
+- [x]Small Pause screen
+![Imgur](https://i.imgur.com/ImwNIFq.png)
+- [x]Large Game Over screen
+![Imgur](https://i.imgur.com/q17RLTd.png)
+- [x]Small Game Over screen
+![Imgur](https://i.imgur.com/eNawu8U.png)
 
 Gameplay
+![Imgur](https://i.imgur.com/LcOCXlt.gifv)
 Ball
-- [] bounces off sides
-- [] bounces off paddles
-- [] bounces off bricks
-- [] vanishes past paddles into top/bottom screen
-- [] decreases life on hitting top/bottom screen
-- [] restarts on hitting top/bottom screen
-- [] triggers game over on hitting top/bottom screen if no lives left
-- [] doesn't generate in contact with another object
+- [X] bounces off sides
+- [X] bounces off paddles
+- [X] bounces off bricks
+- [X] vanishes past paddles into top/bottom screen
+- [X] decreases life on hitting top/bottom screen
+- [X] restarts on hitting top/bottom screen
+- [X] triggers game over on hitting top/bottom screen if no lives left
+- [X] doesn't generate in contact with another object
 
 Bricks
 - [x] Appear where expected
 - [x] Delete on contact
-- [] trigger sound on contact with ball
+- [X] trigger sound on contact with ball
 
 paddles
 - [x] Appear where expected
@@ -286,47 +305,49 @@ paddles
 - [x] trigger sound on contact with ball
 
 keybindings
-- [] M mutes and unmutes sound while running
-- [] M mutes and unmutes sound while in Menu
-- [] M mutes and unmutes sound while paused
-- [] M mutes and unmutes sound while Gameover
-- [] M mutes and unmutes sound while in cheat screen
-- [] ESC pauses/unpauses
-- [] ESC disabled on Menu screen
+- [x] M mutes and unmutes sound while running
+- [x] M mutes and unmutes sound while in Menu
+- [x] M mutes and unmutes sound while paused
+- [x] M mutes and unmutes sound while Gameover
+- [x] M mutes and unmutes sound while in cheat screen
+- [x] ESC pauses/unpauses
+- [x] ESC disabled on Menu screen
 - [x] Space triggers game from menu screen
 - [x] Space reloads game on Gameover screen
 - [x] Space reloads game on Cheat screen
 - [x] Space does not restart level in running screen
 
 Levels
-- [] Generate as expected
-- [] Generates a new level when all bricks cleared
-- [] Correct level no. is displayed on game screen
+![Imgur](https://i.imgur.com/27b0IxP.gifv)
+- [x] Generate as expected
+- [x] Generates a new level when all bricks cleared
+- [x] Correct level no. is displayed on game screen
 
 Lives
-- [] Start with expected number
-- [] Display correct number on pause screen
-- [] Display correct number on play screen
-- [] Decrease by 1 for balls lost off Table
-- [] Increase by 1 on level completion
+![Imgur](https://i.imgur.com/tSJ8rZ2.png)
+- [x] Start with expected number
+- [x] Display correct number on pause screen
+- [x] Display correct number on play screen
+- [x] Decrease by 1 for balls lost off Table
+- [x] Increase by 1 on level completion
 
 Score
-- [] is correctly counted
-- [] is correctly displayed on play screen
-- [] is correctly displayed on pause screen
-- [] is correctly displayed on gmae over screen
-- [] is saved to memory
-- [] highscore is recalled from memory
-- [] deals with null/NaN
+- [x] is correctly counted
+- [x] is correctly displayed on play screen
+- [x] is correctly displayed on pause screen
+- [x] is correctly displayed on gmae over screen
+- [x] is saved to memory
+- [x] highscore is recalled from memory
+- [x] deals with null/NaN highscore value
 
 Responsive
-- [] If screen is resized cheat screen is displayed
-- [] Cheat screen sound can be muted
-- [] Cheat screen sound can be unmuted
+- [x] If screen is resized cheat screen is displayed
+- [x] Cheat screen sound can be muted
+- [x] Cheat screen sound can be unmuted
+- [] Favicon display on various devices - Works correctly on Apple devices. I don't have acces to Android/MS devices to test.
 
 
 
-### Testing Responsive Features: Mobile version (iphone 8)
 
 ## 4.5 Bugs
 
@@ -335,8 +356,12 @@ Responsive
 - [x] Ball bounce under paddle
 - [x] When pausing from start screen, and then unpausing, the game starts. 
     -   fixed by disabling pause from strat screen
-- [ ] Ball bounces through paddle
+- [ ] Ball bounces through paddle if hit on the corner of the paddle in a certain angle.
+    - This seems to be a result of the simple collision code I've implemented which just reverses y axis direction. Re-engineering the impact code improved, but hasn't eliminated this bug. 
 - [ ] Gameover sound loops
+    -   Likely a result of the game loop still running. It's annoying but, not essential for gameplay.
+- [ ] Sound doesn't trigger if brick strike happen in too quick succession. 
+    - This is likely a result of the sound clip already playing from a previous strike.
 - [x] Gameover black circle
 - [x] you restart levels with space bar on level 2+
 - [x] On resize of screen mid play, ball becomes oval, unless refreshed
