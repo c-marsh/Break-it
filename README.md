@@ -226,7 +226,7 @@ The code has been run through the W3 CSS validator, results can be viewed [here]
 
 It has thrown up some issues with the use of variables and vendor extension, however further research implies this is a feature not supported by the validator: https://github.com/w3c/css-validator/issues/111
 
-Manual testing shows the code responding on the webpage as anticipated:
+Manual testing shows the code responding on the webpage as anticipated on chrome, Firefox and Safari:
 
 ![Chrome test](https://i.imgur.com/k0EbJ8t.gif)
 ![Firefox test](https://i.imgur.com/WPkLgZA.gif)
@@ -239,17 +239,22 @@ The contrast validator checks contrast between text and background to ensure it'
 I suspect a limitation may be that it cannot check contrast in the html canvas.
 
 ## 4.2 UX Stories
-Wants to play a game
+### Wants to play a game
  - Head to page 
  - Read instructions 
  - press Spacebar, and play
+
  ![Imgur](https://i.imgur.com/0Rpd9qS.gif)
-Wants to pause game
+
+### Wants to pause game
 - As above, press ESC while playing
+
 ![Imgur](https://i.imgur.com/4mqKwGb.gif)
-Wants to mute/unmute sound in game
+
+### Wants to mute/unmute sound in game
 - As above, press M while playing
-Wants to play again/better score
+
+### Wants to play again/better score
 - As above, when game is complete, follow instructions to press space bar to reload page.
 ![Imgur](https://i.imgur.com/T0w5kqK.gif)
 
