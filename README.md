@@ -228,9 +228,9 @@ It has thrown up some issues with the use of variables and vendor extension, how
 
 Manual testing shows the code responding on the webpage as anticipated:
 
-![Chrome test](https://i.imgur.com/k0EbJ8t.gifv)
-![Firefox test](https://i.imgur.com/WPkLgZA.gifv)
-![Safari test](https://i.imgur.com/h4w8fP0.gifv)
+![Chrome test](https://i.imgur.com/k0EbJ8t.gif)
+![Firefox test](https://i.imgur.com/WPkLgZA.gif)
+![Safari test](https://i.imgur.com/h4w8fP0.gif)
 
 ### [Contrast validator](https://color.a11y.com/Contrast/)
 
@@ -243,24 +243,25 @@ Wants to play a game
  - Head to page 
  - Read instructions 
  - press Spacebar, and play
- ![Imgur](https://i.imgur.com/0Rpd9qS.gifv)
+ ![Imgur](https://i.imgur.com/0Rpd9qS.gif)
 Wants to pause game
 - As above, press ESC while playing
-![Imgur](https://i.imgur.com/4mqKwGb.gifv)
+![Imgur](https://i.imgur.com/4mqKwGb.gif)
 Wants to mute/unmute sound in game
 - As above, press M while playing
 Wants to play again/better score
 - As above, when game is complete, follow instructions to press space bar to reload page.
-![Imgur](https://i.imgur.com/T0w5kqK.gifv)
+![Imgur](https://i.imgur.com/T0w5kqK.gif)
 
 ## 4.3 Manual Testing
 - [x] Website loads as expected
-![Imgur](https://i.imgur.com/0Rpd9qS.gifv)
+![Imgur](https://i.imgur.com/0Rpd9qS.gif)
 - [x] If screen is less than 600 px tall an error message is displayed
 - [x] If screen is less than 680 px tall the footer is hidden
 ![Imgur](https://i.imgur.com/5YrJ0KD.png)
 - [x] If screen is less than 420 px wide an error message is displayed
 ![Imgur](https://i.imgur.com/4mRjBqC.png?1)
+- [x] Extarnal links open in new tabs
 
 Screens
 - [x]Large Menu screen
@@ -280,7 +281,7 @@ Screens
 ![Imgur](https://i.imgur.com/eNawu8U.png)
 
 Gameplay
-![Imgur](https://i.imgur.com/LcOCXlt.gifv)
+![Imgur](https://i.imgur.com/LcOCXlt.gif)
 Ball
 - [X] bounces off sides
 - [X] bounces off paddles
@@ -318,7 +319,7 @@ keybindings
 - [x] Space does not restart level in running screen
 
 Levels
-![Imgur](https://i.imgur.com/27b0IxP.gifv)
+![Imgur](https://i.imgur.com/27b0IxP.gif)
 - [x] Generate as expected
 - [x] Generates a new level when all bricks cleared
 - [x] Correct level no. is displayed on game screen
