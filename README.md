@@ -250,7 +250,7 @@ I suspect a limitation may be that it cannot check contrast in the html canvas.
 ### Wants to mute/unmute sound in game
 - As above, press M while playing
 
-### Wants to play again/better score
+### Wants to play again/better score
 - As above, when game is complete, follow instructions to press space bar to reload page.
 
 ![Imgur](https://i.imgur.com/T0w5kqK.gif)
