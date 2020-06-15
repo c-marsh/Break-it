@@ -130,18 +130,13 @@ export default class Game {
   }
   draw(context) {
     //draw game field text
-    context.font = "12px Major Mono Display";
-    context.fillStyle = "#3b8ea5";
-    context.textAlign = "left";
+      this.textStyling(context, "12px Major Mono Display", "#3b8ea5", "left");
     context.fillText(
       "Score: " + this.score + " | " + this.ballsRemaining + " balls left",
       10,
       15
     );
-
-    context.font = "12px Major Mono Display";
-    context.fillStyle = "#3b8ea5";
-    context.textAlign = "right";
+    this.textStyling(context, "12px Major Mono Display", "#3b8ea5", "right");
     context.fillText("level " + (this.playLevel + 1), this.gameWidth - 10, 15);
 
     //Redraw game features
@@ -471,6 +466,12 @@ export default class Game {
       }
     }
   }
+
+    textStyling(context, font, style, align) {
+        context.font = font;
+        context.fillStyle = style;
+        context.textAlign = align;
+    }
 
   //pause function called when ESC is pressed
   pause() {
