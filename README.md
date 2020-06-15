@@ -1,72 +1,67 @@
 # Table of Contents
 
-## [1. UX](#1.-UX)
+## [1. UX](https://github.com/c-marsh/Break-it#1-ux-1)
 
-[1.1 Who is this website for?](##1.1-Who-is-this-website-for?)
+[1.1 Who is this website for?](https://github.com/c-marsh/Break-it#11-who-is-this-website-for)
 
-[1.2 What is it that they want to achieve?](##1.2-What-is-it-that-they-want-to-achieve?)
+[1.2 What is it that they want to achieve?](https://github.com/c-marsh/Break-it#13-how-my-project-is-the-best-way-to-help-them-achieve-those-things)
 
-[1.3 How my project is the best way to help them achieve those things?](##-1.3-How-my-project-is-the-best-way-to-help-them-achieve-those-things?)
+[1.3 Website Planning and Wireframes](https://github.com/c-marsh/Break-it#13-website-planning-and-wireframes)
 
-[1.4 Website Planning and Wireframes](##-1.4-Website-Planning-and-Wireframes)
+## [2. Features](https://github.com/c-marsh/Break-it#2-features-1)
 
-## [2. Features](#2.-Features)
+[2.1 Screens(https://github.com/c-marsh/Break-it#21-screens)
 
-[2.1 Top Section](##-2.1-Top-Section)
+[2.2 Play Screen](https://github.com/c-marsh/Break-it#22-play-screen)
 
-[2.2 Nav Bar](##-2.2-Nav-Bar)
+[2.3 Lives](https://github.com/c-marsh/Break-it#23-lives)
 
-[2.3 Donate Alert](##-2.3-Donate-Alert)
+[2.4 Score](https://github.com/c-marsh/Break-it#24-score)
 
-[2.4 Welcome section](##-2.4-Welcome-section)
+[2.5 Sounds](https://github.com/c-marsh/Break-it#25-sounds)
 
-[2.5 Shows section](##-2.5-Shows-section)
+[2.6 Responsiveness](https://github.com/c-marsh/Break-it#26-responsiveness)
 
-[2.6 Stories section](##-2.6-Stories-section)
+[2.7 Other Features](https://github.com/c-marsh/Break-it#27-other-features)
 
-[2.7 Projects section](##-2.7-Projects-section)
+[2.8 Levels](https://github.com/c-marsh/Break-it#28-levels)
 
-[2.8 Makes section](##-2.8-Makes-section)
+[2.9 Footer](https://github.com/c-marsh/Break-it#29-footer)
 
-[2.10 General features](##-2.10-General-features)
+[2.11 Future improvements](https://github.com/c-marsh/Break-it#210-potential-future-features)
 
-[2.11 Future improvements](###-2.11-Future-improvements)
+## [3. Technologies Used](https://github.com/c-marsh/Break-it#3-technologies-used-1)
 
-## [3. Technologies Used](#-3.-Technologies-Used)
+[3.1 Languages](https://github.com/c-marsh/Break-it#31-languages)
 
-[3.1 Languages](##-3.1-Languages)
+[3.2 Frameworks](https://github.com/c-marsh/Break-it#32-frameworks)
 
-[3.2 Frameworks](##-3.2-Frameworks)
+[3.3 Integrated Development Environment](https://github.com/c-marsh/Break-it#33-integrated-development-environment)
 
-[3.3 Integrated Development Environment](##-3.3-Integrated-Development-Environment)
+[3.4 External Hostings](https://github.com/c-marsh/Break-it#34-external-hostings)
 
-[3.4 External Hostings](##-3.4-Externa-Hostings)
 
-[3.5 Other Tools](##-3.5-Other-Tools)
+## [4. Testing](https://github.com/c-marsh/Break-it#4-testing-1)
 
-## [4. Testing](#-4.-Testing)
+[4.1 Validation](https://github.com/c-marsh/Break-it#41-validation)
 
-[4.1 Validation](##-4.1-Validation)
+[4.2 UX Stories](https://github.com/c-marsh/Break-it#42-ux-stories)
 
-[4.2 UX Stories](#42-ux-stories)
+[4.3 Manual Testing](https://github.com/c-marsh/Break-it#43-manual-testing)
 
-[4.3 Manual Testing](##-4.3-Manual-Testing)
+[4.4 Bugs](https://github.com/c-marsh/Break-it#45-bugs)
 
-[4.4 Responsive Features](##-4.4-Responsive-Features)
+## [5. Deployment](https://github.com/c-marsh/Break-it#5-deployment-1)
 
-[4.5 Bugs](##-4.5-Bugs)
+## [6. Credits](https://github.com/c-marsh/Break-it#6-credits-1)
 
-## [5. Deployment](#-5.-Deployment)
+[6.1 Code-snippets](https://github.com/c-marsh/Break-it#61-code-snippets)
 
-## [6. Credits](#-6.-Credits)
+[6.2 Content](https://github.com/c-marsh/Break-it#62-content)
 
-[6.1 Code-snippets](##-6.1-Code-snippets)
+[6.3 Media](https://github.com/c-marsh/Break-it#63-media)
 
-[6.2 Content](##-6.2-Content)
-
-[6.3 Media](##-6.3-Media)
-
-[6.4 Acknowledgements](##-6.4-Acknowledgements)
+[6.4 Acknowledgements](https://github.com/c-marsh/Break-it#64-acknowledgements)
 
 # 1. UX
 
@@ -78,10 +73,7 @@ This website is for people who want to play a game, and myself to practice JavaS
 
 A functioning game that can be played, and hopefully be enjoyable to play.
 
-## 1.3 How my project is the best way to help them achieve those things?
-
-## 1.4 Website Planning and Wireframes
-
+## 1.3 Website Planning and Wireframes
 ### User Stories
 Wants to play a game
 Wants to pause game
@@ -185,6 +177,10 @@ JavaScript has been used to code the game.
 
 Bootstrap 4 components were used to save time on devolping the website.
 
+### Jquery
+
+Jquery is included as part of Bootstrap, but not used outside of possible BootStrap functionality.
+
 ## 3.3 Integrated Development Environment
 
 ### Gitpod
@@ -256,12 +252,13 @@ I suspect a limitation may be that it cannot check contrast in the html canvas.
 
 ### Wants to play again/better score
 - As above, when game is complete, follow instructions to press space bar to reload page.
+
 ![Imgur](https://i.imgur.com/T0w5kqK.gif)
 
 ## 4.3 Manual Testing
 See [Here](docs/manualtest.md) manual testing regime.
 
-## 4.5 Bugs
+## 4.4 Bugs
 
 ### Active Bugs
 
