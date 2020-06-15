@@ -3,7 +3,6 @@ import Paddle from "./paddle.js";
 import TopPaddle from "./topPaddle.js";
 import Ball from "./ball.js";
 import KeyBindings from "./keyBindings.js";
-import Brick from "./brick.js";
 import {
   createLevel,
   level1,
@@ -84,7 +83,7 @@ export default class Game {
           localStorage.setItem("highscore", this.score);
         }
         //if NaN has been recorded
-      } else if (this.highscore = isNaN()) {
+      } else if (this.highscore.isNaN()) {
         localStorage.setItem("highscore", this.score);
       } else {
         //if no previous score record this score
