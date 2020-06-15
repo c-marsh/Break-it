@@ -130,14 +130,25 @@ export default class Game {
   }
   draw(context) {
     //draw game field text
-    this.textStyling(context, "12px Major Mono Display", "#3b8ea5", "left");
-    context.fillText(
+    this.textStyling(
+      context,
+      "12px Major Mono Display",
+      "#3b8ea5",
+      "left",
       "Score: " + this.score + " | " + this.ballsRemaining + " balls left",
       10,
       15
     );
-    this.textStyling(context, "12px Major Mono Display", "#3b8ea5", "right");
-    context.fillText("level " + (this.playLevel + 1), this.gameWidth - 10, 15);
+
+    this.textStyling(
+      context,
+      "12px Major Mono Display",
+      "#3b8ea5",
+      "right",
+      "level " + (this.playLevel + 1),
+      this.gameWidth - 10,
+      15
+    );
 
     //Redraw game features
     [...this.features, ...this.bricks].forEach((Object) => {
@@ -156,9 +167,7 @@ export default class Game {
           context,
           "12px Major Mono Display",
           "#F5EE9E",
-          "center"
-        );
-        context.fillText(
+          "center",
           "press SPACE to restart",
           this.gameWidth / 2,
           this.gameHeight / 20
@@ -168,17 +177,17 @@ export default class Game {
           context,
           "30px Major Mono Display",
           "#F5EE9E",
-          "center"
+          "center",
+          "Cheat!",
+          this.gameWidth / 2,
+          this.gameHeight / 3
         );
-        context.fillText("Cheat!", this.gameWidth / 2, this.gameHeight / 3);
 
         this.textStyling(
           context,
           "20px Major Mono Display",
           "#F5EE9E",
-          "center"
-        );
-        context.fillText(
+          "center",
           "You've been caught cheating",
           this.gameWidth / 2,
           this.gameHeight / 2
@@ -188,9 +197,7 @@ export default class Game {
           context,
           "12px Major Mono Display",
           "#F5EE9E",
-          "center"
-        );
-        context.fillText(
+          "center",
           "Your highscore may be reduced as punishment",
           this.gameWidth / 2,
           (this.gameHeight / 3) * 2
@@ -200,8 +207,11 @@ export default class Game {
         context.fillStyle = "#AB3428";
         context.fillRect(0, 0, this.gameWidth, this.gameHeight);
         //content
-        this.textStyling(context, "16px Major Mono Display", "#F5EE9E", "left");
-        context.fillText(
+        this.textStyling(
+          context,
+          "16px Major Mono Display",
+          "#F5EE9E",
+          "left",
           "press SPACE to restart",
           this.gameWidth / 20,
           this.gameHeight / 20
@@ -211,18 +221,18 @@ export default class Game {
           context,
           "30px Major Mono Display",
           "#F5EE9E",
-          "center"
+          "center",
+          "Cheat!",
+          this.gameWidth / 2,
+          this.gameHeight / 3
         );
-        context.fillText("Cheat!", this.gameWidth / 2, this.gameHeight / 3);
 
         this.textStyling(
           context,
           "30px Major Mono Display",
           "#F5EE9E",
-          "center"
-        );
-        context.fillText(
-          "You've been caught cheating'",
+          "center",
+          "You've been caught cheating",
           this.gameWidth / 2,
           this.gameHeight / 2
         );
@@ -231,9 +241,7 @@ export default class Game {
           context,
           "30px Major Mono Display",
           "#F5EE9E",
-          "center"
-        );
-        context.fillText(
+          "center",
           "Your highscore may be reduced as punishment",
           this.gameWidth / 2,
           (this.gameHeight / 3) * 2
@@ -247,33 +255,41 @@ export default class Game {
         context.fillStyle = "#183E4E";
         context.fillRect(0, 0, this.gameWidth, this.gameHeight);
 
-        context.font = "16px Major Mono Display";
-        context.fillStyle = "#F5EEA3";
-        context.textAlign = "center";
-        context.fillText(
+        this.textStyling(
+          context,
+          "16px Major Mono Display",
+          "#F5EEA3",
+          "center",
           "ESC to PAUSE | m to Mute",
           this.gameWidth / 2,
           this.gameHeight / 20
         );
 
-        context.font = "30px Major Mono Display";
-        context.fillStyle = "#F5EEA3";
-        context.textAlign = "center";
-        context.fillText("Paused", this.gameWidth / 2, this.gameHeight / 3);
+        this.textStyling(
+          context,
+          "30px Major Mono Display",
+          "#F5EEA3",
+          "center",
+          "Paused",
+          this.gameWidth / 2,
+          this.gameHeight / 3
+        );
 
-        context.font = "20px Major Mono Display";
-        context.fillStyle = "#F5EEA3";
-        context.textAlign = "center";
-        context.fillText(
+        this.textStyling(
+          context,
+          "20px Major Mono Display",
+          "#F5EEA3",
+          "center",
           "Your current score: " + this.score,
           this.gameWidth / 2,
           this.gameHeight / 2
         );
 
-        context.font = "20px Major Mono Display";
-        context.fillStyle = "#F5EEA3";
-        context.textAlign = "center";
-        context.fillText(
+        this.textStyling(
+          context,
+          "20px Major Mono Display",
+          "#F5EEA3",
+          "center",
           this.ballsRemaining + " balls remaining",
           this.gameWidth / 2,
           (this.gameHeight / 3) * 2
@@ -282,33 +298,41 @@ export default class Game {
         context.fillStyle = "#183E4E";
         context.fillRect(0, 0, this.gameWidth, this.gameHeight);
 
-        context.font = "16px Major Mono Display";
-        context.fillStyle = "#F5EEA3";
-        context.textAlign = "left";
-        context.fillText(
+        this.textStyling(
+          context,
+          "16px Major Mono Display",
+          "#F5EEA3",
+          "left",
           "press ESC to PAUSE | Press m to Mute",
           this.gameWidth / 20,
           this.gameHeight / 20
         );
 
-        context.font = "30px Major Mono Display";
-        context.fillStyle = "#F5EEA3";
-        context.textAlign = "center";
-        context.fillText("Paused", this.gameWidth / 2, this.gameHeight / 3);
+        this.textStyling(
+          context,
+          "30px Major Mono Display",
+          "#F5EEA3",
+          "center",
+          "Paused",
+          this.gameWidth / 2,
+          this.gameHeight / 3
+        );
 
-        context.font = "20px Major Mono Display";
-        context.fillStyle = "#F5EEA3";
-        context.textAlign = "center";
-        context.fillText(
+        this.textStyling(
+          context,
+          "20px Major Mono Display",
+          "#F5EEA3",
+          "center",
           "Your current score: " + this.score,
           this.gameWidth / 2,
           this.gameHeight / 2
         );
 
-        context.font = "20px Major Mono Display";
-        context.fillStyle = "#F5EEA3";
-        context.textAlign = "center";
-        context.fillText(
+        this.textStyling(
+          context,
+          "20px Major Mono Display",
+          "#F5EEA3",
+          "center",
           this.ballsRemaining + " balls remaining",
           this.gameWidth / 2,
           (this.gameHeight / 3) * 2
@@ -322,20 +346,22 @@ export default class Game {
         context.fillStyle = "#3B8EA5";
         context.fillRect(0, 0, this.gameWidth, this.gameHeight);
         //text
-        context.font = "14px Major Mono Display";
-        context.fillStyle = "#F5EE9E";
-        context.textAlign = "center";
-        context.fillText(
+        this.textStyling(
+          context,
+          "14px Major Mono Display",
+          "#F5EE9E",
+          "center",
           "screen too small for game",
           this.gameWidth / 2,
           this.gameHeight / 2 - 50
         );
 
         //text
-        context.font = "12px Major Mono Display";
-        context.fillStyle = "#F5EE9E";
-        context.textAlign = "center";
-        context.fillText(
+        this.textStyling(
+          context,
+          "12px Major Mono Display",
+          "#F5EE9E",
+          "center",
           "try vertical alignment",
           this.gameWidth / 2,
           this.gameHeight / 2
@@ -345,40 +371,44 @@ export default class Game {
         context.fillStyle = "#3B8EA5";
         context.fillRect(0, 0, this.gameWidth, this.gameHeight);
         //text
-        context.font = "14px Major Mono Display";
-        context.fillStyle = "#F5EE9E";
-        context.textAlign = "center";
-        context.fillText(
+        this.textStyling(
+          context,
+          "14px Major Mono Display",
+          "#F5EE9E",
+          "center",
           "use LEFT and RIGHT to move paddle",
           this.gameWidth / 2,
           this.gameHeight / 2 - 50
         );
 
         //text
-        context.font = "28px Major Mono Display";
-        context.fillStyle = "#F5EE9E";
-        context.textAlign = "center";
-        context.fillText(
+        this.textStyling(
+          context,
+          "28px Major Mono Display",
+          "#F5EE9E",
+          "center",
           "Press SPACE to start",
           this.gameWidth / 2,
           this.gameHeight / 2
         );
 
-        context.font = "12px Major Mono Display";
-        context.fillStyle = "#F5EE9E";
-        context.textAlign = "left";
-        context.textAlign = "center";
-        context.fillText(
+        this.textStyling(
+          context,
+          "12px Major Mono Display",
+          "#F5EE9E",
+          "left",
+          "center",
           "press ESC to PAUSE | Press m to Mute",
           this.gameWidth / 2,
           this.gameHeight / 20
         );
 
-        context.font = "12px Major Mono Display";
-        context.fillStyle = "#F5EE9E";
-        context.textAlign = "left";
-        context.textAlign = "center";
-        context.fillText(
+        this.textStyling(
+          context,
+          "12px Major Mono Display",
+          "#F5EE9E",
+          "left",
+          "center",
           this.ballsRemaining + " balls left",
           this.gameWidth / 2,
           this.gameHeight / 20 + 18 * (this.gameHeight / 20)
@@ -394,41 +424,52 @@ export default class Game {
         context.fillStyle = "#AB3428";
         context.fillRect(0, 0, this.gameWidth, this.gameHeight);
         //content
-        context.font = "12px Major Mono Display";
-        context.fillStyle = "#F5EE9E";
-        context.textAlign = "center";
-        context.fillText(
+        this.textStyling(
+          context,
+          "12px Major Mono Display",
+          "#F5EE9E",
+          "center",
           "press SPACE to restart",
           this.gameWidth / 2,
           this.gameHeight / 20
         );
 
-        context.font = "30px Major Mono Display";
-        context.fillStyle = "#F5EE9E";
-        context.textAlign = "center";
-        context.fillText("game over", this.gameWidth / 2, this.gameHeight / 3);
+        this.textStyling(
+          context,
+          "30px Major Mono Display",
+          "#F5EE9E",
+          "center",
+          "game over",
+          this.gameWidth / 2,
+          this.gameHeight / 3
+        );
 
-        context.font = "16px Major Mono Display";
-        context.fillStyle = "#F5EE9E";
-        context.textAlign = "center";
-        context.fillText(
+        this.textStyling(
+          context,
+          "16px Major Mono Display",
+          "#F5EE9E",
+          "center",
           "Your score: " + this.score,
           this.gameWidth / 2,
           this.gameHeight / 2
         );
 
         if (this.score > this.highscore || this.highscore == null) {
-          context.font = "12px Major Mono Display";
-          context.fillStyle = "#F5EE9E";
-          context.textAlign = "center";
-          "Congratulations, new highscore",
+          this.textStyling(
+            context,
+            "12px Major Mono Display",
+            "#F5EE9E",
+            "center",
+            "Congratulations, new highscore",
             this.gameWidth / 2,
-            (this.gameHeight / 3) * 2;
+            (this.gameHeight / 3) * 2
+          );
         } else {
-          context.font = "12px Major Mono Display";
-          context.fillStyle = "#F5EE9E";
-          context.textAlign = "center";
-          context.fillText(
+          this.textStyling(
+            context,
+            "12px Major Mono Display",
+            "#F5EE9E",
+            "center",
             "Previous highscore: " + this.highscore,
             this.gameWidth / 2,
             (this.gameHeight / 3) * 2
@@ -440,43 +481,52 @@ export default class Game {
         context.fillStyle = "#AB3428";
         context.fillRect(0, 0, this.gameWidth, this.gameHeight);
         //content
-        context.font = "16px Major Mono Display";
-        context.fillStyle = "#F5EE9E";
-        context.textAlign = "left";
-        context.fillText(
+        this.textStyling(
+          context,
+          "16px Major Mono Display",
+          "#F5EE9E",
+          "left",
           "press SPACE to restart",
           this.gameWidth / 20,
           this.gameHeight / 20
         );
 
-        context.font = "30px Major Mono Display";
-        context.fillStyle = "#F5EE9E";
-        context.textAlign = "center";
-        context.fillText("game over", this.gameWidth / 2, this.gameHeight / 3);
+        this.textStyling(
+          context,
+          "30px Major Mono Display",
+          "#F5EE9E",
+          "center",
+          "game over",
+          this.gameWidth / 2,
+          this.gameHeight / 3
+        );
 
-        context.font = "30px Major Mono Display";
-        context.fillStyle = "#F5EE9E";
-        context.textAlign = "center";
-        context.fillText(
+        this.textStyling(
+          context,
+          "30px Major Mono Display",
+          "#F5EE9E",
+          "center",
           "Your score: " + this.score,
           this.gameWidth / 2,
           this.gameHeight / 2
         );
 
         if (this.score > this.highscore) {
-          context.font = "30px Major Mono Display";
-          context.fillStyle = "#F5EE9E";
-          context.textAlign = "center";
-          context.fillText(
+          this.textStyling(
+            context,
+            "30px Major Mono Display",
+            "#F5EE9E",
+            "center",
             "Congratulations, new highscore",
             this.gameWidth / 2,
             (this.gameHeight / 3) * 2
           );
         } else {
-          context.font = "30px Major Mono Display";
-          context.fillStyle = "#F5EE9E";
-          context.textAlign = "center";
-          context.fillText(
+          this.textStyling(
+            context,
+            "30px Major Mono Display",
+            "#F5EE9E",
+            "center",
             "Previous highscore: " + this.highscore,
             this.gameWidth / 2,
             (this.gameHeight / 3) * 2
@@ -486,10 +536,11 @@ export default class Game {
     }
   }
 
-  textStyling(context, font, style, align) {
+  textStyling(context, font, style, align, textString, xText, yText) {
     context.font = font;
     context.fillStyle = style;
     context.textAlign = align;
+    context.fillText(textString, xText, yText);
   }
 
   //pause function called when ESC is pressed
