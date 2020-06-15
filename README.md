@@ -1,3 +1,5 @@
+![Imgur](https://i.imgur.com/7hAi8zD.png?1)
+
 # Table of Contents
 
 ## [1. UX](https://github.com/c-marsh/Break-it#1-ux-1)
@@ -301,6 +303,8 @@ Code for retina/HiDef canvas display: https://www.html5rocks.com/en/tutorials/ca
 
 ## 6.2 Content
 All textual content is orginal.
+
+ReadME Header image created on http://ami.responsivedesign.is/
 
 ## 6.3 Media
 Favicon generated with https://realfavicongenerator.net/
