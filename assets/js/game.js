@@ -84,7 +84,7 @@ export default class Game {
           localStorage.setItem("highscore", this.score);
         }
         //if NaN has been recorded
-      } else if (this.highscore == NaN) {
+      } else if (this.highscore = isNaN()) {
         localStorage.setItem("highscore", this.score);
       } else {
         //if no previous score record this score
