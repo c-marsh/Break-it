@@ -138,7 +138,7 @@ All sounds can be muted and unmuted. By dafault they are on, but don't play unti
 ## 2.8 Levels
 Levels are comprised of a grid of up to 11 bricks wide and 5 rows high.
 
-6 unique levels are currently implemented in the game, however a feature is that as a result of their construction as an array, it is simple and quick to add more.
+15 unique levels are currently implemented in the game, however a feature is that as a result of their construction as an array, it is simple and quick to add more.
 
 The current level is displayed on the screen in play.
 
@@ -261,7 +261,7 @@ See [Here](docs/manualtest.md) manual testing regime.
 ## 4.4 Bugs
 
 ### Active Bugs
-
+- [x] Nothing happens when last level completed
 - [x] Ball bounce under paddle
 - [x] When pausing from start screen, and then unpausing, the game starts. 
     -   fixed by disabling pause from strat screen

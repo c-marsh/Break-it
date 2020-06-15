@@ -11,6 +11,15 @@ import {
   level4,
   level5,
   level6,
+  level7,
+  level8,
+  level9,
+  level10,
+  level11,
+  level12,
+  level13,
+  level14,
+  level15,
 } from "./levels.js";
 
 // Screens/Play States created as an object
@@ -36,7 +45,23 @@ export default class Game {
     this.features = [];
     this.bricks = [];
     this.ballsRemaining = 3;
-    this.levels = [level1, level2, level3, level4, level5, level6];
+    this.levels = [
+      level1,
+      level2,
+      level3,
+      level4,
+      level5,
+      level6,
+      level7,
+      level8,
+      level9,
+      level10,
+      level11,
+      level12,
+      level13,
+      level14,
+      level15,
+    ];
     this.playLevel = 0;
 
     //Score
@@ -93,8 +118,8 @@ export default class Game {
   }
 
   update(deltaTime) {
-    //display GameOver screen if no balls left
-    if (this.ballsRemaining === 0) {
+    //display GameOver screen if no balls left or last level reached
+    if (this.ballsRemaining === 0 || this.playLevel === 15) {
       this.screen = screen.gameOver;
       //if previous highscore found...
       if (this.highscore !== null) {
