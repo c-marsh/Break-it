@@ -66,7 +66,8 @@ export default class Game {
 
     //Score
     this.score = 0;
-    this.highscore = localStorage.getItem("highscore");
+    this.penalty = localStorage.getItem("penalty");
+    this.highscore = localStorage.getItem("highscore")-this.penalty;
 
     //SFX
 
@@ -132,14 +133,14 @@ export default class Game {
         localStorage.setItem("highscore", this.score);
       } else {
         //if no previous score record this score
-        localStorage.setItem("highscore", this.score);
+        localStorage.setItem("highscore", this.highscore);
       }
     }
     //If screen width is not the same as screen when game loaded, remove 1 from highscore, unless no highscore detected
     if (document.documentElement.clientWidth != this.gameWidth) {
       this.screen = screen.cheat;
       if (this.highscore !== null) {
-        localStorage.setItem("highscore", (this.highscore = -1));
+        localStorage.setItem("penalty", 1);
       }
     }
 
