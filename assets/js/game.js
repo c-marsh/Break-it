@@ -54,7 +54,27 @@ export default class Game {
     //Keymapping to paddles
     new KeyBindings(this.paddle, this.topPaddle, this);
   }
-
+  // This allows Space bar to be used for innitiating the game in the menu screen, or refreshing the page in the gameover/cheat screen
+  spaceBar() {
+    if (this.screen === screen.menu) {
+      this.start();
+    } else if (
+      this.screen === screen.gameOver ||
+      this.screen === screen.cheat
+    ) {
+      window.location.reload(false);
+    }
+  }
+  //pause function called when ESC is pressed
+  pause() {
+    if (this.screen == screen.menu) {
+      return;
+    } else if (this.screen == screen.paused) {
+      this.screen = screen.running;
+    } else if ((this.screen = screen.running)) {
+      this.screen = screen.paused;
+    }
+  }
   //start the game function
   start() {
     if (this.screen !== screen.menu && this.screen !== screen.levelUp) {
@@ -535,7 +555,7 @@ export default class Game {
     }
   }
 
-//Method for styling text
+  //Method for styling text
   textStyling(context, font, style, align, textString, xText, yText) {
     context.font = font;
     context.fillStyle = style;
@@ -543,16 +563,6 @@ export default class Game {
     context.fillText(textString, xText, yText);
   }
 
-  //pause function called when ESC is pressed
-  pause() {
-    if (this.screen == screen.menu) {
-      return;
-    } else if (this.screen == screen.paused) {
-      this.screen = screen.running;
-    } else if ((this.screen = screen.running)) {
-      this.screen = screen.paused;
-    }
-  }
   //mute functions called when M is pressed
   brickMuteSFX() {
     document.getElementById("brickSFX").muted = !document.getElementById(
@@ -578,17 +588,5 @@ export default class Game {
     document.getElementById("cheatSFX").muted = !document.getElementById(
       "cheatSFX"
     ).muted;
-  }
-
-  // This allows Space bar to be used for innitiating the game in the menu screen, or refreshing the page in the gameover/cheat screen
-  spaceBar() {
-    if (this.screen === screen.menu) {
-      this.start();
-    } else if (
-      this.screen === screen.gameOver ||
-      this.screen === screen.cheat
-    ) {
-      window.location.reload(false);
-    }
   }
 }
