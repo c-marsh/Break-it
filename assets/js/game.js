@@ -536,6 +536,7 @@ export default class Game {
     }
   }
 
+//Method for styling text
   textStyling(context, font, style, align, textString, xText, yText) {
     context.font = font;
     context.fillStyle = style;
