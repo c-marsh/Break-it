@@ -1,4 +1,4 @@
-import { impact } from "./impact.js";
+
 export default class Ball{
   constructor(game) {
     this.gameWidth = game.gameWidth;
