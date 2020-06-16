@@ -120,14 +120,14 @@ export default class Game {
 
   update(deltaTime) {
     //display GameOver screen if no balls left or last level reached
-    if (this.ballsRemaining === 0 || this.playLevel === 15) {
+    if ((this.ballsRemaining === 0) || (this.playLevel === 15)) {
       this.screen = screen.gameOver;
       //if previous highscore found...
       if (this.highscore !== null) {
         //...and if this is greater than previous highscore, overwrite it.
         if (this.score > this.highscore) {
           localStorage.setItem("highscore", this.score);
-        } else if (this.highscore.isNaN()) {
+        } else if (this.highscore == NaN) {
           //if NaN has been recorded
           localStorage.setItem("highscore", this.score);
         }
