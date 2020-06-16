@@ -136,7 +136,7 @@ All sounds can be muted and unmuted. By dafault they are on, but don't play unti
 ## 2.7 Other Features
 - On page load the game screen bounces into place
 - While LEFT and RIGHT are advertised as control keys, A and D also work in case of playing with a keyboard with no arrows.
-- cheating feature: if the viewport is resized, the game is topped, a warning screen is shown and 1 point is deducted from the saved highscore as a penalty for cheating.
+- cheating feature: if the viewport is resized, the game is topped, a warning screen is shown and 1 point is deducted from the saved highscore as a penalty for cheating. This has been implemented as a game feature to add a sense of easter egg style surprise and humour to the game.
 
 ## 2.8 Levels
 Levels are comprised of a grid of up to 11 bricks wide and 5 rows high.
