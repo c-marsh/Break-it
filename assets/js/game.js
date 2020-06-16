@@ -120,7 +120,7 @@ export default class Game {
 
   update(deltaTime) {
     //display GameOver screen if no balls left or last level reached
-    if ((this.ballsRemaining === 0) || (this.playLevel === 15)) {
+    if (this.ballsRemaining === 0 || this.playLevel === 15) {
       this.screen = screen.gameOver;
       //if previous highscore found...
       if (this.highscore !== null) {
@@ -137,7 +137,10 @@ export default class Game {
       }
     }
     //If screen width is not the same as screen when game loaded, remove 1 from highscore, unless no highscore detected
-    if (document.documentElement.clientWidth != this.gameWidth) {
+    if (
+      document.documentElement.clientWidth != this.gameWidth &&
+      this.screen == screen.running
+    ) {
       this.screen = screen.cheat;
       if (this.highscore !== null) {
         localStorage.setItem("penalty", 1);
@@ -237,6 +240,15 @@ export default class Game {
           this.gameWidth / 2,
           this.gameHeight / 2
         );
+        this.textStyling(
+          context,
+          "12px Major Mono Display",
+          "#F5EE9E",
+          "center",
+          "Do not resize your screen",
+          this.gameWidth / 2,
+          this.gameHeight / 2 + 30
+        );
 
         this.textStyling(
           context,
@@ -280,6 +292,15 @@ export default class Game {
           "You've been caught cheating",
           this.gameWidth / 2,
           this.gameHeight / 2
+        );
+          this.textStyling(
+          context,
+          "16px Major Mono Display",
+          "#F5EE9E",
+          "center",
+          "Do not resize your screen",
+          this.gameWidth / 2,
+          this.gameHeight / 2 + 40
         );
 
         this.textStyling(
