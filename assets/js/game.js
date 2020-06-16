@@ -414,24 +414,15 @@ export default class Game {
         //text
         this.textStyling(
           context,
-          "14px Major Mono Display",
+          "16px Major Mono Display",
           "#F5EE9E",
           "center",
-          "screen too small for game",
-          this.gameWidth / 2,
-          this.gameHeight / 2 - 50
-        );
-
-        //text
-        this.textStyling(
-          context,
-          "12px Major Mono Display",
-          "#F5EE9E",
-          "center",
-          "try vertical alignment",
+          "screen too small",
           this.gameWidth / 2,
           this.gameHeight / 2
         );
+
+        
       } else if (421 < this.gameWidth) {
         //styling tablet size+
         context.fillStyle = "#3B8EA5";
