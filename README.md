@@ -280,7 +280,8 @@ See [Here](docs/manualtest.md) manual testing regime.
     -   prevented by implementing cheat screen
 - [x] ~~Ball return to screen after leaving~~ No longer relevent as this a new game screen starts
 - [x] Mute toggle not working
-- [ ] When resizing before playing the game, an error is logged through Chrome as a result of audio being played before input on the page - https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Best_practices#Autoplay_policy
+- [x] When resizing before playing the game, an error is logged through Chrome as a result of audio being played before input on the page - https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Best_practices#Autoplay_policy
+    -   The cheat screen has been disabled while the menu screen is up. This means the information on the start screen never gets obscured, and the sound on the cheat screen can only be triggered after the game has been start.
 
 # 5. Deployment
 
