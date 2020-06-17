@@ -161,6 +161,7 @@ export default class Game {
     if (this.bricks.length === 0) {
       //...Level up
       this.playLevel += 1;
+
       //... add a ball
       this.ballsRemaining += 1;
       this.screen = screen.levelUp;
@@ -293,7 +294,7 @@ export default class Game {
           this.gameWidth / 2,
           this.gameHeight / 2
         );
-          this.textStyling(
+        this.textStyling(
           context,
           "16px Major Mono Display",
           "#F5EE9E",
@@ -421,8 +422,6 @@ export default class Game {
           this.gameWidth / 2,
           this.gameHeight / 2
         );
-
-        
       } else if (421 < this.gameWidth) {
         //styling tablet size+
         context.fillStyle = "#3B8EA5";
@@ -447,6 +446,16 @@ export default class Game {
           "Press SPACE to start",
           this.gameWidth / 2,
           this.gameHeight / 2
+        );
+
+        this.textStyling(
+          context,
+          "14px Major Mono Display",
+          "#F5EE9E",
+          "center",
+          "(Keyboard REQUIRED)",
+          this.gameWidth / 2,
+          this.gameHeight / 2 + 40
         );
 
         this.textStyling(
