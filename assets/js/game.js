@@ -66,8 +66,19 @@ export default class Game {
 
     //Score
     this.score = 0;
-    this.penalty = parseInt(localStorage.getItem("penalty"));
-    this.highscore = parseInt(localStorage.getItem("highscore"));
+    this.penaltyImport = parseInt(localStorage.getItem("penalty"));
+    if (isNaN(this.penaltyImport) === true) {
+      this.penalty = 0;
+    } else {
+      this.penalty = this.penaltyImport;
+    }
+      
+    this.highscoreImport = parseInt(localStorage.getItem("highscore"));
+    if (isNaN(this.highscoreImport) === true) {
+      this.highscore = 0;
+    } else {
+      this.highscore = this.highscoreImport;
+    }
     //SFX
 
     this.brickSFX = document.getElementById("brickSFX");
@@ -128,9 +139,6 @@ export default class Game {
       if (this.highscore !== null) {
         //...and if this is greater than previous highscore, overwrite it.
         if (this.score > this.highscore) {
-          localStorage.setItem("highscore", this.score);
-        } else if (this.highscore == NaN) {
-          //if NaN has been recorded
           localStorage.setItem("highscore", this.score);
         }
       } else {
