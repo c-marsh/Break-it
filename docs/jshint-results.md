@@ -28,7 +28,7 @@ There are 15 functions in this file.
 
 Function with the largest signature take 7 arguments, while the median is 0.
 
-Largest function has 64 statements in it, while the median is 2.
+Largest function has 66 statements in it, while the median is 2.
 
 The most complex function has a cyclomatic complexity value of 14 while the median is 1.
 

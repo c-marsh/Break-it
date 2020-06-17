@@ -114,6 +114,7 @@ A new life is added for each completed level.
 ## 2.4 Score
 The score is calculated as each brick demolished. It is reported on game over and saved to the browser memory as a highscore to beat for future play.
 It can be viewed during play from the pause screen, or in the corner of the screen.
+Error checking is in place to not present NaN/Null
 
 ## 2.5 Sounds
 The game features the following SFX:
