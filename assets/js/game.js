@@ -66,9 +66,8 @@ export default class Game {
 
     //Score
     this.score = 0;
-    this.penalty = localStorage.getItem("penalty");
-    this.highscore = localStorage.getItem("highscore") - this.penalty;
-
+    this.penalty = parseInt(localStorage.getItem("penalty"));
+    this.highscore = parseInt(localStorage.getItem("highscore"));
     //SFX
 
     this.brickSFX = document.getElementById("brickSFX");
@@ -114,6 +113,9 @@ export default class Game {
     this.features = [this.ball, this.paddle, this.topPaddle];
     this.screen = screen.running;
 
+    //Reset Penalty
+    this.highscore = this.highscore - this.penalty;
+    localStorage.setItem("penalty", 0);
     //play start levevel SFX
     document.getElementById("levelUpSFX").play();
   }
@@ -143,7 +145,7 @@ export default class Game {
     ) {
       this.screen = screen.cheat;
       if (this.highscore !== null) {
-        localStorage.setItem("penalty", 1);
+        localStorage.setItem("penalty", 3);
       }
     }
 
